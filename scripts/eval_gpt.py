@@ -1,6 +1,5 @@
 import re
 import json
-
 import openai
 import backoff
 import logging
@@ -385,7 +384,6 @@ if __name__ == '__main__':
     logger.addHandler(stream_handler)
 
     temperature = 0
-    # References: https://github.com/chatanywhere/GPT_API_free
     openai.api_key = args.api_key
     model_max_tokens = {
         'gpt-3.5-turbo': 4097,
