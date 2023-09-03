@@ -1,5 +1,6 @@
 import re
 import json
+
 import openai
 import backoff
 import logging
@@ -351,7 +352,7 @@ def main():
     load_path = Path(__file__).parent.parent / Path('data') / Path(args.data_load_name)
     save_path = Path(__file__).parent.parent / Path('results') / Path(args.result_save_name)
 
-    dataset = load_dataset('json', split='train', data_files=str(load_path)).select(range(5))
+    dataset = load_dataset('json', split='train', data_files=str(load_path))
     dataset.cleanup_cache_files()  # for multiple evaluation
     print(dataset)
 
@@ -386,7 +387,6 @@ if __name__ == '__main__':
     temperature = 0
     # References: https://github.com/chatanywhere/GPT_API_free
     openai.api_key = args.api_key
-    openai.api_base = 'https://api.chatanywhere.com.cn/v1'
     model_max_tokens = {
         'gpt-3.5-turbo': 4097,
         'gpt-3.5-turbo-16k': 16385,
@@ -402,5 +402,4 @@ if __name__ == '__main__':
     }
     max_tokens = model_max_tokens.get(args.model) if model_max_tokens.get(args.model) is not None else 0
     main()
-    # print(generate_text(args.model, 'Why did Zhou Shuren beat up Lu Xun?', temperature))
     # python scripts/eval_gpt.py
