@@ -310,7 +310,7 @@ Respond only with a string in the following JSON format:
             if input_tokens + output_tokens > max_tokens:
                 logging.warning('Over total tokens limit ' + str(code_uid))
 
-            pattern = r'\[{.*?\}]'
+            pattern = r'\[.*{.*?\}.*]'
             matches = re.search(pattern, response, re.DOTALL)
             if matches:
                 json_array_string = matches.group().replace("'", '"')

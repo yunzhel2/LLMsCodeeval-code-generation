@@ -280,7 +280,7 @@ Respond only with a string in the following JSON format:
             if output_tokens > max_output_tokens:
                 logging.warning('Over output tokens limit ' + str(code_uid))
 
-            pattern = r'\[{.*?\}]'
+            pattern = r'\[.*{.*?\}.*]'
             matches = re.search(pattern, response.result, re.DOTALL)
             if matches:
                 json_array_string = matches.group().replace("'", '"')
@@ -357,7 +357,7 @@ if __name__ == '__main__':
     # References: https://github.com/google/generative-ai-python/issues/29
     palm.configure(api_key=args.api_key, transport='rest')
     models = [model for model in palm.list_models() if 'generateText' in model.supported_generation_methods]
-    max_input_tokens = models[0].input_token_limit
-    max_output_tokens = models[0].output_token_limit
+    max_input_tokens = models[0].input_token_limit  # 8192
+    max_output_tokens = models[0].output_token_limit  # 1024
     main()
     # python scripts/eval_palm.py
