@@ -85,10 +85,13 @@ Respond only with one of the specified categories."""
                 smell = ''
             else:
                 smell = ''
+                # Find the smell that first occurs in the response.
+                min_index = float('inf')
                 for supported_smell in supported_smells:
-                    if supported_smell in response.result.lower():
+                    first_index = response.lower().find(supported_smell)
+                    if first_index != -1 and first_index < min_index:
+                        min_index = first_index
                         smell = supported_smell
-                        break
         else:
             logging.warning('Respond content is none.')
             smell = ''
@@ -151,10 +154,13 @@ Respond only with the number: 0 or 1."""
                 diff_tag = 2
             else:
                 diff_tag = 2
+                # Find the diff tag that first occurs in the response.
+                min_index = float('inf')
                 for supported_diff_tag in supported_diff_tags:
-                    if supported_diff_tag in response.result:
+                    first_index = response.find(supported_diff_tag)
+                    if first_index != -1 and first_index < min_index:
+                        min_index = first_index
                         diff_tag = int(supported_diff_tag)
-                        break
         else:
             logging.warning('Respond content is none.')
             diff_tag = 2
