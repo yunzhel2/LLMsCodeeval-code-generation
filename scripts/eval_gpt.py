@@ -375,6 +375,7 @@ def main():
 
 if __name__ == '__main__':
     args = parse_arguments()
+
     log_file_path = Path(__file__).parent.parent / Path('logs') / Path(args.log_file_name)
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
@@ -389,7 +390,7 @@ if __name__ == '__main__':
     logger.addHandler(file_handler)
     logger.addHandler(stream_handler)
 
-    temperature = 0
+    # References: https://platform.openai.com/docs/api-reference/authentication
     openai.api_key = args.api_key
     model_max_tokens = {
         'gpt-3.5-turbo': 4097,
@@ -404,6 +405,8 @@ if __name__ == '__main__':
         'gpt-4-0314': 8192,
         'gpt-4-32k-0314': 32768
     }
+    temperature = 0
     max_tokens = model_max_tokens.get(args.model) if model_max_tokens.get(args.model) is not None else 0
+
     main()
     # python scripts/eval_gpt.py

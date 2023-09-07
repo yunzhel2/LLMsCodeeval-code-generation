@@ -345,6 +345,7 @@ def main():
 
 if __name__ == '__main__':
     args = parse_arguments()
+
     log_file_path = Path(__file__).parent.parent / Path('logs') / Path(args.log_file_name)
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
@@ -359,11 +360,12 @@ if __name__ == '__main__':
     logger.addHandler(file_handler)
     logger.addHandler(stream_handler)
 
-    temperature = 0
     # References: https://github.com/google/generative-ai-python/issues/29
     palm.configure(api_key=args.api_key, transport='rest')
     models = [model for model in palm.list_models() if 'generateText' in model.supported_generation_methods]
+    temperature = 0
     max_input_tokens = models[0].input_token_limit  # 8192
     max_output_tokens = models[0].output_token_limit  # 1024
+
     main()
     # python scripts/eval_palm.py
