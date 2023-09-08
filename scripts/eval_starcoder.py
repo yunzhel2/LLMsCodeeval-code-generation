@@ -14,6 +14,7 @@ from tenacity import retry, stop_after_attempt, wait_random_exponential
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('--access_token', default='', type=str)
+    parser.add_argument('--cache_dir', default='', type=str)
     parser.add_argument('--checkpoint', default='bigcode/tiny_starcoder_py',
                         choices=['bigcode/tiny_starcoder_py', 'bigcode/starcoder', 'bigcode/starcoderplus'], type=str)
     parser.add_argument('--data_load_name', default='code_smell_data.jsonl',
@@ -391,7 +392,8 @@ if __name__ == '__main__':
         args.checkpoint,
         use_fast=True,
         trust_remote_code=True,
-        token=args.access_token
+        token=args.access_token,
+        cache_dir=args.cache_dir
     )
     model = AutoModelForCausalLM.from_pretrained(
         args.checkpoint,
@@ -400,7 +402,8 @@ if __name__ == '__main__':
         low_cpu_mem_usage=True,
         trust_remote_code=True,
         device_map='auto',
-        token=args.access_token
+        token=args.access_token,
+        cache_dir=args.cache_dir
     )
     print(f'Memory footprint: {model.get_memory_footprint() / 1e6:.2f} MB')
     temperature = 0
