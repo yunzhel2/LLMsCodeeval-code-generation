@@ -6,7 +6,6 @@ openai==0.27.10
 tiktoken==0.4.0
 datasets==2.14.4
 protobuf==4.24.2
-torch==2.0.1+cu118
 accelerate==0.22.0
 transformers==4.33.0
 bitsandbytes==0.41.1

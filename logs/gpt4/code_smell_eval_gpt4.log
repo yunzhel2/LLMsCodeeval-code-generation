@@ -1,0 +1,1034 @@
+2023-09-07 21:17:40 - eval_gpt_damo.py - INFO - code uid: a417fc22949c4445adbc4d9f9984cb08
+2023-09-07 21:17:40 - eval_gpt_damo.py - INFO - input tokens: 1580
+2023-09-07 21:17:44 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:17:44 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:17:44 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:17:44 - eval_gpt_damo.py - INFO - code uid: 293cd79ef0394cf0b654c6847eb6831e
+2023-09-07 21:17:44 - eval_gpt_damo.py - INFO - input tokens: 654
+2023-09-07 21:18:03 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's a relatively small class with a single method that doesn't appear to be overly long or complex, it doesn't seem to be handling too many responsibilities, it's not just a data class as it contains behavior, and it doesn't appear to be accessing the data of another object more than its own.
+2023-09-07 21:18:03 - eval_gpt_damo.py - INFO - output tokens: 77
+2023-09-07 21:18:03 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:18:03 - eval_gpt_damo.py - INFO - code uid: a590068eb6d049b69e907d246862a25c
+2023-09-07 21:18:03 - eval_gpt_damo.py - INFO - input tokens: 1206
+2023-09-07 21:18:07 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:18:07 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:18:07 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:18:07 - eval_gpt_damo.py - INFO - code uid: 07a10bd24c72462b9d802fde14727c41
+2023-09-07 21:18:07 - eval_gpt_damo.py - INFO - input tokens: 804
+2023-09-07 21:18:12 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:18:12 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:18:12 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:18:12 - eval_gpt_damo.py - INFO - code uid: 7ee6a6aace15406da543b78d83f929ba
+2023-09-07 21:18:12 - eval_gpt_damo.py - INFO - input tokens: 990
+2023-09-07 21:18:25 - eval_gpt_damo.py - INFO - response: The code smell in this segment can be categorized as a "long method".
+2023-09-07 21:18:25 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 21:18:25 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:18:25 - eval_gpt_damo.py - INFO - code uid: 093cb33cd98f4fdeae7b6b28b911f74e
+2023-09-07 21:18:25 - eval_gpt_damo.py - INFO - input tokens: 434
+2023-09-07 21:18:29 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:18:29 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:18:29 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:18:29 - eval_gpt_damo.py - INFO - code uid: 55f1abb3bca2481ab26573f783fae272
+2023-09-07 21:18:29 - eval_gpt_damo.py - INFO - input tokens: 358
+2023-09-07 21:18:46 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:18:46 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:18:46 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:18:46 - eval_gpt_damo.py - INFO - code uid: fc8e0b273f854e5b83083a59135dbfcd
+2023-09-07 21:18:46 - eval_gpt_damo.py - INFO - input tokens: 1259
+2023-09-07 21:19:13 - eval_gpt_damo.py - INFO - response: blob
+2023-09-07 21:19:13 - eval_gpt_damo.py - INFO - output tokens: 1
+2023-09-07 21:19:13 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:19:13 - eval_gpt_damo.py - INFO - code uid: e9aea3f62f52457fa1fbfe82addbec7c
+2023-09-07 21:19:13 - eval_gpt_damo.py - INFO - input tokens: 2661
+2023-09-07 21:19:24 - eval_gpt_damo.py - INFO - response: blob
+2023-09-07 21:19:24 - eval_gpt_damo.py - INFO - output tokens: 1
+2023-09-07 21:19:24 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:19:24 - eval_gpt_damo.py - INFO - code uid: f089bd02200f4d23b11e21c1e25a5fcc
+2023-09-07 21:19:24 - eval_gpt_damo.py - INFO - input tokens: 524
+2023-09-07 21:19:27 - eval_gpt_damo.py - INFO - response: blob
+2023-09-07 21:19:27 - eval_gpt_damo.py - INFO - output tokens: 1
+2023-09-07 21:19:27 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:19:27 - eval_gpt_damo.py - INFO - code uid: ac34e5ce62ac4b75a052f8681ba720e5
+2023-09-07 21:19:27 - eval_gpt_damo.py - INFO - input tokens: 838
+2023-09-07 21:19:31 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:19:31 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:19:31 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:19:31 - eval_gpt_damo.py - INFO - code uid: 8fafa3903a9b4e2390570d22b75f3035
+2023-09-07 21:19:31 - eval_gpt_damo.py - INFO - input tokens: 821
+2023-09-07 21:19:36 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:19:36 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:19:36 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:19:36 - eval_gpt_damo.py - INFO - code uid: 28d9002741ea4931b5148773ea6744bb
+2023-09-07 21:19:36 - eval_gpt_damo.py - INFO - input tokens: 1334
+2023-09-07 21:19:46 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It does not contain too many fields, methods, or lines of code (large class). It is not a class that only contains fields and crude methods for accessing them (data class). It does not concentrate too many responsibilities or control too many different objects (blob). The methods do not access the data of another object more than its own data (feature envy). And none of the methods contain too many lines of code (long method).
+2023-09-07 21:19:46 - eval_gpt_damo.py - INFO - output tokens: 102
+2023-09-07 21:19:46 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:19:46 - eval_gpt_damo.py - INFO - code uid: c62ec190434d4e6d8b9e6c99d445574b
+2023-09-07 21:19:46 - eval_gpt_damo.py - INFO - input tokens: 625
+2023-09-07 21:19:53 - eval_gpt_damo.py - INFO - response: The code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 21:19:53 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 21:19:53 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:19:53 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:19:53 - eval_gpt_damo.py - INFO - code uid: ad7f11861fbf4883becfa561bad8fc36
+2023-09-07 21:19:53 - eval_gpt_damo.py - INFO - input tokens: 4297
+2023-09-07 21:19:59 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:19:59 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:19:59 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:19:59 - eval_gpt_damo.py - INFO - code uid: fa20381cfcc44ec9a14da8653e9f66cd
+2023-09-07 21:19:59 - eval_gpt_damo.py - INFO - input tokens: 3224
+2023-09-07 21:21:03 - eval_gpt_damo.py - INFO - response: The code smell in this segment can be categorized as a "long method". The methods `Import`, `CreateFontFace`, and `ImportGlyph` are quite long and could potentially be broken down into smaller, more manageable methods.
+2023-09-07 21:21:03 - eval_gpt_damo.py - INFO - output tokens: 46
+2023-09-07 21:21:03 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:21:03 - eval_gpt_damo.py - INFO - code uid: 52ce0f7bba9e4c2f858ddc4c94f3f662
+2023-09-07 21:21:03 - eval_gpt_damo.py - INFO - input tokens: 849
+2023-09-07 21:21:08 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:21:08 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:21:08 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:21:08 - eval_gpt_damo.py - INFO - code uid: 8e22a8e6c68249f6b729c727303ed8dd
+2023-09-07 21:21:08 - eval_gpt_damo.py - INFO - input tokens: 275
+2023-09-07 21:21:14 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:21:14 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:21:14 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:21:14 - eval_gpt_damo.py - INFO - code uid: b46a94e293ac464a8244294641a63a1f
+2023-09-07 21:21:14 - eval_gpt_damo.py - INFO - input tokens: 2523
+2023-09-07 21:21:21 - eval_gpt_damo.py - INFO - response: The code does not seem to have any of the specified code smells.
+2023-09-07 21:21:21 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 21:21:21 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:21:21 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:21:21 - eval_gpt_damo.py - INFO - code uid: 1b0efebf2715471bb3d74874f8d75b3f
+2023-09-07 21:21:21 - eval_gpt_damo.py - INFO - input tokens: 1414
+2023-09-07 21:21:24 - eval_gpt_damo.py - INFO - response: blob
+2023-09-07 21:21:24 - eval_gpt_damo.py - INFO - output tokens: 1
+2023-09-07 21:21:24 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:21:24 - eval_gpt_damo.py - INFO - code uid: c6728b6a34d3424897bfee5dafdc64a6
+2023-09-07 21:21:24 - eval_gpt_damo.py - INFO - input tokens: 1080
+2023-09-07 21:21:29 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:21:29 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:21:29 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:21:29 - eval_gpt_damo.py - INFO - code uid: 3837e54ef33d419caa910b26853d0fc7
+2023-09-07 21:21:29 - eval_gpt_damo.py - INFO - input tokens: 1079
+2023-09-07 21:23:00 - _common.py - INFO - Backing off generate_text_damo(...) for 0.9s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 21:23:05 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:23:05 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:23:05 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:23:05 - eval_gpt_damo.py - INFO - code uid: 0da9a35d13d7404d888b0d4998e993e4
+2023-09-07 21:23:05 - eval_gpt_damo.py - INFO - input tokens: 706
+2023-09-07 21:23:20 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's not a large class, data class, blob, feature envy, or long method.
+2023-09-07 21:23:20 - eval_gpt_damo.py - INFO - output tokens: 34
+2023-09-07 21:23:20 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:23:20 - eval_gpt_damo.py - INFO - code uid: 61f46f249aa3419f932e67d42c85db24
+2023-09-07 21:23:20 - eval_gpt_damo.py - INFO - input tokens: 1017
+2023-09-07 21:23:25 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:23:25 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:23:25 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:23:25 - eval_gpt_damo.py - INFO - code uid: 0722a4eb2ea245f3824d5142659942ef
+2023-09-07 21:23:25 - eval_gpt_damo.py - INFO - input tokens: 1082
+2023-09-07 21:23:35 - eval_gpt_damo.py - INFO - response: The code segment provided can be categorized as a data class. This is because the class `DrawableHoldNoteTail` mainly contains fields and methods for accessing and manipulating these fields. It does not seem to have too many responsibilities or control over many different objects, which would categorize it as a blob. The methods are not excessively long, ruling out the long method category. The class does not seem to be excessively large with too many fields, methods, or lines of code, ruling out the large class category. Lastly, the methods do not seem to access the data of another object more than its own data, ruling out the feature envy category.
+2023-09-07 21:23:35 - eval_gpt_damo.py - INFO - output tokens: 129
+2023-09-07 21:23:35 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:23:35 - eval_gpt_damo.py - INFO - code uid: 5668c589e66340859159153870731213
+2023-09-07 21:23:35 - eval_gpt_damo.py - INFO - input tokens: 201
+2023-09-07 21:23:38 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:23:38 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:23:38 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:23:38 - eval_gpt_damo.py - INFO - code uid: b116f64c56734deaa6fa87ac44067722
+2023-09-07 21:23:38 - eval_gpt_damo.py - INFO - input tokens: 853
+2023-09-07 21:23:43 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:23:43 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:23:43 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:23:43 - eval_gpt_damo.py - INFO - code uid: a56b5a0cd2794add9f5f83e5c7d8546c
+2023-09-07 21:23:43 - eval_gpt_damo.py - INFO - input tokens: 927
+2023-09-07 21:23:55 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's not a large class, data class, blob, feature envy, or long method. The class has a clear responsibility, methods are short and concise, and it doesn't excessively use data from other classes.
+2023-09-07 21:23:55 - eval_gpt_damo.py - INFO - output tokens: 58
+2023-09-07 21:23:55 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:23:55 - eval_gpt_damo.py - INFO - code uid: d2f41636c0594cb48619e2da4d6b3f34
+2023-09-07 21:23:55 - eval_gpt_damo.py - INFO - input tokens: 673
+2023-09-07 21:24:09 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's not a large class, data class, blob, feature envy, or long method. The class is relatively small, it's not just a data holder, it doesn't concentrate too many responsibilities, methods don't access data of other objects more than its own, and there are no methods with too many lines of code.
+2023-09-07 21:24:09 - eval_gpt_damo.py - INFO - output tokens: 81
+2023-09-07 21:24:09 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:24:09 - eval_gpt_damo.py - INFO - code uid: e4d05dd701034fe2a7e7edd9e4ff41a7
+2023-09-07 21:24:09 - eval_gpt_damo.py - INFO - input tokens: 1036
+2023-09-07 21:24:52 - eval_gpt_damo.py - INFO - response: The smell code segment can be categorized as a data class.
+2023-09-07 21:24:52 - eval_gpt_damo.py - INFO - output tokens: 12
+2023-09-07 21:24:52 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:24:52 - eval_gpt_damo.py - INFO - code uid: 635ca617045a47bea05a50b51ee28e07
+2023-09-07 21:24:52 - eval_gpt_damo.py - INFO - input tokens: 1142
+2023-09-07 21:26:23 - _common.py - INFO - Backing off generate_text_damo(...) for 0.5s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 21:26:48 - eval_gpt_damo.py - INFO - response: The code does not seem to exhibit any of the mentioned code smells. It does not have too many fields/methods/lines of code (large class), it does not contain only fields and crude methods for accessing them (data class), it does not concentrate too many responsibilities (blob), it does not access the data of another object more than its own data (feature envy), and it does not contain methods with too many lines of code (long method).
+2023-09-07 21:26:48 - eval_gpt_damo.py - INFO - output tokens: 91
+2023-09-07 21:26:48 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:26:48 - eval_gpt_damo.py - INFO - code uid: abd48421a39b4f5897ddf2b3054f320a
+2023-09-07 21:26:48 - eval_gpt_damo.py - INFO - input tokens: 239
+2023-09-07 21:26:51 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:26:51 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:26:51 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:26:51 - eval_gpt_damo.py - INFO - code uid: 2fa1d6b367e54387b6d35591c24e0a0c
+2023-09-07 21:26:51 - eval_gpt_damo.py - INFO - input tokens: 1688
+2023-09-07 21:27:00 - eval_gpt_damo.py - INFO - response: The code segment provided can be categorized as a "data class" code smell. The class `PlaybackTabItem` mainly contains fields and methods for accessing and modifying these fields. It does not contain complex business logic or behavior.
+2023-09-07 21:27:00 - eval_gpt_damo.py - INFO - output tokens: 45
+2023-09-07 21:27:00 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:27:00 - eval_gpt_damo.py - INFO - code uid: 6f554e798844423ebc3dc2452b3717dd
+2023-09-07 21:27:00 - eval_gpt_damo.py - INFO - input tokens: 1209
+2023-09-07 21:27:04 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:27:04 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:27:04 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:27:04 - eval_gpt_damo.py - INFO - code uid: a037f87a60ad4b78845fc2e42d92a5ad
+2023-09-07 21:27:04 - eval_gpt_damo.py - INFO - input tokens: 634
+2023-09-07 21:27:10 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:27:10 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:27:10 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:27:10 - eval_gpt_damo.py - INFO - code uid: 7ce6070c45594b9fad8b65fa5e5151aa
+2023-09-07 21:27:10 - eval_gpt_damo.py - INFO - input tokens: 856
+2023-09-07 21:28:41 - _common.py - INFO - Backing off generate_text_damo(...) for 0.1s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 21:28:45 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:28:45 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:28:45 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:28:46 - eval_gpt_damo.py - INFO - code uid: 99c31742e2284eac90dcc9c1cea60977
+2023-09-07 21:28:46 - eval_gpt_damo.py - INFO - input tokens: 1888
+2023-09-07 21:29:22 - eval_gpt_damo.py - INFO - response: blob
+2023-09-07 21:29:22 - eval_gpt_damo.py - INFO - output tokens: 1
+2023-09-07 21:29:22 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:29:22 - eval_gpt_damo.py - INFO - code uid: d1c929af0dcc4015a6a6ed3854b21031
+2023-09-07 21:29:22 - eval_gpt_damo.py - INFO - input tokens: 1181
+2023-09-07 21:30:00 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:30:00 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:30:00 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:30:00 - eval_gpt_damo.py - INFO - code uid: 94786537dec34cb5bea64db748e91df9
+2023-09-07 21:30:00 - eval_gpt_damo.py - INFO - input tokens: 1992
+2023-09-07 21:30:07 - eval_gpt_damo.py - INFO - response: blob
+2023-09-07 21:30:07 - eval_gpt_damo.py - INFO - output tokens: 1
+2023-09-07 21:30:07 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:30:07 - eval_gpt_damo.py - INFO - code uid: 28421c58168247c1b6fced6f467b4d36
+2023-09-07 21:30:07 - eval_gpt_damo.py - INFO - input tokens: 1026
+2023-09-07 21:31:38 - _common.py - INFO - Backing off generate_text_damo(...) for 0.2s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 21:31:52 - eval_gpt_damo.py - INFO - response: The code segment provided can be categorized as a long method code smell. The method `UpdateAfterChildren()` in the `VisualiserLine` class contains many lines of code and multiple responsibilities. It could potentially be broken down into smaller, more manageable methods.
+2023-09-07 21:31:52 - eval_gpt_damo.py - INFO - output tokens: 51
+2023-09-07 21:31:52 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:31:52 - eval_gpt_damo.py - INFO - code uid: 1ad03a113fb34ad187f7ae329a3cf10c
+2023-09-07 21:31:52 - eval_gpt_damo.py - INFO - input tokens: 871
+2023-09-07 21:31:56 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:31:56 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:31:56 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:31:56 - eval_gpt_damo.py - INFO - code uid: af588af59d444266a3fbf11cce11d84a
+2023-09-07 21:31:56 - eval_gpt_damo.py - INFO - input tokens: 2265
+2023-09-07 21:32:09 - eval_gpt_damo.py - INFO - response: The provided code segment does not seem to exhibit any of the mentioned code smells. It is not a large class, data class, blob, feature envy, or long method. The class has a clear responsibility, methods are not excessively long, and it does not seem to be overly dependent on data from other classes.
+2023-09-07 21:32:09 - eval_gpt_damo.py - INFO - output tokens: 63
+2023-09-07 21:32:09 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:32:09 - eval_gpt_damo.py - INFO - code uid: d401c9009a6a43d2b84dc557e6de112b
+2023-09-07 21:32:09 - eval_gpt_damo.py - INFO - input tokens: 1398
+2023-09-07 21:32:13 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:32:13 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:32:13 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:32:13 - eval_gpt_damo.py - INFO - code uid: 350723e9051c4c42a2cafa32d18bc6bd
+2023-09-07 21:32:13 - eval_gpt_damo.py - INFO - input tokens: 272
+2023-09-07 21:32:18 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:32:18 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:32:18 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:32:18 - eval_gpt_damo.py - INFO - code uid: 4c59925d36884fdca880f06091c99a81
+2023-09-07 21:32:18 - eval_gpt_damo.py - INFO - input tokens: 1473
+2023-09-07 21:32:31 - eval_gpt_damo.py - INFO - response: The code segment provided can be categorized as a long method code smell. The `Update` and `UpdateTimeAndPosition` methods are quite long and could potentially be broken down into smaller, more manageable methods.
+2023-09-07 21:32:31 - eval_gpt_damo.py - INFO - output tokens: 41
+2023-09-07 21:32:31 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:32:31 - eval_gpt_damo.py - INFO - code uid: 0b6e92a017714875b0c724ad562ff262
+2023-09-07 21:32:31 - eval_gpt_damo.py - INFO - input tokens: 341
+2023-09-07 21:32:58 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:32:58 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:32:58 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:32:58 - eval_gpt_damo.py - INFO - code uid: 31c07b67923f4a7a9c5f882f1ebe0ac1
+2023-09-07 21:32:58 - eval_gpt_damo.py - INFO - input tokens: 1731
+2023-09-07 21:33:09 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It is not a large class, data class, blob, feature envy, or long method. The class has a clear responsibility, methods are concise, and it does not excessively use data from another object.
+2023-09-07 21:33:09 - eval_gpt_damo.py - INFO - output tokens: 56
+2023-09-07 21:33:09 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:33:09 - eval_gpt_damo.py - INFO - code uid: aa23c208a5284fa5a77e61df26d8c732
+2023-09-07 21:33:09 - eval_gpt_damo.py - INFO - input tokens: 1317
+2023-09-07 21:33:25 - eval_gpt_damo.py - INFO - response: The code does not seem to exhibit any of the mentioned code smells. It does not have too many fields/methods/lines of code (large class), it does not contain only fields and crude methods for accessing them (data class), it does not concentrate too many responsibilities (blob), it does not access the data of another object more than its own data (feature envy), and none of its methods contain too many lines of code (long method).
+2023-09-07 21:33:25 - eval_gpt_damo.py - INFO - output tokens: 90
+2023-09-07 21:33:25 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:33:25 - eval_gpt_damo.py - INFO - code uid: c5217f8eff74466ca335e2e11eceffc9
+2023-09-07 21:33:25 - eval_gpt_damo.py - INFO - input tokens: 557
+2023-09-07 21:33:29 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:33:29 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:33:29 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:33:29 - eval_gpt_damo.py - INFO - code uid: 1ba0102545824eb8b7207a15343d1526
+2023-09-07 21:33:29 - eval_gpt_damo.py - INFO - input tokens: 549
+2023-09-07 21:33:33 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:33:33 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:33:33 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:33:33 - eval_gpt_damo.py - INFO - code uid: ce21635ee7a645a3a4efe246cd91d935
+2023-09-07 21:33:33 - eval_gpt_damo.py - INFO - input tokens: 386
+2023-09-07 21:33:39 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 21:33:39 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 21:33:39 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:33:39 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:33:39 - eval_gpt_damo.py - INFO - code uid: eeaa35648f69441cacfec320b3a1596d
+2023-09-07 21:33:39 - eval_gpt_damo.py - INFO - input tokens: 1609
+2023-09-07 21:33:42 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 21:33:42 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 21:33:42 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:33:42 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:33:42 - eval_gpt_damo.py - INFO - code uid: 496c0b7464b6480084cbd84c5c4e6d53
+2023-09-07 21:33:42 - eval_gpt_damo.py - INFO - input tokens: 664
+2023-09-07 21:33:47 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:33:47 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:33:47 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:33:47 - eval_gpt_damo.py - INFO - code uid: cadeb9ba31024984ae45ec1f34892df9
+2023-09-07 21:33:47 - eval_gpt_damo.py - INFO - input tokens: 807
+2023-09-07 21:33:52 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:33:52 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:33:52 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:33:52 - eval_gpt_damo.py - INFO - code uid: 8d3df5ef7d6d42f6b1830d553594bda1
+2023-09-07 21:33:52 - eval_gpt_damo.py - INFO - input tokens: 805
+2023-09-07 21:33:56 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:33:56 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:33:56 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:33:56 - eval_gpt_damo.py - INFO - code uid: 3dd41cc55c56423f8dca73a1a5a2fb4a
+2023-09-07 21:33:56 - eval_gpt_damo.py - INFO - input tokens: 1230
+2023-09-07 21:34:00 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:34:00 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:34:00 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:34:00 - eval_gpt_damo.py - INFO - code uid: 8311161436644d3eb6d1a8b9942e70b0
+2023-09-07 21:34:00 - eval_gpt_damo.py - INFO - input tokens: 953
+2023-09-07 21:34:05 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:34:05 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:34:05 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:34:05 - eval_gpt_damo.py - INFO - code uid: 61eb1c8e59c748faac04b05afcc5b1da
+2023-09-07 21:34:05 - eval_gpt_damo.py - INFO - input tokens: 536
+2023-09-07 21:34:15 - eval_gpt_damo.py - INFO - response: The code smell in this segment can be categorized as a "data class". The class `GroupVisualisation` mainly contains fields and methods for accessing and manipulating these fields. It doesn't contain much business logic or behavior.
+2023-09-07 21:34:15 - eval_gpt_damo.py - INFO - output tokens: 44
+2023-09-07 21:34:15 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:34:15 - eval_gpt_damo.py - INFO - code uid: 0dc2d0ed28154ae4b0e8c9c213d46c78
+2023-09-07 21:34:15 - eval_gpt_damo.py - INFO - input tokens: 1406
+2023-09-07 21:34:19 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:34:19 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:34:19 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:34:19 - eval_gpt_damo.py - INFO - code uid: 50c98db738614d8385b29381e07aafd2
+2023-09-07 21:34:19 - eval_gpt_damo.py - INFO - input tokens: 1288
+2023-09-07 21:35:00 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:35:00 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:35:00 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:35:00 - eval_gpt_damo.py - INFO - code uid: bf62746f0da24c8caf5c86c0b7538671
+2023-09-07 21:35:00 - eval_gpt_damo.py - INFO - input tokens: 885
+2023-09-07 21:35:06 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:35:06 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:35:06 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:35:06 - eval_gpt_damo.py - INFO - code uid: 6e7293dc3bb748628f4117e8199dde8b
+2023-09-07 21:35:06 - eval_gpt_damo.py - INFO - input tokens: 535
+2023-09-07 21:35:10 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:35:10 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:35:10 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:35:10 - eval_gpt_damo.py - INFO - code uid: e88d100f038f44a796dfc5041cef3cf5
+2023-09-07 21:35:10 - eval_gpt_damo.py - INFO - input tokens: 1237
+2023-09-07 21:35:20 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:35:20 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:35:20 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:35:20 - eval_gpt_damo.py - INFO - code uid: 1e3d0e129f25470e83f6cee75eb42784
+2023-09-07 21:35:20 - eval_gpt_damo.py - INFO - input tokens: 802
+2023-09-07 21:35:24 - eval_gpt_damo.py - INFO - response: The code smell in this segment can be categorized as a long method.
+2023-09-07 21:35:24 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 21:35:24 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:35:24 - eval_gpt_damo.py - INFO - code uid: 04d0c6f642664c81aed29ba36a929524
+2023-09-07 21:35:24 - eval_gpt_damo.py - INFO - input tokens: 923
+2023-09-07 21:35:33 - eval_gpt_damo.py - INFO - response: The code provided does not seem to exhibit any of the code smells listed. It is not a large class, data class, blob, feature envy, or long method.
+2023-09-07 21:35:33 - eval_gpt_damo.py - INFO - output tokens: 34
+2023-09-07 21:35:33 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:35:33 - eval_gpt_damo.py - INFO - code uid: 234fbc4652254d7dbe11d7dcbcd029ee
+2023-09-07 21:35:33 - eval_gpt_damo.py - INFO - input tokens: 870
+2023-09-07 21:35:52 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:35:52 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:35:52 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:35:52 - eval_gpt_damo.py - INFO - code uid: de303f5251464e75a7169c48232e2c5a
+2023-09-07 21:35:52 - eval_gpt_damo.py - INFO - input tokens: 1242
+2023-09-07 21:35:56 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:35:56 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:35:56 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:35:56 - eval_gpt_damo.py - INFO - code uid: 9b3148fd10984c1e9d580a3a045ff1d8
+2023-09-07 21:35:56 - eval_gpt_damo.py - INFO - input tokens: 643
+2023-09-07 21:35:59 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 21:35:59 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 21:35:59 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:35:59 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:35:59 - eval_gpt_damo.py - INFO - code uid: 35469f8664ad48278f10f4b75c248f47
+2023-09-07 21:35:59 - eval_gpt_damo.py - INFO - input tokens: 1309
+2023-09-07 21:36:03 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:36:03 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:36:03 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:36:03 - eval_gpt_damo.py - INFO - code uid: 295653d67bff4df0a798f7b220f1b716
+2023-09-07 21:36:03 - eval_gpt_damo.py - INFO - input tokens: 941
+2023-09-07 21:36:07 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:36:07 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:36:07 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:36:07 - eval_gpt_damo.py - INFO - code uid: c5d2e83a13274108b46eb1d43fdf9947
+2023-09-07 21:36:07 - eval_gpt_damo.py - INFO - input tokens: 702
+2023-09-07 21:36:11 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:36:11 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:36:11 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:36:11 - eval_gpt_damo.py - INFO - code uid: 17343f769a6e4db19800ddb633b7466a
+2023-09-07 21:36:11 - eval_gpt_damo.py - INFO - input tokens: 323
+2023-09-07 21:36:15 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:36:15 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:36:15 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:36:15 - eval_gpt_damo.py - INFO - code uid: a5beafc2e4f34d1fa8d174b593772eca
+2023-09-07 21:36:15 - eval_gpt_damo.py - INFO - input tokens: 467
+2023-09-07 21:36:19 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:36:19 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:36:19 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:36:19 - eval_gpt_damo.py - INFO - code uid: 0abeecbb2bd847ed95266193e193af5d
+2023-09-07 21:36:19 - eval_gpt_damo.py - INFO - input tokens: 967
+2023-09-07 21:36:38 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:36:38 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:36:38 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:36:38 - eval_gpt_damo.py - INFO - code uid: 4e7d4de4b7f242deba18ea428b739b2e
+2023-09-07 21:36:38 - eval_gpt_damo.py - INFO - input tokens: 1794
+2023-09-07 21:36:54 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:36:54 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:36:54 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:36:54 - eval_gpt_damo.py - INFO - code uid: 9dc6857e2e0643d19289a0e8d8c19116
+2023-09-07 21:36:54 - eval_gpt_damo.py - INFO - input tokens: 805
+2023-09-07 21:36:58 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:36:58 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:36:58 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:36:58 - eval_gpt_damo.py - INFO - code uid: 0e64f27ba5434e00abe65615793b7ba0
+2023-09-07 21:36:58 - eval_gpt_damo.py - INFO - input tokens: 402
+2023-09-07 21:37:02 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:37:02 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:37:02 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:37:02 - eval_gpt_damo.py - INFO - code uid: 2e546e957fd94da8ae7dd4ebb30626dc
+2023-09-07 21:37:02 - eval_gpt_damo.py - INFO - input tokens: 1716
+2023-09-07 21:37:13 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:37:13 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:37:13 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:37:13 - eval_gpt_damo.py - INFO - code uid: b228c37454bf4d36ba5b30a39c50bd94
+2023-09-07 21:37:13 - eval_gpt_damo.py - INFO - input tokens: 1241
+2023-09-07 21:37:38 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:37:38 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:37:38 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:37:38 - eval_gpt_damo.py - INFO - code uid: a9e854bf62024725a2bcca23bf1ccac3
+2023-09-07 21:37:38 - eval_gpt_damo.py - INFO - input tokens: 1187
+2023-09-07 21:38:07 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:38:07 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:38:07 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:38:07 - eval_gpt_damo.py - INFO - code uid: 4b54d407694d47e39f039751149a066f
+2023-09-07 21:38:07 - eval_gpt_damo.py - INFO - input tokens: 711
+2023-09-07 21:38:21 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's not a large class, data class, blob, feature envy, or long method. The class has a reasonable size, it's not just a data holder, it doesn't concentrate too many responsibilities, methods don't access data of other objects more than its own data, and there are no methods with too many lines of code.
+2023-09-07 21:38:21 - eval_gpt_damo.py - INFO - output tokens: 83
+2023-09-07 21:38:21 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:38:21 - eval_gpt_damo.py - INFO - code uid: ef41b43447ce48988d4150ee11b94916
+2023-09-07 21:38:21 - eval_gpt_damo.py - INFO - input tokens: 1034
+2023-09-07 21:39:37 - eval_gpt_damo.py - INFO - response: The smell code segment does not fall into any of the specified categories.
+2023-09-07 21:39:37 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 21:39:37 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:39:37 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:39:37 - eval_gpt_damo.py - INFO - code uid: 3440f3ae64844962ac9c3a8206d0c77f
+2023-09-07 21:39:37 - eval_gpt_damo.py - INFO - input tokens: 985
+2023-09-07 21:40:01 - eval_gpt_damo.py - INFO - response: The code smell in this segment can be categorized as a "blob".
+2023-09-07 21:40:01 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 21:40:01 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:40:01 - eval_gpt_damo.py - INFO - code uid: 05e064220b25438fb0b10f6d6c4d0b8b
+2023-09-07 21:40:01 - eval_gpt_damo.py - INFO - input tokens: 1871
+2023-09-07 21:40:05 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:40:05 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:40:05 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:40:05 - eval_gpt_damo.py - INFO - code uid: 1c84fb2da6e648598e8f06eb30664e64
+2023-09-07 21:40:05 - eval_gpt_damo.py - INFO - input tokens: 764
+2023-09-07 21:40:09 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:40:09 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:40:09 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:40:09 - eval_gpt_damo.py - INFO - code uid: fb20d36e82de4992bc9b0d63f5fc6f8a
+2023-09-07 21:40:09 - eval_gpt_damo.py - INFO - input tokens: 793
+2023-09-07 21:40:17 - eval_gpt_damo.py - INFO - response: The smell in this code segment can be categorized as a data class. The class `HistoryLogLogic` mainly contains fields and methods for accessing and manipulating these fields. It doesn't seem to have much behavior of its own.
+2023-09-07 21:40:17 - eval_gpt_damo.py - INFO - output tokens: 45
+2023-09-07 21:40:17 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:40:17 - eval_gpt_damo.py - INFO - code uid: 5b0f1d2c55dd4fe78cb9d48b50f355ca
+2023-09-07 21:40:17 - eval_gpt_damo.py - INFO - input tokens: 542
+2023-09-07 21:40:20 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:40:20 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:40:20 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:40:20 - eval_gpt_damo.py - INFO - code uid: 472e2321af3648c0b387bce4f43ce93c
+2023-09-07 21:40:20 - eval_gpt_damo.py - INFO - input tokens: 506
+2023-09-07 21:40:26 - eval_gpt_damo.py - INFO - response: The code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 21:40:26 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 21:40:26 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:40:26 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:40:26 - eval_gpt_damo.py - INFO - code uid: 5e54bd8c0dd0430ba0e2ed6ba00fcb49
+2023-09-07 21:40:26 - eval_gpt_damo.py - INFO - input tokens: 556
+2023-09-07 21:41:15 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:41:15 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:41:15 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:41:15 - eval_gpt_damo.py - INFO - code uid: 765e5fc99e77452ca247dd7ecd6fac9b
+2023-09-07 21:41:15 - eval_gpt_damo.py - INFO - input tokens: 1616
+2023-09-07 21:41:19 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:41:19 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:41:19 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:41:19 - eval_gpt_damo.py - INFO - code uid: 77fae7d393ae46128dd72c9915c6b901
+2023-09-07 21:41:19 - eval_gpt_damo.py - INFO - input tokens: 1796
+2023-09-07 21:41:23 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:41:23 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:41:23 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:41:23 - eval_gpt_damo.py - INFO - code uid: e4be99e1d7e54ff4b7784eefecdd07d5
+2023-09-07 21:41:23 - eval_gpt_damo.py - INFO - input tokens: 1362
+2023-09-07 21:41:59 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:41:59 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:41:59 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:41:59 - eval_gpt_damo.py - INFO - code uid: 67569cb8a13f494d8b9fc79610854e8d
+2023-09-07 21:41:59 - eval_gpt_damo.py - INFO - input tokens: 741
+2023-09-07 21:42:10 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 21:42:10 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 21:42:10 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:42:10 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:42:10 - eval_gpt_damo.py - INFO - code uid: e9cbe355669540db8c5e3452e96b9e4b
+2023-09-07 21:42:10 - eval_gpt_damo.py - INFO - input tokens: 883
+2023-09-07 21:42:15 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:42:15 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:42:15 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:42:15 - eval_gpt_damo.py - INFO - code uid: 7ca48b5f323c4c008e6785d6c3db0aa0
+2023-09-07 21:42:15 - eval_gpt_damo.py - INFO - input tokens: 1233
+2023-09-07 21:42:21 - eval_gpt_damo.py - INFO - response: The smell in the provided code segment can be categorized as a long method.
+2023-09-07 21:42:21 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 21:42:21 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:42:21 - eval_gpt_damo.py - INFO - code uid: 7d354cc21c914932af3bfb574ba0da1c
+2023-09-07 21:42:21 - eval_gpt_damo.py - INFO - input tokens: 540
+2023-09-07 21:42:26 - eval_gpt_damo.py - INFO - response: The code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 21:42:26 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 21:42:26 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:42:26 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:42:26 - eval_gpt_damo.py - INFO - code uid: ae4e35297c7340e4897d96771484f8d0
+2023-09-07 21:42:26 - eval_gpt_damo.py - INFO - input tokens: 869
+2023-09-07 21:43:57 - _common.py - INFO - Backing off generate_text_damo(...) for 1.0s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 21:44:20 - eval_gpt_damo.py - INFO - response: The code does not seem to exhibit any of the mentioned code smells. It does not have too many fields/methods/lines of code (large class), it does not contain only fields and crude methods for accessing them (data class), it does not concentrate too many responsibilities (blob), it does not access the data of another object more than its own data (feature envy), and it does not contain methods with too many lines of code (long method).
+2023-09-07 21:44:20 - eval_gpt_damo.py - INFO - output tokens: 91
+2023-09-07 21:44:20 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:44:20 - eval_gpt_damo.py - INFO - code uid: 957b5e1a0b9b43a3a806a35ffb914355
+2023-09-07 21:44:20 - eval_gpt_damo.py - INFO - input tokens: 823
+2023-09-07 21:44:25 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:44:25 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:44:25 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:44:25 - eval_gpt_damo.py - INFO - code uid: 6becf9965d5144338c094ccbfba5d0b3
+2023-09-07 21:44:25 - eval_gpt_damo.py - INFO - input tokens: 1029
+2023-09-07 21:44:28 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:44:28 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:44:28 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:44:28 - eval_gpt_damo.py - INFO - code uid: 5e58f1b421174fc49008d837c29569d1
+2023-09-07 21:44:28 - eval_gpt_damo.py - INFO - input tokens: 992
+2023-09-07 21:44:35 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:44:35 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:44:35 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:44:35 - eval_gpt_damo.py - INFO - code uid: 91d06a52831444f0a4276e2b286c513e
+2023-09-07 21:44:35 - eval_gpt_damo.py - INFO - input tokens: 722
+2023-09-07 21:44:40 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:44:40 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:44:40 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:44:40 - eval_gpt_damo.py - INFO - code uid: a4bd5c50d60b432595ecf2b1c16ae297
+2023-09-07 21:44:40 - eval_gpt_damo.py - INFO - input tokens: 488
+2023-09-07 21:44:43 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:44:43 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:44:43 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:44:43 - eval_gpt_damo.py - INFO - code uid: 7993e132e49a44259eb7308b727b6cb0
+2023-09-07 21:44:43 - eval_gpt_damo.py - INFO - input tokens: 752
+2023-09-07 21:44:48 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:44:48 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:44:48 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:44:48 - eval_gpt_damo.py - INFO - code uid: 38fb18f7b3d94f6cb98f6f33b974b27f
+2023-09-07 21:44:48 - eval_gpt_damo.py - INFO - input tokens: 919
+2023-09-07 21:45:02 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:45:02 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:45:02 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:45:02 - eval_gpt_damo.py - INFO - code uid: 5118c29cac66457393c08acee13aec9f
+2023-09-07 21:45:02 - eval_gpt_damo.py - INFO - input tokens: 1567
+2023-09-07 21:45:10 - eval_gpt_damo.py - INFO - response: This code does not fall into any of the specified code smell categories. It's a well-structured functional interface in Java.
+2023-09-07 21:45:10 - eval_gpt_damo.py - INFO - output tokens: 25
+2023-09-07 21:45:10 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:45:10 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:45:10 - eval_gpt_damo.py - INFO - code uid: c45ef2ec1da44606a362609197fe7a03
+2023-09-07 21:45:10 - eval_gpt_damo.py - INFO - input tokens: 450
+2023-09-07 21:45:13 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 21:45:13 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 21:45:13 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:45:13 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:45:13 - eval_gpt_damo.py - INFO - code uid: 269b1c86b21f4ea78c08da492ee9babe
+2023-09-07 21:45:13 - eval_gpt_damo.py - INFO - input tokens: 754
+2023-09-07 21:45:16 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 21:45:16 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 21:45:16 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:45:16 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:45:16 - eval_gpt_damo.py - INFO - code uid: d165aef23e0947b18d3b9a802e01bda1
+2023-09-07 21:45:16 - eval_gpt_damo.py - INFO - input tokens: 758
+2023-09-07 21:45:49 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's an interface definition with a clear purpose and does not contain any implementation details. Therefore, it doesn't fit into any of the categories: large class, data class, blob, feature envy, or long method.
+2023-09-07 21:45:49 - eval_gpt_damo.py - INFO - output tokens: 59
+2023-09-07 21:45:49 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:45:49 - eval_gpt_damo.py - INFO - code uid: 9fea233549af43cb95439cdced46d7d3
+2023-09-07 21:45:49 - eval_gpt_damo.py - INFO - input tokens: 639
+2023-09-07 21:45:58 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:45:58 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:45:58 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:45:58 - eval_gpt_damo.py - INFO - code uid: 65a135d031ed42479e3c78843d61e47b
+2023-09-07 21:45:58 - eval_gpt_damo.py - INFO - input tokens: 1245
+2023-09-07 21:46:14 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's not a large class, data class, blob, feature envy, or long method. The class has a single responsibility, methods are short and concise, and it doesn't excessively use data from other classes.
+2023-09-07 21:46:14 - eval_gpt_damo.py - INFO - output tokens: 58
+2023-09-07 21:46:14 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:46:14 - eval_gpt_damo.py - INFO - code uid: e7c50aa753ac46a288df6968a67932ab
+2023-09-07 21:46:14 - eval_gpt_damo.py - INFO - input tokens: 837
+2023-09-07 21:46:22 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:46:22 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:46:22 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:46:22 - eval_gpt_damo.py - INFO - code uid: f876da0221144e58aafd999d3c674612
+2023-09-07 21:46:22 - eval_gpt_damo.py - INFO - input tokens: 659
+2023-09-07 21:46:31 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:46:31 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:46:31 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:46:31 - eval_gpt_damo.py - INFO - code uid: ac3b887305374fd999d6e9117fe65dcc
+2023-09-07 21:46:31 - eval_gpt_damo.py - INFO - input tokens: 1311
+2023-09-07 21:46:34 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:46:34 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:46:34 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:46:34 - eval_gpt_damo.py - INFO - code uid: a9079c2f9c8342288c445787de224245
+2023-09-07 21:46:34 - eval_gpt_damo.py - INFO - input tokens: 2489
+2023-09-07 21:47:24 - eval_gpt_damo.py - INFO - response: This code does not fall into any of the specified code smell categories. It's an interface in Java, which is a contract for what a class should do, but doesn't implement any functionality itself. Therefore, it can't be classified as a large class, data class, blob, feature envy, or long method.
+2023-09-07 21:47:24 - eval_gpt_damo.py - INFO - output tokens: 64
+2023-09-07 21:47:24 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:47:24 - eval_gpt_damo.py - INFO - code uid: b60b7ada28c74d4fba090495a483b82e
+2023-09-07 21:47:24 - eval_gpt_damo.py - INFO - input tokens: 1536
+2023-09-07 21:47:40 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:47:40 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:47:40 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:47:40 - eval_gpt_damo.py - INFO - code uid: d724d0a851a547a78f510aa8a1b43ae1
+2023-09-07 21:47:40 - eval_gpt_damo.py - INFO - input tokens: 2909
+2023-09-07 21:47:45 - eval_gpt_damo.py - INFO - response: blob
+2023-09-07 21:47:45 - eval_gpt_damo.py - INFO - output tokens: 1
+2023-09-07 21:47:45 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:47:45 - eval_gpt_damo.py - INFO - code uid: bdc69350e97a422e925909d5919387b7
+2023-09-07 21:47:45 - eval_gpt_damo.py - INFO - input tokens: 788
+2023-09-07 21:47:54 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's a utility class with a single static method and does not have too many fields/methods/lines of code (large class), it's not a class that contains only fields and crude methods for accessing them (data class), it does not concentrate too many responsibilities (blob), the method does not access the data of another object more than its own data (feature envy), and the method does not contain too many lines of code (long method).
+2023-09-07 21:47:54 - eval_gpt_damo.py - INFO - output tokens: 105
+2023-09-07 21:47:54 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:47:54 - eval_gpt_damo.py - INFO - code uid: c4c67c6474f2405888e14f2fb09bc711
+2023-09-07 21:47:54 - eval_gpt_damo.py - INFO - input tokens: 1045
+2023-09-07 21:48:04 - eval_gpt_damo.py - INFO - response: The provided code segment does not seem to exhibit any of the mentioned code smells. It is not a large class, data class, blob, feature envy, or long method.
+2023-09-07 21:48:04 - eval_gpt_damo.py - INFO - output tokens: 35
+2023-09-07 21:48:04 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:48:04 - eval_gpt_damo.py - INFO - code uid: 332228197fdf41aa9d6a8461605f52da
+2023-09-07 21:48:04 - eval_gpt_damo.py - INFO - input tokens: 661
+2023-09-07 21:48:58 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:48:58 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:48:58 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:48:58 - eval_gpt_damo.py - INFO - code uid: a009b44d5bba4c87ad772457e2d4c6eb
+2023-09-07 21:48:58 - eval_gpt_damo.py - INFO - input tokens: 1155
+2023-09-07 21:49:08 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:49:08 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:08 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:49:08 - eval_gpt_damo.py - INFO - code uid: 22d9e77ad3504617aec275dc1f6a5b99
+2023-09-07 21:49:08 - eval_gpt_damo.py - INFO - input tokens: 589
+2023-09-07 21:49:12 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:49:12 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:12 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:49:12 - eval_gpt_damo.py - INFO - code uid: 95306003af104f0aa21b5155316a5365
+2023-09-07 21:49:12 - eval_gpt_damo.py - INFO - input tokens: 609
+2023-09-07 21:49:16 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:49:16 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:16 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:49:16 - eval_gpt_damo.py - INFO - code uid: cff2e40ebfc84d93b09f7686c8e81221
+2023-09-07 21:49:16 - eval_gpt_damo.py - INFO - input tokens: 1118
+2023-09-07 21:49:20 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:49:20 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:20 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:49:20 - eval_gpt_damo.py - INFO - code uid: ce5789c17a754be6b58d6175f1896f00
+2023-09-07 21:49:20 - eval_gpt_damo.py - INFO - input tokens: 1036
+2023-09-07 21:49:34 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's not a large class, data class, blob, feature envy, or long method. The class has a clear responsibility, methods are short and concise, and it doesn't contain too many fields or methods.
+2023-09-07 21:49:34 - eval_gpt_damo.py - INFO - output tokens: 58
+2023-09-07 21:49:34 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:49:34 - eval_gpt_damo.py - INFO - code uid: 4189ea9090af4589ae75cde0774feba6
+2023-09-07 21:49:34 - eval_gpt_damo.py - INFO - input tokens: 430
+2023-09-07 21:49:37 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:49:37 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:37 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:49:37 - eval_gpt_damo.py - INFO - code uid: 134e26df191b4f7d8fd5fee883acf492
+2023-09-07 21:49:37 - eval_gpt_damo.py - INFO - input tokens: 490
+2023-09-07 21:49:41 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:49:41 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:41 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:49:41 - eval_gpt_damo.py - INFO - code uid: 3e899504fbf4452297ea52883fe156ac
+2023-09-07 21:49:41 - eval_gpt_damo.py - INFO - input tokens: 1370
+2023-09-07 21:49:47 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:49:47 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:47 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:49:47 - eval_gpt_damo.py - INFO - code uid: e8ea95b8dc154868be064c8c9f1d7b41
+2023-09-07 21:49:47 - eval_gpt_damo.py - INFO - input tokens: 824
+2023-09-07 21:49:51 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:49:51 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:51 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:49:51 - eval_gpt_damo.py - INFO - code uid: 442ee18c98694b08a23ba35f0a16ff0a
+2023-09-07 21:49:51 - eval_gpt_damo.py - INFO - input tokens: 1435
+2023-09-07 21:49:55 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:49:55 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:49:55 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:49:55 - eval_gpt_damo.py - INFO - code uid: 2a350307c5dd4daa8973a6ebe83b93fc
+2023-09-07 21:49:55 - eval_gpt_damo.py - INFO - input tokens: 1378
+2023-09-07 21:50:13 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:50:13 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:50:13 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:50:13 - eval_gpt_damo.py - INFO - code uid: edbf7f81e38f4fb1aba938511782b35e
+2023-09-07 21:50:13 - eval_gpt_damo.py - INFO - input tokens: 433
+2023-09-07 21:50:19 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:50:19 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:50:19 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:50:19 - eval_gpt_damo.py - INFO - code uid: cb9e94d303014fec9d5794068b9f1c4c
+2023-09-07 21:50:19 - eval_gpt_damo.py - INFO - input tokens: 1170
+2023-09-07 21:50:23 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:50:23 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:50:23 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:50:23 - eval_gpt_damo.py - INFO - code uid: e0759b3e7d634697897c90c96ddc7132
+2023-09-07 21:50:23 - eval_gpt_damo.py - INFO - input tokens: 678
+2023-09-07 21:51:01 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:51:01 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:51:01 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:51:01 - eval_gpt_damo.py - INFO - code uid: e2d956c593a944b4b08fcfb2daaf4e0f
+2023-09-07 21:51:01 - eval_gpt_damo.py - INFO - input tokens: 387
+2023-09-07 21:51:11 - eval_gpt_damo.py - INFO - response: The provided code does not fall into any of the specified code smell categories. It's a simple interface with two methods, which doesn't exhibit any signs of large class, data class, blob, feature envy, or long method smells.
+2023-09-07 21:51:11 - eval_gpt_damo.py - INFO - output tokens: 47
+2023-09-07 21:51:11 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:51:11 - eval_gpt_damo.py - INFO - code uid: d641f259f43f442ab60b81746a37f364
+2023-09-07 21:51:11 - eval_gpt_damo.py - INFO - input tokens: 897
+2023-09-07 21:51:16 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:51:16 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:51:16 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:51:16 - eval_gpt_damo.py - INFO - code uid: 3a1bc93b54de4cd3919cf52679b3eac4
+2023-09-07 21:51:16 - eval_gpt_damo.py - INFO - input tokens: 868
+2023-09-07 21:51:21 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 21:51:21 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 21:51:21 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:51:21 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:51:21 - eval_gpt_damo.py - INFO - code uid: 1f70d2f10b0e4767a5605c437af841d6
+2023-09-07 21:51:21 - eval_gpt_damo.py - INFO - input tokens: 665
+2023-09-07 21:51:26 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 21:51:26 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 21:51:26 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:51:26 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:51:26 - eval_gpt_damo.py - INFO - code uid: a6f8195ae91e4d179aed831d60825d2c
+2023-09-07 21:51:26 - eval_gpt_damo.py - INFO - input tokens: 982
+2023-09-07 21:51:40 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's not a large class, data class, blob, feature envy, or long method. The class is not large, it doesn't just contain fields and crude methods, it doesn't concentrate too many responsibilities, the method doesn't access the data of another object more than its own data, and the method doesn't contain too many lines of code.
+2023-09-07 21:51:40 - eval_gpt_damo.py - INFO - output tokens: 86
+2023-09-07 21:51:40 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:51:40 - eval_gpt_damo.py - INFO - code uid: b66134ae3d3442a697192ffd5b358968
+2023-09-07 21:51:40 - eval_gpt_damo.py - INFO - input tokens: 498
+2023-09-07 21:51:45 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:51:45 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:51:45 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:51:45 - eval_gpt_damo.py - INFO - code uid: 2d5a4120383a4b8fb50a835b540e5c69
+2023-09-07 21:51:45 - eval_gpt_damo.py - INFO - input tokens: 2159
+2023-09-07 21:51:51 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:51:51 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:51:51 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:51:51 - eval_gpt_damo.py - INFO - code uid: 1415ea65e9db44118fbcca92779f6416
+2023-09-07 21:51:51 - eval_gpt_damo.py - INFO - input tokens: 1598
+2023-09-07 21:52:11 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It does not contain too many fields/methods/lines of code (large class), it does not contain only fields and crude methods for accessing them (data class), it does not concentrate too many responsibilities (blob), it does not access the data of another object more than its own data (feature envy), and it does not contain methods with too many lines of code (long method).
+2023-09-07 21:52:11 - eval_gpt_damo.py - INFO - output tokens: 92
+2023-09-07 21:52:11 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:52:11 - eval_gpt_damo.py - INFO - code uid: 5141dfad903041cd8019ce6b36de5305
+2023-09-07 21:52:11 - eval_gpt_damo.py - INFO - input tokens: 1600
+2023-09-07 21:52:24 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 21:52:24 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 21:52:24 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:52:24 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:52:24 - eval_gpt_damo.py - INFO - code uid: 864318c12a994422b59c0fc9849e8c37
+2023-09-07 21:52:24 - eval_gpt_damo.py - INFO - input tokens: 1831
+2023-09-07 21:52:28 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:52:28 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:52:28 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:52:28 - eval_gpt_damo.py - INFO - code uid: 5cc8cccdc1784c0691f47de8ef488cdb
+2023-09-07 21:52:28 - eval_gpt_damo.py - INFO - input tokens: 226
+2023-09-07 21:52:37 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:52:37 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:52:37 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:52:37 - eval_gpt_damo.py - INFO - code uid: 0c31020c0a6c47dfaadd6faaf20e8475
+2023-09-07 21:52:37 - eval_gpt_damo.py - INFO - input tokens: 536
+2023-09-07 21:53:29 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's a small class with a single responsibility, it doesn't contain too many fields or methods, it doesn't access data of another object more than its own, and it doesn't contain long methods.
+2023-09-07 21:53:29 - eval_gpt_damo.py - INFO - output tokens: 56
+2023-09-07 21:53:29 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:53:29 - eval_gpt_damo.py - INFO - code uid: e753a203eddf40678352b473cd73f09d
+2023-09-07 21:53:29 - eval_gpt_damo.py - INFO - input tokens: 2360
+2023-09-07 21:53:36 - eval_gpt_damo.py - INFO - response: blob
+2023-09-07 21:53:36 - eval_gpt_damo.py - INFO - output tokens: 1
+2023-09-07 21:53:36 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 21:53:36 - eval_gpt_damo.py - INFO - code uid: 5ae1893dfc324c57a8e8f77a6014e2b7
+2023-09-07 21:53:36 - eval_gpt_damo.py - INFO - input tokens: 557
+2023-09-07 21:53:41 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:53:41 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:53:41 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:53:41 - eval_gpt_damo.py - INFO - code uid: 5855ab771069402fadcb1901f214218f
+2023-09-07 21:53:41 - eval_gpt_damo.py - INFO - input tokens: 847
+2023-09-07 21:54:21 - eval_gpt_damo.py - INFO - response: The provided code can be categorized as a data class. This is because the class `ViewerErrorScanner` contains only one field `process` and a method `run()` that mainly manipulates the data of this field. It does not contain any complex business logic or behavior.
+2023-09-07 21:54:21 - eval_gpt_damo.py - INFO - output tokens: 55
+2023-09-07 21:54:21 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:54:21 - eval_gpt_damo.py - INFO - code uid: 97afd2dd953f4fdb9ac63c281a135cbb
+2023-09-07 21:54:21 - eval_gpt_damo.py - INFO - input tokens: 1444
+2023-09-07 21:54:37 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells. It's an abstract class with a reasonable number of methods, none of which are overly long or seem to violate the single responsibility principle. It doesn't contain any fields, so it can't be a data class. The methods don't seem to access data from other objects more than their own, so it's not feature envy. Therefore, none of the categories apply.
+2023-09-07 21:54:37 - eval_gpt_damo.py - INFO - output tokens: 89
+2023-09-07 21:54:37 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:54:37 - eval_gpt_damo.py - INFO - code uid: 1d841989807842beae921c3029ee3b1d
+2023-09-07 21:54:37 - eval_gpt_damo.py - INFO - input tokens: 480
+2023-09-07 21:54:42 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:54:42 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:54:42 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:54:42 - eval_gpt_damo.py - INFO - code uid: c3b05055eb154f93af9f0876bb80b9c4
+2023-09-07 21:54:42 - eval_gpt_damo.py - INFO - input tokens: 568
+2023-09-07 21:54:49 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:54:49 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:54:49 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:54:49 - eval_gpt_damo.py - INFO - code uid: 9e9d932c9eba417d82b666967b7041a9
+2023-09-07 21:54:49 - eval_gpt_damo.py - INFO - input tokens: 785
+2023-09-07 21:54:53 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:54:53 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:54:53 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:54:53 - eval_gpt_damo.py - INFO - code uid: 885c081377cc4f7b8fa2cbbc0e65535e
+2023-09-07 21:54:53 - eval_gpt_damo.py - INFO - input tokens: 419
+2023-09-07 21:55:49 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:55:49 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:55:49 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:55:49 - eval_gpt_damo.py - INFO - code uid: 1074ad28afc6489fb38ae60bcd488305
+2023-09-07 21:55:49 - eval_gpt_damo.py - INFO - input tokens: 541
+2023-09-07 21:56:27 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:56:27 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:56:27 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:56:27 - eval_gpt_damo.py - INFO - code uid: 92fe42c024f34c4cbad266654aaf72bb
+2023-09-07 21:56:27 - eval_gpt_damo.py - INFO - input tokens: 1417
+2023-09-07 21:56:31 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 21:56:31 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:56:31 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:56:31 - eval_gpt_damo.py - INFO - code uid: ad38b026fd0749dab5d931f57686cb26
+2023-09-07 21:56:31 - eval_gpt_damo.py - INFO - input tokens: 1865
+2023-09-07 21:56:39 - eval_gpt_damo.py - INFO - response: The smell code segment can be categorized as a long method.
+2023-09-07 21:56:39 - eval_gpt_damo.py - INFO - output tokens: 12
+2023-09-07 21:56:39 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:56:39 - eval_gpt_damo.py - INFO - code uid: d999f6c1f5c1416d9ed5bb4dd8e6c5fb
+2023-09-07 21:56:39 - eval_gpt_damo.py - INFO - input tokens: 200
+2023-09-07 21:56:47 - eval_gpt_damo.py - INFO - response: The provided code does not fall into any of the specified categories.
+2023-09-07 21:56:47 - eval_gpt_damo.py - INFO - output tokens: 13
+2023-09-07 21:56:47 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:56:47 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:56:47 - eval_gpt_damo.py - INFO - code uid: bf8d610082e74bbe8a12537760bab868
+2023-09-07 21:56:47 - eval_gpt_damo.py - INFO - input tokens: 1309
+2023-09-07 21:56:53 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 21:56:53 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 21:56:53 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 21:56:53 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 21:56:53 - eval_gpt_damo.py - INFO - code uid: c958573fd7824437ade7bf73469bb70c
+2023-09-07 21:56:53 - eval_gpt_damo.py - INFO - input tokens: 1033
+2023-09-07 21:56:56 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:56:56 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:56:56 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:56:56 - eval_gpt_damo.py - INFO - code uid: 46be348c20214bb5810b30cae83797a5
+2023-09-07 21:56:56 - eval_gpt_damo.py - INFO - input tokens: 1148
+2023-09-07 21:57:02 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 21:57:02 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:57:02 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 21:57:02 - eval_gpt_damo.py - INFO - code uid: 69f55d02516c419ea7b34e298eb6cac6
+2023-09-07 21:57:02 - eval_gpt_damo.py - INFO - input tokens: 541
+2023-09-07 21:57:09 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:57:09 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:57:09 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:57:09 - eval_gpt_damo.py - INFO - code uid: 8a225ce457fe4f8b86f5d381d065a5c8
+2023-09-07 21:57:09 - eval_gpt_damo.py - INFO - input tokens: 1942
+2023-09-07 21:57:13 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:57:13 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:57:13 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:57:13 - eval_gpt_damo.py - INFO - code uid: c840b4fe2ac54809b32b5ff10ba90799
+2023-09-07 21:57:13 - eval_gpt_damo.py - INFO - input tokens: 1658
+2023-09-07 21:57:18 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:57:18 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:57:18 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:57:18 - eval_gpt_damo.py - INFO - code uid: 4452bf95f2d141b5af5c47c0048469dc
+2023-09-07 21:57:18 - eval_gpt_damo.py - INFO - input tokens: 318
+2023-09-07 21:57:29 - eval_gpt_damo.py - INFO - response: The provided code does not fall into any of the specified code smell categories. It's a simple, concise method within a class that doesn't exhibit any of the characteristics of large class, data class, blob, feature envy, or long method.
+2023-09-07 21:57:29 - eval_gpt_damo.py - INFO - output tokens: 49
+2023-09-07 21:57:29 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 21:57:29 - eval_gpt_damo.py - INFO - code uid: 02410004f2334eb281362e49c847cae5
+2023-09-07 21:57:29 - eval_gpt_damo.py - INFO - input tokens: 1398
+2023-09-07 21:57:33 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:57:33 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:57:33 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:57:33 - eval_gpt_damo.py - INFO - code uid: c38d00c33c3343eaa66990af1fbf9811
+2023-09-07 21:57:33 - eval_gpt_damo.py - INFO - input tokens: 1117
+2023-09-07 21:57:39 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:57:39 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:57:39 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:57:39 - eval_gpt_damo.py - INFO - code uid: 79283973192240a791ca9d36b56294c5
+2023-09-07 21:57:39 - eval_gpt_damo.py - INFO - input tokens: 1229
+2023-09-07 21:57:44 - eval_gpt_damo.py - INFO - response: The smell in the provided code segment can be categorized as a long method.
+2023-09-07 21:57:44 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 21:57:44 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:57:44 - eval_gpt_damo.py - INFO - code uid: 92599364e51c40ba9b8ef0c7b201580e
+2023-09-07 21:57:44 - eval_gpt_damo.py - INFO - input tokens: 1292
+2023-09-07 21:59:16 - _common.py - INFO - Backing off generate_text_damo(...) for 0.0s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 21:59:52 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 21:59:52 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:59:52 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 21:59:52 - eval_gpt_damo.py - INFO - code uid: 288c7e01c7c2483daf464702d60103f0
+2023-09-07 21:59:52 - eval_gpt_damo.py - INFO - input tokens: 1162
+2023-09-07 21:59:57 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 21:59:57 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 21:59:57 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 21:59:57 - eval_gpt_damo.py - INFO - code uid: 6438d70c9b8e47879358634944f540f8
+2023-09-07 21:59:57 - eval_gpt_damo.py - INFO - input tokens: 1413
+2023-09-07 22:00:00 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 22:00:00 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:00:00 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 22:00:00 - eval_gpt_damo.py - INFO - code uid: 47f0f476882c41a4ba954a745b4b716d
+2023-09-07 22:00:00 - eval_gpt_damo.py - INFO - input tokens: 788
+2023-09-07 22:00:09 - eval_gpt_damo.py - INFO - response: The code smell in this segment can be categorized as a "data class". The class `ProjectCloseListener` mainly contains fields and methods for accessing them, but does not have much behavior.
+2023-09-07 22:00:09 - eval_gpt_damo.py - INFO - output tokens: 38
+2023-09-07 22:00:09 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:00:09 - eval_gpt_damo.py - INFO - code uid: c64ec8920a014804a0613cc682247ca8
+2023-09-07 22:00:09 - eval_gpt_damo.py - INFO - input tokens: 1056
+2023-09-07 22:00:13 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:00:13 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:00:13 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:00:13 - eval_gpt_damo.py - INFO - code uid: d2f5952142f5498d87dbd424e71678f5
+2023-09-07 22:00:13 - eval_gpt_damo.py - INFO - input tokens: 1541
+2023-09-07 22:00:29 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:00:29 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:00:29 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:00:29 - eval_gpt_damo.py - INFO - code uid: ed5c736a2a3949bb9477b56984863c6a
+2023-09-07 22:00:29 - eval_gpt_damo.py - INFO - input tokens: 882
+2023-09-07 22:00:39 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:00:39 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:00:39 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:00:39 - eval_gpt_damo.py - INFO - code uid: 1c1d0fb14930491f8d92ed3cbb367f18
+2023-09-07 22:00:39 - eval_gpt_damo.py - INFO - input tokens: 1443
+2023-09-07 22:00:46 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 22:00:46 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 22:00:46 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 22:00:46 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 22:00:46 - eval_gpt_damo.py - INFO - code uid: 3f1d9720314641ada117878be367b558
+2023-09-07 22:00:46 - eval_gpt_damo.py - INFO - input tokens: 273
+2023-09-07 22:00:51 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 22:00:51 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 22:00:51 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 22:00:51 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 22:00:51 - eval_gpt_damo.py - INFO - code uid: d07e9bae06fb4dd7a7406679397e488b
+2023-09-07 22:00:51 - eval_gpt_damo.py - INFO - input tokens: 1334
+2023-09-07 22:00:55 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 22:00:55 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:00:55 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 22:00:55 - eval_gpt_damo.py - INFO - code uid: d1fa641f5e1c4f25b700215473b9c8d7
+2023-09-07 22:00:55 - eval_gpt_damo.py - INFO - input tokens: 535
+2023-09-07 22:01:00 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 22:01:00 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 22:01:00 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 22:01:00 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 22:01:00 - eval_gpt_damo.py - INFO - code uid: e98cf3adea854ccc9b9341cc8944d3a6
+2023-09-07 22:01:00 - eval_gpt_damo.py - INFO - input tokens: 1090
+2023-09-07 22:01:03 - eval_gpt_damo.py - INFO - response: 
+2023-09-07 22:01:03 - eval_gpt_damo.py - INFO - output tokens: 0
+2023-09-07 22:01:03 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 22:01:03 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 22:01:03 - eval_gpt_damo.py - INFO - code uid: dfd1933814e94be1a8254564eea81e33
+2023-09-07 22:01:03 - eval_gpt_damo.py - INFO - input tokens: 1139
+2023-09-07 22:01:28 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 22:01:28 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:01:28 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 22:01:28 - eval_gpt_damo.py - INFO - code uid: aec4eee747484c02983926683b8fd719
+2023-09-07 22:01:28 - eval_gpt_damo.py - INFO - input tokens: 787
+2023-09-07 22:01:45 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 22:01:45 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 22:01:45 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 22:01:45 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 22:01:45 - eval_gpt_damo.py - INFO - code uid: d23667b8a4c742f987d5b8e24b82e747
+2023-09-07 22:01:45 - eval_gpt_damo.py - INFO - input tokens: 1148
+2023-09-07 22:03:16 - _common.py - INFO - Backing off generate_text_damo(...) for 1.0s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 22:03:23 - eval_gpt_damo.py - INFO - response: The code smell in this segment can be categorized as a "blob".
+2023-09-07 22:03:23 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 22:03:23 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 22:03:23 - eval_gpt_damo.py - INFO - code uid: e5a0af79e5bd4d9e99635d105e22f80e
+2023-09-07 22:03:23 - eval_gpt_damo.py - INFO - input tokens: 778
+2023-09-07 22:03:26 - eval_gpt_damo.py - INFO - response: long method
+2023-09-07 22:03:26 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:03:26 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 22:03:26 - eval_gpt_damo.py - INFO - code uid: 90165b5079be4620adb2e36f4e2a8f4b
+2023-09-07 22:03:26 - eval_gpt_damo.py - INFO - input tokens: 1290
+2023-09-07 22:03:33 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:03:33 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:03:33 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:03:33 - eval_gpt_damo.py - INFO - code uid: 17fa52550a044dae91e9194bc5619752
+2023-09-07 22:03:33 - eval_gpt_damo.py - INFO - input tokens: 632
+2023-09-07 22:03:36 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:03:36 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:03:36 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:03:36 - eval_gpt_damo.py - INFO - code uid: 68d09d4bea5e478ea145f9f48a4291e7
+2023-09-07 22:03:36 - eval_gpt_damo.py - INFO - input tokens: 1921
+2023-09-07 22:03:39 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 22:03:39 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:03:39 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 22:03:39 - eval_gpt_damo.py - INFO - code uid: 6a35f09c3037458288ff19badcaf2f65
+2023-09-07 22:03:39 - eval_gpt_damo.py - INFO - input tokens: 1109
+2023-09-07 22:03:44 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 22:03:44 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 22:03:44 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 22:03:44 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 22:03:44 - eval_gpt_damo.py - INFO - code uid: d9c7190bb75a416f95bcd70218eee1bd
+2023-09-07 22:03:44 - eval_gpt_damo.py - INFO - input tokens: 1361
+2023-09-07 22:05:15 - _common.py - INFO - Backing off generate_text_damo(...) for 0.4s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 22:05:24 - eval_gpt_damo.py - INFO - response: The smell in this code segment can be categorized as a "long method".
+2023-09-07 22:05:24 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 22:05:24 - eval_gpt_damo.py - INFO - smell: long method
+2023-09-07 22:05:24 - eval_gpt_damo.py - INFO - code uid: 5fd175a8adab45d581ca33fd499d36af
+2023-09-07 22:05:24 - eval_gpt_damo.py - INFO - input tokens: 1025
+2023-09-07 22:05:28 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:05:28 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:05:28 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:05:28 - eval_gpt_damo.py - INFO - code uid: dd83cf23d5bc412e9962743afa29e5e6
+2023-09-07 22:05:28 - eval_gpt_damo.py - INFO - input tokens: 896
+2023-09-07 22:05:50 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:05:50 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:05:50 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:05:50 - eval_gpt_damo.py - INFO - code uid: 76186da07ba74e61b161cfda2c55149e
+2023-09-07 22:05:50 - eval_gpt_damo.py - INFO - input tokens: 796
+2023-09-07 22:05:54 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:05:54 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:05:54 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:05:54 - eval_gpt_damo.py - INFO - code uid: a954edec79a948e09c316fe1ca023f38
+2023-09-07 22:05:54 - eval_gpt_damo.py - INFO - input tokens: 1266
+2023-09-07 22:05:58 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 22:05:58 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:05:58 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 22:05:58 - eval_gpt_damo.py - INFO - code uid: 06e46621e0eb4d938d92be0e28dd340a
+2023-09-07 22:05:58 - eval_gpt_damo.py - INFO - input tokens: 830
+2023-09-07 22:07:29 - _common.py - INFO - Backing off generate_text_damo(...) for 1.0s (requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2023-09-07 22:07:35 - eval_gpt_damo.py - INFO - response: The code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 22:07:35 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 22:07:35 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 22:07:35 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 22:07:35 - eval_gpt_damo.py - INFO - code uid: 6042bb60221a44b08c42f1fbb74fbc2b
+2023-09-07 22:07:35 - eval_gpt_damo.py - INFO - input tokens: 1032
+2023-09-07 22:07:39 - eval_gpt_damo.py - INFO - response: feature envy
+2023-09-07 22:07:39 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:07:39 - eval_gpt_damo.py - INFO - smell: feature envy
+2023-09-07 22:07:39 - eval_gpt_damo.py - INFO - code uid: 60ac6eeae31d458a9bc6f5aae516d938
+2023-09-07 22:07:39 - eval_gpt_damo.py - INFO - input tokens: 546
+2023-09-07 22:07:46 - eval_gpt_damo.py - INFO - response: The provided code does not seem to exhibit any of the mentioned code smells.
+2023-09-07 22:07:46 - eval_gpt_damo.py - INFO - output tokens: 15
+2023-09-07 22:07:46 - eval_gpt_damo.py - WARNING - Respond content is invalid value.
+2023-09-07 22:07:46 - eval_gpt_damo.py - INFO - smell: 
+2023-09-07 22:07:46 - eval_gpt_damo.py - INFO - code uid: 53132dbb5cb84d07930a324b289b108e
+2023-09-07 22:07:46 - eval_gpt_damo.py - INFO - input tokens: 1251
+2023-09-07 22:07:53 - eval_gpt_damo.py - INFO - response: large class
+2023-09-07 22:07:53 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:07:53 - eval_gpt_damo.py - INFO - smell: large class
+2023-09-07 22:07:53 - eval_gpt_damo.py - INFO - code uid: 0ce6c67dd6354d479f24db0185dfece2
+2023-09-07 22:07:53 - eval_gpt_damo.py - INFO - input tokens: 944
+2023-09-07 22:07:58 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:07:58 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:07:58 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:07:58 - eval_gpt_damo.py - INFO - code uid: afb73d6afb5d4353b413912ec18c7eaf
+2023-09-07 22:07:58 - eval_gpt_damo.py - INFO - input tokens: 963
+2023-09-07 22:08:03 - eval_gpt_damo.py - INFO - response: data class
+2023-09-07 22:08:03 - eval_gpt_damo.py - INFO - output tokens: 2
+2023-09-07 22:08:03 - eval_gpt_damo.py - INFO - smell: data class
+2023-09-07 22:08:03 - eval_gpt_damo.py - INFO - code uid: f4eb559f25224a05b5e5d7751df0cd0c
+2023-09-07 22:08:03 - eval_gpt_damo.py - INFO - input tokens: 1804
+2023-09-07 22:08:21 - eval_gpt_damo.py - INFO - response: The provided code can be categorized as a "blob". This is because the class `OAuth2SecurityExpressionMethods` is responsible for a wide range of functionalities related to OAuth2 security expressions, including checking scopes, roles, and types of authentication. It controls and oversees many different objects and responsibilities, which makes it a blob.
+2023-09-07 22:08:21 - eval_gpt_damo.py - INFO - output tokens: 65
+2023-09-07 22:08:21 - eval_gpt_damo.py - INFO - smell: blob
+2023-09-07 22:08:21 - eval_gpt_damo.py - INFO - code uid: 788274bfe66240719c89ebe05323ac50
+2023-09-07 22:08:21 - eval_gpt_damo.py - INFO - input tokens: 748
+2023-09-07 22:08:26 - eval_gpt_damo.py - INFO - response: The code smell in this segment can be categorized as a long method.
+2023-09-07 22:08:26 - eval_gpt_damo.py - INFO - output tokens: 14
+2023-09-07 22:08:26 - eval_gpt_damo.py - INFO - smell: long method

@@ -426,8 +426,7 @@ if __name__ == '__main__':
     )
     print(f'Memory footprint: {model.get_memory_footprint() / 1e6:.2f} MB')
     temperature = 0
-    max_input_tokens = tokenizer.model_max_length
-    print(max_input_tokens)  # 8192
+    max_input_tokens = tokenizer.model_max_length  # 8192
     # The maximum numbers of tokens to generate, ignoring the number of tokens in the prompt.
     max_new_tokens = 1024
 
