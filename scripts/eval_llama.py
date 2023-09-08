@@ -14,9 +14,9 @@ from tenacity import retry, stop_after_attempt, wait_random_exponential
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('--access_token', default='', type=str)
-    parser.add_argument('--checkpoint', default='elinas/llama-7b-hf-transformers-4.29',
-                        choices=['elinas/llama-7b-hf-transformers-4.29', 'elinas/llama-13b-hf-transformers-4.29',
-                                 'elinas/llama-30b-hf-transformers-4.29', 'elinas/llama-65b-hf-transformers-4.29'],
+    parser.add_argument('--checkpoint', default='huggyllama/llama-7b',
+                        choices=['huggyllama/llama-7b', 'huggyllama/llama-13b',
+                                 'huggyllama/llama-30b', 'huggyllama/llama-65b'],
                         type=str)
     parser.add_argument('--data_load_name', default='code_smell_data.jsonl',
                         choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl'], type=str)
