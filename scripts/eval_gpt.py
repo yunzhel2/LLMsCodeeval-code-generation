@@ -13,18 +13,18 @@ from datasets import load_dataset
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('--api_key', default='', type=str)
-    parser.add_argument('--model', default='gpt-3.5-turbo',
+    parser.add_argument('--model', default='gpt-3.5-turbo-0613',
                         choices=['gpt-3.5-turbo', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo-0613', 'gpt-3.5-turbo-16k-0613',
                                  'gpt-3.5-turbo-0301', 'gpt-4', 'gpt-4-0613', 'gpt-4-32k', 'gpt-4-32k-0613',
                                  'gpt-4-0314', 'gpt-4-32k-0314'],
                         type=str)
-    parser.add_argument('--data_load_name', default='code_review_data.jsonl',
+    parser.add_argument('--data_load_name', default='code_test_data.jsonl',
                         choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl'], type=str)
-    parser.add_argument('--result_save_name', default='code_review_eval_gpt3.jsonl',
+    parser.add_argument('--result_save_name', default='code_test_data_gpt3.jsonl',
                         choices=['code_review_eval_gpt3.jsonl', 'code_smell_eval_gpt3.jsonl',
                                  'code_test_data_gpt3.jsonl', 'code_review_eval_gpt4.jsonl',
                                  'code_smell_eval_gpt4.jsonl', 'code_test_data_gpt4.jsonl'], type=str)
-    parser.add_argument('--log_file_name', default='code_review_eval_gpt3.log',
+    parser.add_argument('--log_file_name', default='code_test_data_gpt3.log',
                         choices=['code_review_eval_gpt3.log', 'code_smell_eval_gpt3.log', 'code_test_data_gpt3.log',
                                  'code_review_eval_gpt4.log', 'code_smell_eval_gpt4.log', 'code_test_data_gpt4.log'],
                         type=str)
@@ -78,12 +78,27 @@ def add_smell(example):
     lang_cluster = example['lang_cluster']
     smell_code = example['smell_code']
     source_code = example['source_code']
-    prompt = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
-- large class: A class contains too many fields/methods/lines of code.
-- data class: A class contains only fields and crude methods for accessing them.
-- blob: A class that concentrates too many responsibilities, controls and oversees too many different objects.
-- feature envy: A method accesses the data of another object more than its own data.
-- long method: A method contains too many lines of code.
+    if lang_cluster == 'C#':
+        prompt = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
+- large class
+- long method
+The detailed information are as follows:
+1. Programming language: {lang_cluster} 
+2. Smell code segment: 
+```
+{smell_code.strip()}
+```
+3. Source code containing code smells:
+```
+{source_code.strip()}
+```
+Respond only with one of the specified categories."""
+    else:
+        prompt = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
+- data class
+- blob
+- feature envy
+- long method
 The detailed information are as follows:
 1. Programming language: {lang_cluster} 
 2. Smell code segment: 
@@ -316,7 +331,7 @@ Respond only with a string in the following JSON format:
             if input_tokens + output_tokens > max_tokens:
                 logging.warning('Over total tokens limit ' + str(code_uid))
 
-            pattern = r'\[.*{.*?\}.*]'
+            pattern = r'\[\s*\{.*?\}\s*\]'
             matches = re.search(pattern, response, re.DOTALL)
             if matches:
                 json_array_string = matches.group().replace("'", '"')
@@ -331,21 +346,21 @@ Respond only with a string in the following JSON format:
                         hidden_unit_tests = str(json_array)
                     else:
                         logging.warning('Respond content is not a list.')
-                        hidden_unit_tests = '[]'
+                        hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
                 except json.JSONDecodeError as e:
                     logging.warning('Failed to load json:', e)
-                    hidden_unit_tests = '[]'
+                    hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
             else:
                 logging.warning('JSON array object not found.')
-                hidden_unit_tests = '[]'
+                hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
 
         else:
             logging.warning('Respond content is none.')
-            hidden_unit_tests = '[]'
+            hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
 
     except Exception as e:
         logging.error('Failed to generate text: ' + e.__str__())
-        hidden_unit_tests = '[]'
+        hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
 
     logging.info('hidden_unit_tests: ' + str(hidden_unit_tests))
     example['hidden_unit_tests'] = hidden_unit_tests

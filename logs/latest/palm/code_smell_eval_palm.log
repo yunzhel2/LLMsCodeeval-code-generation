@@ -1,0 +1,1001 @@
+2023-09-09 16:42:38 - builder.py - WARNING - Found cached dataset json (C:/Users/Administrator/.cache/huggingface/datasets/json/default-349c088353ab8004/0.0.0/e347ab1c932092252e717ff3f949105a4dd28b27e842dd53157d2f72e276c2e4)
+2023-09-09 16:42:38 - eval_palm.py - INFO - code uid: a417fc22949c4445adbc4d9f9984cb08
+2023-09-09 16:42:39 - eval_palm.py - INFO - input tokens: 2152
+2023-09-09 16:42:41 - eval_palm.py - INFO - response: None
+2023-09-09 16:42:41 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:42:41 - eval_palm.py - INFO - smell: 
+2023-09-09 16:42:41 - eval_palm.py - INFO - code uid: 293cd79ef0394cf0b654c6847eb6831e
+2023-09-09 16:42:41 - eval_palm.py - INFO - input tokens: 738
+2023-09-09 16:42:43 - eval_palm.py - INFO - response: long method
+2023-09-09 16:42:43 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:42:43 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:42:43 - eval_palm.py - INFO - code uid: a590068eb6d049b69e907d246862a25c
+2023-09-09 16:42:43 - eval_palm.py - INFO - input tokens: 1411
+2023-09-09 16:42:45 - eval_palm.py - INFO - response: None
+2023-09-09 16:42:45 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:42:45 - eval_palm.py - INFO - smell: 
+2023-09-09 16:42:45 - eval_palm.py - INFO - code uid: 07a10bd24c72462b9d802fde14727c41
+2023-09-09 16:42:46 - eval_palm.py - INFO - input tokens: 842
+2023-09-09 16:42:47 - eval_palm.py - INFO - response: large class
+2023-09-09 16:42:47 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:42:47 - eval_palm.py - INFO - smell: large class
+2023-09-09 16:42:47 - eval_palm.py - INFO - code uid: 7ee6a6aace15406da543b78d83f929ba
+2023-09-09 16:42:47 - eval_palm.py - INFO - input tokens: 1130
+2023-09-09 16:42:49 - eval_palm.py - INFO - response: long method
+2023-09-09 16:42:49 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:42:49 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:42:49 - eval_palm.py - INFO - code uid: 093cb33cd98f4fdeae7b6b28b911f74e
+2023-09-09 16:42:50 - eval_palm.py - INFO - input tokens: 428
+2023-09-09 16:42:50 - eval_palm.py - INFO - response: long method
+2023-09-09 16:42:51 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:42:51 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:42:51 - eval_palm.py - INFO - code uid: 55f1abb3bca2481ab26573f783fae272
+2023-09-09 16:42:51 - eval_palm.py - INFO - input tokens: 387
+2023-09-09 16:42:52 - eval_palm.py - INFO - response: long method
+2023-09-09 16:42:52 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:42:52 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:42:52 - eval_palm.py - INFO - code uid: fc8e0b273f854e5b83083a59135dbfcd
+2023-09-09 16:42:52 - eval_palm.py - INFO - input tokens: 1831
+2023-09-09 16:42:55 - eval_palm.py - INFO - response: long method
+2023-09-09 16:42:55 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:42:55 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:42:55 - eval_palm.py - INFO - code uid: e9aea3f62f52457fa1fbfe82addbec7c
+2023-09-09 16:42:55 - eval_palm.py - INFO - input tokens: 3587
+2023-09-09 16:43:00 - eval_palm.py - INFO - response: The code segment is a long method.
+2023-09-09 16:43:00 - eval_palm.py - INFO - output tokens: 19
+2023-09-09 16:43:00 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:00 - eval_palm.py - INFO - code uid: f089bd02200f4d23b11e21c1e25a5fcc
+2023-09-09 16:43:00 - eval_palm.py - INFO - input tokens: 611
+2023-09-09 16:43:01 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:02 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:02 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:02 - eval_palm.py - INFO - code uid: ac34e5ce62ac4b75a052f8681ba720e5
+2023-09-09 16:43:02 - eval_palm.py - INFO - input tokens: 929
+2023-09-09 16:43:03 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:03 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:03 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:03 - eval_palm.py - INFO - code uid: 8fafa3903a9b4e2390570d22b75f3035
+2023-09-09 16:43:03 - eval_palm.py - INFO - input tokens: 877
+2023-09-09 16:43:05 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:05 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:05 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:05 - eval_palm.py - INFO - code uid: 28d9002741ea4931b5148773ea6744bb
+2023-09-09 16:43:05 - eval_palm.py - INFO - input tokens: 1558
+2023-09-09 16:43:08 - eval_palm.py - INFO - response: None
+2023-09-09 16:43:08 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:43:08 - eval_palm.py - INFO - smell: 
+2023-09-09 16:43:08 - eval_palm.py - INFO - code uid: c62ec190434d4e6d8b9e6c99d445574b
+2023-09-09 16:43:08 - eval_palm.py - INFO - input tokens: 709
+2023-09-09 16:43:09 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:09 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:09 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:09 - eval_palm.py - INFO - code uid: ad7f11861fbf4883becfa561bad8fc36
+2023-09-09 16:43:10 - eval_palm.py - INFO - input tokens: 5123
+2023-09-09 16:43:14 - eval_palm.py - INFO - response: The code is a long method.
+2023-09-09 16:43:14 - eval_palm.py - INFO - output tokens: 18
+2023-09-09 16:43:14 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:14 - eval_palm.py - INFO - code uid: fa20381cfcc44ec9a14da8653e9f66cd
+2023-09-09 16:43:15 - eval_palm.py - INFO - input tokens: 4148
+2023-09-09 16:43:17 - eval_palm.py - INFO - response: Long method
+2023-09-09 16:43:17 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:17 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:17 - eval_palm.py - INFO - code uid: 52ce0f7bba9e4c2f858ddc4c94f3f662
+2023-09-09 16:43:18 - eval_palm.py - INFO - input tokens: 947
+2023-09-09 16:43:20 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:20 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:20 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:20 - eval_palm.py - INFO - code uid: 8e22a8e6c68249f6b729c727303ed8dd
+2023-09-09 16:43:20 - eval_palm.py - INFO - input tokens: 256
+2023-09-09 16:43:21 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:21 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:21 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:21 - eval_palm.py - INFO - code uid: b46a94e293ac464a8244294641a63a1f
+2023-09-09 16:43:21 - eval_palm.py - INFO - input tokens: 3188
+2023-09-09 16:43:24 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:24 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:24 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:24 - eval_palm.py - INFO - code uid: 1b0efebf2715471bb3d74874f8d75b3f
+2023-09-09 16:43:24 - eval_palm.py - INFO - input tokens: 1710
+2023-09-09 16:43:27 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:27 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:27 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:27 - eval_palm.py - INFO - code uid: c6728b6a34d3424897bfee5dafdc64a6
+2023-09-09 16:43:27 - eval_palm.py - INFO - input tokens: 1215
+2023-09-09 16:43:29 - eval_palm.py - INFO - response: None
+2023-09-09 16:43:29 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:43:29 - eval_palm.py - INFO - smell: 
+2023-09-09 16:43:29 - eval_palm.py - INFO - code uid: 3837e54ef33d419caa910b26853d0fc7
+2023-09-09 16:43:29 - eval_palm.py - INFO - input tokens: 1208
+2023-09-09 16:43:32 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:32 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:32 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:32 - eval_palm.py - INFO - code uid: 0da9a35d13d7404d888b0d4998e993e4
+2023-09-09 16:43:32 - eval_palm.py - INFO - input tokens: 749
+2023-09-09 16:43:33 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:33 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:33 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:33 - eval_palm.py - INFO - code uid: 61f46f249aa3419f932e67d42c85db24
+2023-09-09 16:43:34 - eval_palm.py - INFO - input tokens: 1151
+2023-09-09 16:43:36 - eval_palm.py - INFO - response: large class
+2023-09-09 16:43:36 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:36 - eval_palm.py - INFO - smell: large class
+2023-09-09 16:43:36 - eval_palm.py - INFO - code uid: 0722a4eb2ea245f3824d5142659942ef
+2023-09-09 16:43:36 - eval_palm.py - INFO - input tokens: 1211
+2023-09-09 16:43:39 - eval_palm.py - INFO - response: None
+2023-09-09 16:43:39 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:43:39 - eval_palm.py - INFO - smell: 
+2023-09-09 16:43:39 - eval_palm.py - INFO - code uid: 5668c589e66340859159153870731213
+2023-09-09 16:43:39 - eval_palm.py - INFO - input tokens: 150
+2023-09-09 16:43:40 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:40 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:40 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:40 - eval_palm.py - INFO - code uid: b116f64c56734deaa6fa87ac44067722
+2023-09-09 16:43:40 - eval_palm.py - INFO - input tokens: 921
+2023-09-09 16:43:42 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:42 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:42 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:42 - eval_palm.py - INFO - code uid: a56b5a0cd2794add9f5f83e5c7d8546c
+2023-09-09 16:43:43 - eval_palm.py - INFO - input tokens: 1029
+2023-09-09 16:43:44 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:44 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:44 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:44 - eval_palm.py - INFO - code uid: d2f41636c0594cb48619e2da4d6b3f34
+2023-09-09 16:43:44 - eval_palm.py - INFO - input tokens: 735
+2023-09-09 16:43:46 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:46 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:46 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:46 - eval_palm.py - INFO - code uid: e4d05dd701034fe2a7e7edd9e4ff41a7
+2023-09-09 16:43:46 - eval_palm.py - INFO - input tokens: 1296
+2023-09-09 16:43:47 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:48 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:48 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:48 - eval_palm.py - INFO - code uid: 635ca617045a47bea05a50b51ee28e07
+2023-09-09 16:43:48 - eval_palm.py - INFO - input tokens: 1350
+2023-09-09 16:43:49 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:50 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:50 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:50 - eval_palm.py - INFO - code uid: abd48421a39b4f5897ddf2b3054f320a
+2023-09-09 16:43:50 - eval_palm.py - INFO - input tokens: 202
+2023-09-09 16:43:51 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:51 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:51 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:51 - eval_palm.py - INFO - code uid: 2fa1d6b367e54387b6d35591c24e0a0c
+2023-09-09 16:43:51 - eval_palm.py - INFO - input tokens: 2138
+2023-09-09 16:43:54 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:54 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:54 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:54 - eval_palm.py - INFO - code uid: 6f554e798844423ebc3dc2452b3717dd
+2023-09-09 16:43:54 - eval_palm.py - INFO - input tokens: 1416
+2023-09-09 16:43:56 - eval_palm.py - INFO - response: None
+2023-09-09 16:43:56 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:43:56 - eval_palm.py - INFO - smell: 
+2023-09-09 16:43:56 - eval_palm.py - INFO - code uid: a037f87a60ad4b78845fc2e42d92a5ad
+2023-09-09 16:43:57 - eval_palm.py - INFO - input tokens: 687
+2023-09-09 16:43:58 - eval_palm.py - INFO - response: long method
+2023-09-09 16:43:58 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:43:58 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:43:58 - eval_palm.py - INFO - code uid: 7ce6070c45594b9fad8b65fa5e5151aa
+2023-09-09 16:43:58 - eval_palm.py - INFO - input tokens: 1026
+2023-09-09 16:43:59 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:02 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:02 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:02 - eval_palm.py - INFO - code uid: 99c31742e2284eac90dcc9c1cea60977
+2023-09-09 16:44:02 - eval_palm.py - INFO - input tokens: 2306
+2023-09-09 16:44:05 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:05 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:05 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:05 - eval_palm.py - INFO - code uid: d1c929af0dcc4015a6a6ed3854b21031
+2023-09-09 16:44:05 - eval_palm.py - INFO - input tokens: 1472
+2023-09-09 16:44:06 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:07 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:07 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:07 - eval_palm.py - INFO - code uid: 94786537dec34cb5bea64db748e91df9
+2023-09-09 16:44:07 - eval_palm.py - INFO - input tokens: 2487
+2023-09-09 16:44:10 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:10 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:10 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:10 - eval_palm.py - INFO - code uid: 28421c58168247c1b6fced6f467b4d36
+2023-09-09 16:44:10 - eval_palm.py - INFO - input tokens: 1274
+2023-09-09 16:44:12 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:12 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:12 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:12 - eval_palm.py - INFO - code uid: 1ad03a113fb34ad187f7ae329a3cf10c
+2023-09-09 16:44:12 - eval_palm.py - INFO - input tokens: 964
+2023-09-09 16:44:13 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:14 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:14 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:14 - eval_palm.py - INFO - code uid: af588af59d444266a3fbf11cce11d84a
+2023-09-09 16:44:14 - eval_palm.py - INFO - input tokens: 2623
+2023-09-09 16:44:16 - eval_palm.py - INFO - response: large class
+2023-09-09 16:44:16 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:16 - eval_palm.py - INFO - smell: large class
+2023-09-09 16:44:16 - eval_palm.py - INFO - code uid: d401c9009a6a43d2b84dc557e6de112b
+2023-09-09 16:44:17 - eval_palm.py - INFO - input tokens: 1863
+2023-09-09 16:44:18 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:18 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:18 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:18 - eval_palm.py - INFO - code uid: 350723e9051c4c42a2cafa32d18bc6bd
+2023-09-09 16:44:18 - eval_palm.py - INFO - input tokens: 258
+2023-09-09 16:44:19 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:20 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:20 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:20 - eval_palm.py - INFO - code uid: 4c59925d36884fdca880f06091c99a81
+2023-09-09 16:44:20 - eval_palm.py - INFO - input tokens: 1832
+2023-09-09 16:44:22 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:22 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:22 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:22 - eval_palm.py - INFO - code uid: 0b6e92a017714875b0c724ad562ff262
+2023-09-09 16:44:23 - eval_palm.py - INFO - input tokens: 320
+2023-09-09 16:44:24 - eval_palm.py - INFO - response: large class
+2023-09-09 16:44:24 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:24 - eval_palm.py - INFO - smell: large class
+2023-09-09 16:44:24 - eval_palm.py - INFO - code uid: 31c07b67923f4a7a9c5f882f1ebe0ac1
+2023-09-09 16:44:24 - eval_palm.py - INFO - input tokens: 2039
+2023-09-09 16:44:26 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:26 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:26 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:26 - eval_palm.py - INFO - code uid: aa23c208a5284fa5a77e61df26d8c732
+2023-09-09 16:44:26 - eval_palm.py - INFO - input tokens: 1568
+2023-09-09 16:44:29 - eval_palm.py - INFO - response: None
+2023-09-09 16:44:29 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:44:29 - eval_palm.py - INFO - smell: 
+2023-09-09 16:44:29 - eval_palm.py - INFO - code uid: c5217f8eff74466ca335e2e11eceffc9
+2023-09-09 16:44:29 - eval_palm.py - INFO - input tokens: 608
+2023-09-09 16:44:30 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:31 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:31 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:31 - eval_palm.py - INFO - code uid: 1ba0102545824eb8b7207a15343d1526
+2023-09-09 16:44:31 - eval_palm.py - INFO - input tokens: 726
+2023-09-09 16:44:32 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:32 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:32 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:32 - eval_palm.py - INFO - code uid: ce21635ee7a645a3a4efe246cd91d935
+2023-09-09 16:44:32 - eval_palm.py - INFO - input tokens: 415
+2023-09-09 16:44:33 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:34 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:34 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:34 - eval_palm.py - INFO - code uid: eeaa35648f69441cacfec320b3a1596d
+2023-09-09 16:44:34 - eval_palm.py - INFO - input tokens: 1853
+2023-09-09 16:44:36 - eval_palm.py - INFO - response: None
+2023-09-09 16:44:36 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:44:36 - eval_palm.py - INFO - smell: 
+2023-09-09 16:44:36 - eval_palm.py - INFO - code uid: 496c0b7464b6480084cbd84c5c4e6d53
+2023-09-09 16:44:36 - eval_palm.py - INFO - input tokens: 747
+2023-09-09 16:44:37 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:37 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:37 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:37 - eval_palm.py - INFO - code uid: cadeb9ba31024984ae45ec1f34892df9
+2023-09-09 16:44:38 - eval_palm.py - INFO - input tokens: 916
+2023-09-09 16:44:39 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:39 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:39 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:39 - eval_palm.py - INFO - code uid: 8d3df5ef7d6d42f6b1830d553594bda1
+2023-09-09 16:44:39 - eval_palm.py - INFO - input tokens: 904
+2023-09-09 16:44:40 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:41 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:41 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:41 - eval_palm.py - INFO - code uid: 3dd41cc55c56423f8dca73a1a5a2fb4a
+2023-09-09 16:44:41 - eval_palm.py - INFO - input tokens: 1403
+2023-09-09 16:44:43 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:44 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:44 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:44 - eval_palm.py - INFO - code uid: 8311161436644d3eb6d1a8b9942e70b0
+2023-09-09 16:44:44 - eval_palm.py - INFO - input tokens: 1147
+2023-09-09 16:44:46 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:46 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:46 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:46 - eval_palm.py - INFO - code uid: 61eb1c8e59c748faac04b05afcc5b1da
+2023-09-09 16:44:46 - eval_palm.py - INFO - input tokens: 578
+2023-09-09 16:44:47 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:47 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:47 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:47 - eval_palm.py - INFO - code uid: 0dc2d0ed28154ae4b0e8c9c213d46c78
+2023-09-09 16:44:48 - eval_palm.py - INFO - input tokens: 1789
+2023-09-09 16:44:49 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:49 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:49 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:49 - eval_palm.py - INFO - code uid: 50c98db738614d8385b29381e07aafd2
+2023-09-09 16:44:50 - eval_palm.py - INFO - input tokens: 1425
+2023-09-09 16:44:51 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:52 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:52 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:52 - eval_palm.py - INFO - code uid: bf62746f0da24c8caf5c86c0b7538671
+2023-09-09 16:44:52 - eval_palm.py - INFO - input tokens: 988
+2023-09-09 16:44:54 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:54 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:54 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:54 - eval_palm.py - INFO - code uid: 6e7293dc3bb748628f4117e8199dde8b
+2023-09-09 16:44:54 - eval_palm.py - INFO - input tokens: 609
+2023-09-09 16:44:55 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:55 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:55 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:55 - eval_palm.py - INFO - code uid: e88d100f038f44a796dfc5041cef3cf5
+2023-09-09 16:44:56 - eval_palm.py - INFO - input tokens: 1452
+2023-09-09 16:44:58 - eval_palm.py - INFO - response: long method
+2023-09-09 16:44:58 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:44:58 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:44:58 - eval_palm.py - INFO - code uid: 1e3d0e129f25470e83f6cee75eb42784
+2023-09-09 16:44:59 - eval_palm.py - INFO - input tokens: 874
+2023-09-09 16:45:00 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:00 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:00 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:00 - eval_palm.py - INFO - code uid: 04d0c6f642664c81aed29ba36a929524
+2023-09-09 16:45:00 - eval_palm.py - INFO - input tokens: 1021
+2023-09-09 16:45:02 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:02 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:02 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:02 - eval_palm.py - INFO - code uid: 234fbc4652254d7dbe11d7dcbcd029ee
+2023-09-09 16:45:03 - eval_palm.py - INFO - input tokens: 1081
+2023-09-09 16:45:04 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:04 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:04 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:04 - eval_palm.py - INFO - code uid: de303f5251464e75a7169c48232e2c5a
+2023-09-09 16:45:04 - eval_palm.py - INFO - input tokens: 1581
+2023-09-09 16:45:05 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:06 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:06 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:06 - eval_palm.py - INFO - code uid: 9b3148fd10984c1e9d580a3a045ff1d8
+2023-09-09 16:45:06 - eval_palm.py - INFO - input tokens: 810
+2023-09-09 16:45:07 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:07 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:07 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:07 - eval_palm.py - INFO - code uid: 35469f8664ad48278f10f4b75c248f47
+2023-09-09 16:45:08 - eval_palm.py - INFO - input tokens: 1463
+2023-09-09 16:45:10 - eval_palm.py - INFO - response: None
+2023-09-09 16:45:10 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:45:10 - eval_palm.py - INFO - smell: 
+2023-09-09 16:45:10 - eval_palm.py - INFO - code uid: 295653d67bff4df0a798f7b220f1b716
+2023-09-09 16:45:10 - eval_palm.py - INFO - input tokens: 1317
+2023-09-09 16:45:12 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:12 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:12 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:12 - eval_palm.py - INFO - code uid: c5d2e83a13274108b46eb1d43fdf9947
+2023-09-09 16:45:12 - eval_palm.py - INFO - input tokens: 813
+2023-09-09 16:45:13 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:14 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:14 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:14 - eval_palm.py - INFO - code uid: 17343f769a6e4db19800ddb633b7466a
+2023-09-09 16:45:15 - eval_palm.py - INFO - input tokens: 338
+2023-09-09 16:45:16 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:16 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:16 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:16 - eval_palm.py - INFO - code uid: a5beafc2e4f34d1fa8d174b593772eca
+2023-09-09 16:45:17 - eval_palm.py - INFO - input tokens: 548
+2023-09-09 16:45:18 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:18 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:18 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:18 - eval_palm.py - INFO - code uid: 0abeecbb2bd847ed95266193e193af5d
+2023-09-09 16:45:18 - eval_palm.py - INFO - input tokens: 1246
+2023-09-09 16:45:19 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:20 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:20 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:20 - eval_palm.py - INFO - code uid: 4e7d4de4b7f242deba18ea428b739b2e
+2023-09-09 16:45:20 - eval_palm.py - INFO - input tokens: 2346
+2023-09-09 16:45:23 - eval_palm.py - INFO - response: None
+2023-09-09 16:45:23 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:45:23 - eval_palm.py - INFO - smell: 
+2023-09-09 16:45:23 - eval_palm.py - INFO - code uid: 9dc6857e2e0643d19289a0e8d8c19116
+2023-09-09 16:45:23 - eval_palm.py - INFO - input tokens: 934
+2023-09-09 16:45:24 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:25 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:25 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:25 - eval_palm.py - INFO - code uid: 0e64f27ba5434e00abe65615793b7ba0
+2023-09-09 16:45:25 - eval_palm.py - INFO - input tokens: 438
+2023-09-09 16:45:26 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:26 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:26 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:26 - eval_palm.py - INFO - code uid: 2e546e957fd94da8ae7dd4ebb30626dc
+2023-09-09 16:45:26 - eval_palm.py - INFO - input tokens: 2298
+2023-09-09 16:45:28 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:29 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:29 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:29 - eval_palm.py - INFO - code uid: b228c37454bf4d36ba5b30a39c50bd94
+2023-09-09 16:45:29 - eval_palm.py - INFO - input tokens: 1545
+2023-09-09 16:45:30 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:30 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:30 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:30 - eval_palm.py - INFO - code uid: a9e854bf62024725a2bcca23bf1ccac3
+2023-09-09 16:45:31 - eval_palm.py - INFO - input tokens: 1453
+2023-09-09 16:45:32 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:32 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:32 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:32 - eval_palm.py - INFO - code uid: 4b54d407694d47e39f039751149a066f
+2023-09-09 16:45:33 - eval_palm.py - INFO - input tokens: 794
+2023-09-09 16:45:34 - eval_palm.py - INFO - response: None
+2023-09-09 16:45:34 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:45:34 - eval_palm.py - INFO - smell: 
+2023-09-09 16:45:34 - eval_palm.py - INFO - code uid: ef41b43447ce48988d4150ee11b94916
+2023-09-09 16:45:34 - eval_palm.py - INFO - input tokens: 1333
+2023-09-09 16:45:36 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:37 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:37 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:37 - eval_palm.py - INFO - code uid: 3440f3ae64844962ac9c3a8206d0c77f
+2023-09-09 16:45:37 - eval_palm.py - INFO - input tokens: 1297
+2023-09-09 16:45:38 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:38 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:38 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:38 - eval_palm.py - INFO - code uid: 05e064220b25438fb0b10f6d6c4d0b8b
+2023-09-09 16:45:38 - eval_palm.py - INFO - input tokens: 2344
+2023-09-09 16:45:41 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:41 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:41 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:41 - eval_palm.py - INFO - code uid: 1c84fb2da6e648598e8f06eb30664e64
+2023-09-09 16:45:42 - eval_palm.py - INFO - input tokens: 951
+2023-09-09 16:45:43 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:43 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:43 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:43 - eval_palm.py - INFO - code uid: fb20d36e82de4992bc9b0d63f5fc6f8a
+2023-09-09 16:45:43 - eval_palm.py - INFO - input tokens: 930
+2023-09-09 16:45:44 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:45 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:45 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:45 - eval_palm.py - INFO - code uid: 5b0f1d2c55dd4fe78cb9d48b50f355ca
+2023-09-09 16:45:45 - eval_palm.py - INFO - input tokens: 576
+2023-09-09 16:45:46 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:46 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:46 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:46 - eval_palm.py - INFO - code uid: 472e2321af3648c0b387bce4f43ce93c
+2023-09-09 16:45:47 - eval_palm.py - INFO - input tokens: 532
+2023-09-09 16:45:48 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:48 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:48 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:48 - eval_palm.py - INFO - code uid: 5e54bd8c0dd0430ba0e2ed6ba00fcb49
+2023-09-09 16:45:48 - eval_palm.py - INFO - input tokens: 609
+2023-09-09 16:45:49 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:49 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:49 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:49 - eval_palm.py - INFO - code uid: 765e5fc99e77452ca247dd7ecd6fac9b
+2023-09-09 16:45:50 - eval_palm.py - INFO - input tokens: 2111
+2023-09-09 16:45:51 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:51 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:51 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:51 - eval_palm.py - INFO - code uid: 77fae7d393ae46128dd72c9915c6b901
+2023-09-09 16:45:52 - eval_palm.py - INFO - input tokens: 2049
+2023-09-09 16:45:54 - eval_palm.py - INFO - response: None
+2023-09-09 16:45:54 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:45:54 - eval_palm.py - INFO - smell: 
+2023-09-09 16:45:54 - eval_palm.py - INFO - code uid: e4be99e1d7e54ff4b7784eefecdd07d5
+2023-09-09 16:45:54 - eval_palm.py - INFO - input tokens: 1719
+2023-09-09 16:45:55 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:56 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:56 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:56 - eval_palm.py - INFO - code uid: 67569cb8a13f494d8b9fc79610854e8d
+2023-09-09 16:45:56 - eval_palm.py - INFO - input tokens: 848
+2023-09-09 16:45:57 - eval_palm.py - INFO - response: long method
+2023-09-09 16:45:57 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:45:57 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:45:57 - eval_palm.py - INFO - code uid: e9cbe355669540db8c5e3452e96b9e4b
+2023-09-09 16:45:58 - eval_palm.py - INFO - input tokens: 1260
+2023-09-09 16:45:59 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:00 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:00 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:00 - eval_palm.py - INFO - code uid: 7ca48b5f323c4c008e6785d6c3db0aa0
+2023-09-09 16:46:00 - eval_palm.py - INFO - input tokens: 1468
+2023-09-09 16:46:01 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:02 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:02 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:02 - eval_palm.py - INFO - code uid: 7d354cc21c914932af3bfb574ba0da1c
+2023-09-09 16:46:02 - eval_palm.py - INFO - input tokens: 577
+2023-09-09 16:46:03 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:03 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:03 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:03 - eval_palm.py - INFO - code uid: ae4e35297c7340e4897d96771484f8d0
+2023-09-09 16:46:03 - eval_palm.py - INFO - input tokens: 1002
+2023-09-09 16:46:05 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:05 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:05 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:05 - eval_palm.py - INFO - code uid: 957b5e1a0b9b43a3a806a35ffb914355
+2023-09-09 16:46:05 - eval_palm.py - INFO - input tokens: 951
+2023-09-09 16:46:07 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:07 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:07 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:07 - eval_palm.py - INFO - code uid: 6becf9965d5144338c094ccbfba5d0b3
+2023-09-09 16:46:07 - eval_palm.py - INFO - input tokens: 1273
+2023-09-09 16:46:09 - eval_palm.py - INFO - response: None
+2023-09-09 16:46:09 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:46:09 - eval_palm.py - INFO - smell: 
+2023-09-09 16:46:09 - eval_palm.py - INFO - code uid: 5e58f1b421174fc49008d837c29569d1
+2023-09-09 16:46:09 - eval_palm.py - INFO - input tokens: 1177
+2023-09-09 16:46:11 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:11 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:11 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:11 - eval_palm.py - INFO - code uid: 91d06a52831444f0a4276e2b286c513e
+2023-09-09 16:46:11 - eval_palm.py - INFO - input tokens: 801
+2023-09-09 16:46:13 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:13 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:13 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:13 - eval_palm.py - INFO - code uid: a4bd5c50d60b432595ecf2b1c16ae297
+2023-09-09 16:46:13 - eval_palm.py - INFO - input tokens: 520
+2023-09-09 16:46:14 - eval_palm.py - INFO - response: data class
+2023-09-09 16:46:14 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:14 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:46:14 - eval_palm.py - INFO - code uid: 7993e132e49a44259eb7308b727b6cb0
+2023-09-09 16:46:15 - eval_palm.py - INFO - input tokens: 844
+2023-09-09 16:46:16 - eval_palm.py - INFO - response: blob
+2023-09-09 16:46:16 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:46:16 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:46:16 - eval_palm.py - INFO - code uid: 38fb18f7b3d94f6cb98f6f33b974b27f
+2023-09-09 16:46:16 - eval_palm.py - INFO - input tokens: 1077
+2023-09-09 16:46:17 - eval_palm.py - INFO - response: data class
+2023-09-09 16:46:18 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:18 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:46:18 - eval_palm.py - INFO - code uid: 5118c29cac66457393c08acee13aec9f
+2023-09-09 16:46:18 - eval_palm.py - INFO - input tokens: 1708
+2023-09-09 16:46:20 - eval_palm.py - INFO - response: blob
+2023-09-09 16:46:20 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:46:20 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:46:20 - eval_palm.py - INFO - code uid: c45ef2ec1da44606a362609197fe7a03
+2023-09-09 16:46:21 - eval_palm.py - INFO - input tokens: 449
+2023-09-09 16:46:22 - eval_palm.py - INFO - response: data class
+2023-09-09 16:46:22 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:22 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:46:22 - eval_palm.py - INFO - code uid: 269b1c86b21f4ea78c08da492ee9babe
+2023-09-09 16:46:22 - eval_palm.py - INFO - input tokens: 918
+2023-09-09 16:46:23 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:23 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:23 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:23 - eval_palm.py - INFO - code uid: d165aef23e0947b18d3b9a802e01bda1
+2023-09-09 16:46:24 - eval_palm.py - INFO - input tokens: 820
+2023-09-09 16:46:25 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:26 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:26 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:26 - eval_palm.py - INFO - code uid: 9fea233549af43cb95439cdced46d7d3
+2023-09-09 16:46:26 - eval_palm.py - INFO - input tokens: 703
+2023-09-09 16:46:27 - eval_palm.py - INFO - response: blob
+2023-09-09 16:46:27 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:46:27 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:46:27 - eval_palm.py - INFO - code uid: 65a135d031ed42479e3c78843d61e47b
+2023-09-09 16:46:28 - eval_palm.py - INFO - input tokens: 1556
+2023-09-09 16:46:29 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:29 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:29 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:29 - eval_palm.py - INFO - code uid: e7c50aa753ac46a288df6968a67932ab
+2023-09-09 16:46:30 - eval_palm.py - INFO - input tokens: 1001
+2023-09-09 16:46:31 - eval_palm.py - INFO - response: blob
+2023-09-09 16:46:31 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:46:31 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:46:31 - eval_palm.py - INFO - code uid: f876da0221144e58aafd999d3c674612
+2023-09-09 16:46:34 - eval_palm.py - INFO - input tokens: 697
+2023-09-09 16:46:35 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:35 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:35 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:35 - eval_palm.py - INFO - code uid: ac3b887305374fd999d6e9117fe65dcc
+2023-09-09 16:46:35 - eval_palm.py - INFO - input tokens: 1483
+2023-09-09 16:46:37 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:38 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:38 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:38 - eval_palm.py - INFO - code uid: a9079c2f9c8342288c445787de224245
+2023-09-09 16:46:38 - eval_palm.py - INFO - input tokens: 2902
+2023-09-09 16:46:40 - eval_palm.py - INFO - response: blob
+2023-09-09 16:46:40 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:46:40 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:46:40 - eval_palm.py - INFO - code uid: b60b7ada28c74d4fba090495a483b82e
+2023-09-09 16:46:41 - eval_palm.py - INFO - input tokens: 1936
+2023-09-09 16:46:42 - eval_palm.py - INFO - response: None
+2023-09-09 16:46:42 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:46:42 - eval_palm.py - INFO - smell: 
+2023-09-09 16:46:42 - eval_palm.py - INFO - code uid: d724d0a851a547a78f510aa8a1b43ae1
+2023-09-09 16:46:42 - eval_palm.py - INFO - input tokens: 3571
+2023-09-09 16:46:46 - eval_palm.py - INFO - response: None
+2023-09-09 16:46:46 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:46:46 - eval_palm.py - INFO - smell: 
+2023-09-09 16:46:46 - eval_palm.py - INFO - code uid: bdc69350e97a422e925909d5919387b7
+2023-09-09 16:46:46 - eval_palm.py - INFO - input tokens: 883
+2023-09-09 16:46:48 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:48 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:48 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:48 - eval_palm.py - INFO - code uid: c4c67c6474f2405888e14f2fb09bc711
+2023-09-09 16:46:48 - eval_palm.py - INFO - input tokens: 1212
+2023-09-09 16:46:51 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:51 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:51 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:51 - eval_palm.py - INFO - code uid: 332228197fdf41aa9d6a8461605f52da
+2023-09-09 16:46:51 - eval_palm.py - INFO - input tokens: 713
+2023-09-09 16:46:52 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:52 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:52 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:52 - eval_palm.py - INFO - code uid: a009b44d5bba4c87ad772457e2d4c6eb
+2023-09-09 16:46:53 - eval_palm.py - INFO - input tokens: 1300
+2023-09-09 16:46:55 - eval_palm.py - INFO - response: blob
+2023-09-09 16:46:55 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:46:55 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:46:55 - eval_palm.py - INFO - code uid: 22d9e77ad3504617aec275dc1f6a5b99
+2023-09-09 16:46:55 - eval_palm.py - INFO - input tokens: 598
+2023-09-09 16:46:56 - eval_palm.py - INFO - response: None
+2023-09-09 16:46:56 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:46:56 - eval_palm.py - INFO - smell: 
+2023-09-09 16:46:56 - eval_palm.py - INFO - code uid: 95306003af104f0aa21b5155316a5365
+2023-09-09 16:46:56 - eval_palm.py - INFO - input tokens: 679
+2023-09-09 16:46:58 - eval_palm.py - INFO - response: long method
+2023-09-09 16:46:58 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:46:58 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:46:58 - eval_palm.py - INFO - code uid: cff2e40ebfc84d93b09f7686c8e81221
+2023-09-09 16:46:58 - eval_palm.py - INFO - input tokens: 1366
+2023-09-09 16:47:00 - eval_palm.py - INFO - response: The code segment is a data class.
+2023-09-09 16:47:00 - eval_palm.py - INFO - output tokens: 19
+2023-09-09 16:47:00 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:47:00 - eval_palm.py - INFO - code uid: ce5789c17a754be6b58d6175f1896f00
+2023-09-09 16:47:01 - eval_palm.py - INFO - input tokens: 1144
+2023-09-09 16:47:02 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:02 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:02 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:02 - eval_palm.py - INFO - code uid: 4189ea9090af4589ae75cde0774feba6
+2023-09-09 16:47:02 - eval_palm.py - INFO - input tokens: 448
+2023-09-09 16:47:04 - eval_palm.py - INFO - response: data class
+2023-09-09 16:47:04 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:04 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:47:04 - eval_palm.py - INFO - code uid: 134e26df191b4f7d8fd5fee883acf492
+2023-09-09 16:47:04 - eval_palm.py - INFO - input tokens: 574
+2023-09-09 16:47:05 - eval_palm.py - INFO - response: data class
+2023-09-09 16:47:05 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:05 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:47:05 - eval_palm.py - INFO - code uid: 3e899504fbf4452297ea52883fe156ac
+2023-09-09 16:47:05 - eval_palm.py - INFO - input tokens: 1574
+2023-09-09 16:47:07 - eval_palm.py - INFO - response: None
+2023-09-09 16:47:07 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:47:07 - eval_palm.py - INFO - smell: 
+2023-09-09 16:47:07 - eval_palm.py - INFO - code uid: e8ea95b8dc154868be064c8c9f1d7b41
+2023-09-09 16:47:07 - eval_palm.py - INFO - input tokens: 1034
+2023-09-09 16:47:09 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:09 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:09 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:09 - eval_palm.py - INFO - code uid: 442ee18c98694b08a23ba35f0a16ff0a
+2023-09-09 16:47:09 - eval_palm.py - INFO - input tokens: 1712
+2023-09-09 16:47:12 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:12 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:12 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:12 - eval_palm.py - INFO - code uid: 2a350307c5dd4daa8973a6ebe83b93fc
+2023-09-09 16:47:12 - eval_palm.py - INFO - input tokens: 1600
+2023-09-09 16:47:15 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:15 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:15 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:15 - eval_palm.py - INFO - code uid: edbf7f81e38f4fb1aba938511782b35e
+2023-09-09 16:47:15 - eval_palm.py - INFO - input tokens: 424
+2023-09-09 16:47:16 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:16 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:16 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:16 - eval_palm.py - INFO - code uid: cb9e94d303014fec9d5794068b9f1c4c
+2023-09-09 16:47:16 - eval_palm.py - INFO - input tokens: 1437
+2023-09-09 16:47:18 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:18 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:18 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:18 - eval_palm.py - INFO - code uid: e0759b3e7d634697897c90c96ddc7132
+2023-09-09 16:47:19 - eval_palm.py - INFO - input tokens: 727
+2023-09-09 16:47:20 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:21 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:21 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:21 - eval_palm.py - INFO - code uid: e2d956c593a944b4b08fcfb2daaf4e0f
+2023-09-09 16:47:21 - eval_palm.py - INFO - input tokens: 358
+2023-09-09 16:47:22 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:22 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:22 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:22 - eval_palm.py - INFO - code uid: d641f259f43f442ab60b81746a37f364
+2023-09-09 16:47:22 - eval_palm.py - INFO - input tokens: 1008
+2023-09-09 16:47:24 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:24 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:24 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:24 - eval_palm.py - INFO - code uid: 3a1bc93b54de4cd3919cf52679b3eac4
+2023-09-09 16:47:25 - eval_palm.py - INFO - input tokens: 1042
+2023-09-09 16:47:26 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:26 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:26 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:26 - eval_palm.py - INFO - code uid: 1f70d2f10b0e4767a5605c437af841d6
+2023-09-09 16:47:26 - eval_palm.py - INFO - input tokens: 691
+2023-09-09 16:47:28 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:28 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:28 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:28 - eval_palm.py - INFO - code uid: a6f8195ae91e4d179aed831d60825d2c
+2023-09-09 16:47:28 - eval_palm.py - INFO - input tokens: 1148
+2023-09-09 16:47:30 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:30 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:30 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:30 - eval_palm.py - INFO - code uid: b66134ae3d3442a697192ffd5b358968
+2023-09-09 16:47:30 - eval_palm.py - INFO - input tokens: 493
+2023-09-09 16:47:31 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:31 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:31 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:31 - eval_palm.py - INFO - code uid: 2d5a4120383a4b8fb50a835b540e5c69
+2023-09-09 16:47:31 - eval_palm.py - INFO - input tokens: 2525
+2023-09-09 16:47:35 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:35 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:35 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:35 - eval_palm.py - INFO - code uid: 1415ea65e9db44118fbcca92779f6416
+2023-09-09 16:47:36 - eval_palm.py - INFO - input tokens: 1946
+2023-09-09 16:47:39 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:39 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:39 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:39 - eval_palm.py - INFO - code uid: 5141dfad903041cd8019ce6b36de5305
+2023-09-09 16:47:39 - eval_palm.py - INFO - input tokens: 1914
+2023-09-09 16:47:42 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:42 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:42 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:42 - eval_palm.py - INFO - code uid: 864318c12a994422b59c0fc9849e8c37
+2023-09-09 16:47:43 - eval_palm.py - INFO - input tokens: 2159
+2023-09-09 16:47:44 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:45 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:45 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:45 - eval_palm.py - INFO - code uid: 5cc8cccdc1784c0691f47de8ef488cdb
+2023-09-09 16:47:45 - eval_palm.py - INFO - input tokens: 205
+2023-09-09 16:47:46 - eval_palm.py - INFO - response: data class
+2023-09-09 16:47:46 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:46 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:47:46 - eval_palm.py - INFO - code uid: 0c31020c0a6c47dfaadd6faaf20e8475
+2023-09-09 16:47:46 - eval_palm.py - INFO - input tokens: 569
+2023-09-09 16:47:47 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:48 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:48 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:48 - eval_palm.py - INFO - code uid: e753a203eddf40678352b473cd73f09d
+2023-09-09 16:47:48 - eval_palm.py - INFO - input tokens: 2941
+2023-09-09 16:47:50 - eval_palm.py - INFO - response: The code smells like a long method.
+2023-09-09 16:47:50 - eval_palm.py - INFO - output tokens: 19
+2023-09-09 16:47:50 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:50 - eval_palm.py - INFO - code uid: 5ae1893dfc324c57a8e8f77a6014e2b7
+2023-09-09 16:47:50 - eval_palm.py - INFO - input tokens: 585
+2023-09-09 16:47:51 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:52 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:52 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:52 - eval_palm.py - INFO - code uid: 5855ab771069402fadcb1901f214218f
+2023-09-09 16:47:52 - eval_palm.py - INFO - input tokens: 976
+2023-09-09 16:47:53 - eval_palm.py - INFO - response: long method
+2023-09-09 16:47:53 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:47:53 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:47:53 - eval_palm.py - INFO - code uid: 97afd2dd953f4fdb9ac63c281a135cbb
+2023-09-09 16:47:53 - eval_palm.py - INFO - input tokens: 1615
+2023-09-09 16:47:56 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:56 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:56 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:56 - eval_palm.py - INFO - code uid: 1d841989807842beae921c3029ee3b1d
+2023-09-09 16:47:56 - eval_palm.py - INFO - input tokens: 518
+2023-09-09 16:47:57 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:57 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:57 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:57 - eval_palm.py - INFO - code uid: c3b05055eb154f93af9f0876bb80b9c4
+2023-09-09 16:47:58 - eval_palm.py - INFO - input tokens: 611
+2023-09-09 16:47:59 - eval_palm.py - INFO - response: blob
+2023-09-09 16:47:59 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:47:59 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:47:59 - eval_palm.py - INFO - code uid: 9e9d932c9eba417d82b666967b7041a9
+2023-09-09 16:47:59 - eval_palm.py - INFO - input tokens: 867
+2023-09-09 16:48:01 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:01 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:01 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:01 - eval_palm.py - INFO - code uid: 885c081377cc4f7b8fa2cbbc0e65535e
+2023-09-09 16:48:02 - eval_palm.py - INFO - input tokens: 419
+2023-09-09 16:48:03 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:03 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:03 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:03 - eval_palm.py - INFO - code uid: 1074ad28afc6489fb38ae60bcd488305
+2023-09-09 16:48:03 - eval_palm.py - INFO - input tokens: 579
+2023-09-09 16:48:04 - eval_palm.py - INFO - response: data class
+2023-09-09 16:48:05 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:05 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:48:05 - eval_palm.py - INFO - code uid: 92fe42c024f34c4cbad266654aaf72bb
+2023-09-09 16:48:05 - eval_palm.py - INFO - input tokens: 1732
+2023-09-09 16:48:06 - eval_palm.py - INFO - response: None
+2023-09-09 16:48:06 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:48:06 - eval_palm.py - INFO - smell: 
+2023-09-09 16:48:06 - eval_palm.py - INFO - code uid: ad38b026fd0749dab5d931f57686cb26
+2023-09-09 16:48:07 - eval_palm.py - INFO - input tokens: 2174
+2023-09-09 16:48:09 - eval_palm.py - INFO - response: blob
+2023-09-09 16:48:10 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:48:10 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:48:10 - eval_palm.py - INFO - code uid: d999f6c1f5c1416d9ed5bb4dd8e6c5fb
+2023-09-09 16:48:10 - eval_palm.py - INFO - input tokens: 148
+2023-09-09 16:48:11 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:11 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:11 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:11 - eval_palm.py - INFO - code uid: bf8d610082e74bbe8a12537760bab868
+2023-09-09 16:48:11 - eval_palm.py - INFO - input tokens: 1669
+2023-09-09 16:48:13 - eval_palm.py - INFO - response: blob
+2023-09-09 16:48:13 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:48:13 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:48:13 - eval_palm.py - INFO - code uid: c958573fd7824437ade7bf73469bb70c
+2023-09-09 16:48:13 - eval_palm.py - INFO - input tokens: 1181
+2023-09-09 16:48:15 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:16 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:16 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:16 - eval_palm.py - INFO - code uid: 46be348c20214bb5810b30cae83797a5
+2023-09-09 16:48:16 - eval_palm.py - INFO - input tokens: 1315
+2023-09-09 16:48:17 - eval_palm.py - INFO - response: feature envy
+2023-09-09 16:48:17 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:17 - eval_palm.py - INFO - smell: feature envy
+2023-09-09 16:48:17 - eval_palm.py - INFO - code uid: 69f55d02516c419ea7b34e298eb6cac6
+2023-09-09 16:48:18 - eval_palm.py - INFO - input tokens: 561
+2023-09-09 16:48:19 - eval_palm.py - INFO - response: feature envy
+2023-09-09 16:48:19 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:19 - eval_palm.py - INFO - smell: feature envy
+2023-09-09 16:48:19 - eval_palm.py - INFO - code uid: 8a225ce457fe4f8b86f5d381d065a5c8
+2023-09-09 16:48:19 - eval_palm.py - INFO - input tokens: 2438
+2023-09-09 16:48:21 - eval_palm.py - INFO - response: None
+2023-09-09 16:48:21 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:48:21 - eval_palm.py - INFO - smell: 
+2023-09-09 16:48:21 - eval_palm.py - INFO - code uid: c840b4fe2ac54809b32b5ff10ba90799
+2023-09-09 16:48:22 - eval_palm.py - INFO - input tokens: 2071
+2023-09-09 16:48:23 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:24 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:24 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:24 - eval_palm.py - INFO - code uid: 4452bf95f2d141b5af5c47c0048469dc
+2023-09-09 16:48:24 - eval_palm.py - INFO - input tokens: 312
+2023-09-09 16:48:25 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:25 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:25 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:25 - eval_palm.py - INFO - code uid: 02410004f2334eb281362e49c847cae5
+2023-09-09 16:48:25 - eval_palm.py - INFO - input tokens: 1694
+2023-09-09 16:48:28 - eval_palm.py - INFO - response: feature envy
+2023-09-09 16:48:28 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:28 - eval_palm.py - INFO - smell: feature envy
+2023-09-09 16:48:28 - eval_palm.py - INFO - code uid: c38d00c33c3343eaa66990af1fbf9811
+2023-09-09 16:48:28 - eval_palm.py - INFO - input tokens: 1386
+2023-09-09 16:48:30 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:30 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:30 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:30 - eval_palm.py - INFO - code uid: 79283973192240a791ca9d36b56294c5
+2023-09-09 16:48:31 - eval_palm.py - INFO - input tokens: 1454
+2023-09-09 16:48:32 - eval_palm.py - INFO - response: blob
+2023-09-09 16:48:32 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:48:32 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:48:32 - eval_palm.py - INFO - code uid: 92599364e51c40ba9b8ef0c7b201580e
+2023-09-09 16:48:32 - eval_palm.py - INFO - input tokens: 1601
+2023-09-09 16:48:34 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:35 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:35 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:35 - eval_palm.py - INFO - code uid: 288c7e01c7c2483daf464702d60103f0
+2023-09-09 16:48:35 - eval_palm.py - INFO - input tokens: 1420
+2023-09-09 16:48:37 - eval_palm.py - INFO - response: None
+2023-09-09 16:48:37 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:48:37 - eval_palm.py - INFO - smell: 
+2023-09-09 16:48:37 - eval_palm.py - INFO - code uid: 6438d70c9b8e47879358634944f540f8
+2023-09-09 16:48:37 - eval_palm.py - INFO - input tokens: 1772
+2023-09-09 16:48:39 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:39 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:39 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:39 - eval_palm.py - INFO - code uid: 47f0f476882c41a4ba954a745b4b716d
+2023-09-09 16:48:40 - eval_palm.py - INFO - input tokens: 926
+2023-09-09 16:48:42 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:42 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:42 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:42 - eval_palm.py - INFO - code uid: c64ec8920a014804a0613cc682247ca8
+2023-09-09 16:48:42 - eval_palm.py - INFO - input tokens: 1185
+2023-09-09 16:48:43 - eval_palm.py - INFO - response: None
+2023-09-09 16:48:43 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:48:43 - eval_palm.py - INFO - smell: 
+2023-09-09 16:48:43 - eval_palm.py - INFO - code uid: d2f5952142f5498d87dbd424e71678f5
+2023-09-09 16:48:44 - eval_palm.py - INFO - input tokens: 1922
+2023-09-09 16:48:47 - eval_palm.py - INFO - response: data class
+2023-09-09 16:48:47 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:47 - eval_palm.py - INFO - smell: data class
+2023-09-09 16:48:47 - eval_palm.py - INFO - code uid: ed5c736a2a3949bb9477b56984863c6a
+2023-09-09 16:48:47 - eval_palm.py - INFO - input tokens: 1013
+2023-09-09 16:48:48 - eval_palm.py - INFO - response: blob
+2023-09-09 16:48:49 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:48:49 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:48:49 - eval_palm.py - INFO - code uid: 1c1d0fb14930491f8d92ed3cbb367f18
+2023-09-09 16:48:49 - eval_palm.py - INFO - input tokens: 1690
+2023-09-09 16:48:50 - eval_palm.py - INFO - response: None
+2023-09-09 16:48:50 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:48:50 - eval_palm.py - INFO - smell: 
+2023-09-09 16:48:50 - eval_palm.py - INFO - code uid: 3f1d9720314641ada117878be367b558
+2023-09-09 16:48:51 - eval_palm.py - INFO - input tokens: 273
+2023-09-09 16:48:52 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:52 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:52 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:52 - eval_palm.py - INFO - code uid: d07e9bae06fb4dd7a7406679397e488b
+2023-09-09 16:48:52 - eval_palm.py - INFO - input tokens: 1644
+2023-09-09 16:48:54 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:55 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:55 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:55 - eval_palm.py - INFO - code uid: d1fa641f5e1c4f25b700215473b9c8d7
+2023-09-09 16:48:55 - eval_palm.py - INFO - input tokens: 565
+2023-09-09 16:48:56 - eval_palm.py - INFO - response: feature envy
+2023-09-09 16:48:56 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:56 - eval_palm.py - INFO - smell: feature envy
+2023-09-09 16:48:56 - eval_palm.py - INFO - code uid: e98cf3adea854ccc9b9341cc8944d3a6
+2023-09-09 16:48:57 - eval_palm.py - INFO - input tokens: 1234
+2023-09-09 16:48:58 - eval_palm.py - INFO - response: long method
+2023-09-09 16:48:58 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:48:58 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:48:58 - eval_palm.py - INFO - code uid: dfd1933814e94be1a8254564eea81e33
+2023-09-09 16:48:58 - eval_palm.py - INFO - input tokens: 1507
+2023-09-09 16:49:00 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:01 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:01 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:01 - eval_palm.py - INFO - code uid: aec4eee747484c02983926683b8fd719
+2023-09-09 16:49:01 - eval_palm.py - INFO - input tokens: 932
+2023-09-09 16:49:03 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:03 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:03 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:03 - eval_palm.py - INFO - code uid: d23667b8a4c742f987d5b8e24b82e747
+2023-09-09 16:49:03 - eval_palm.py - INFO - input tokens: 1427
+2023-09-09 16:49:05 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:05 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:05 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:05 - eval_palm.py - INFO - code uid: e5a0af79e5bd4d9e99635d105e22f80e
+2023-09-09 16:49:05 - eval_palm.py - INFO - input tokens: 873
+2023-09-09 16:49:06 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:07 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:07 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:07 - eval_palm.py - INFO - code uid: 90165b5079be4620adb2e36f4e2a8f4b
+2023-09-09 16:49:07 - eval_palm.py - INFO - input tokens: 1561
+2023-09-09 16:49:09 - eval_palm.py - INFO - response: blob
+2023-09-09 16:49:09 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:49:09 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:49:09 - eval_palm.py - INFO - code uid: 17fa52550a044dae91e9194bc5619752
+2023-09-09 16:49:09 - eval_palm.py - INFO - input tokens: 685
+2023-09-09 16:49:10 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:11 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:11 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:11 - eval_palm.py - INFO - code uid: 68d09d4bea5e478ea145f9f48a4291e7
+2023-09-09 16:49:11 - eval_palm.py - INFO - input tokens: 2547
+2023-09-09 16:49:13 - eval_palm.py - INFO - response: None
+2023-09-09 16:49:13 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:49:13 - eval_palm.py - INFO - smell: 
+2023-09-09 16:49:13 - eval_palm.py - INFO - code uid: 6a35f09c3037458288ff19badcaf2f65
+2023-09-09 16:49:14 - eval_palm.py - INFO - input tokens: 1279
+2023-09-09 16:49:15 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:15 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:15 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:15 - eval_palm.py - INFO - code uid: d9c7190bb75a416f95bcd70218eee1bd
+2023-09-09 16:49:16 - eval_palm.py - INFO - input tokens: 1718
+2023-09-09 16:49:18 - eval_palm.py - INFO - response: None
+2023-09-09 16:49:18 - eval_palm.py - WARNING - Respond content is none.
+2023-09-09 16:49:18 - eval_palm.py - INFO - smell: 
+2023-09-09 16:49:18 - eval_palm.py - INFO - code uid: 5fd175a8adab45d581ca33fd499d36af
+2023-09-09 16:49:19 - eval_palm.py - INFO - input tokens: 1197
+2023-09-09 16:49:20 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:20 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:20 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:20 - eval_palm.py - INFO - code uid: dd83cf23d5bc412e9962743afa29e5e6
+2023-09-09 16:49:21 - eval_palm.py - INFO - input tokens: 1065
+2023-09-09 16:49:23 - eval_palm.py - INFO - response: blob
+2023-09-09 16:49:23 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:49:23 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:49:23 - eval_palm.py - INFO - code uid: 76186da07ba74e61b161cfda2c55149e
+2023-09-09 16:49:23 - eval_palm.py - INFO - input tokens: 915
+2023-09-09 16:49:24 - eval_palm.py - INFO - response: blob
+2023-09-09 16:49:24 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:49:24 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:49:24 - eval_palm.py - INFO - code uid: a954edec79a948e09c316fe1ca023f38
+2023-09-09 16:49:24 - eval_palm.py - INFO - input tokens: 1504
+2023-09-09 16:49:26 - eval_palm.py - INFO - response: The code segment is a long method.
+2023-09-09 16:49:27 - eval_palm.py - INFO - output tokens: 19
+2023-09-09 16:49:27 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:27 - eval_palm.py - INFO - code uid: 06e46621e0eb4d938d92be0e28dd340a
+2023-09-09 16:49:27 - eval_palm.py - INFO - input tokens: 998
+2023-09-09 16:49:29 - eval_palm.py - INFO - response: blob
+2023-09-09 16:49:29 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:49:29 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:49:29 - eval_palm.py - INFO - code uid: 6042bb60221a44b08c42f1fbb74fbc2b
+2023-09-09 16:49:29 - eval_palm.py - INFO - input tokens: 1117
+2023-09-09 16:49:30 - eval_palm.py - INFO - response: feature envy
+2023-09-09 16:49:31 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:31 - eval_palm.py - INFO - smell: feature envy
+2023-09-09 16:49:31 - eval_palm.py - INFO - code uid: 60ac6eeae31d458a9bc6f5aae516d938
+2023-09-09 16:49:31 - eval_palm.py - INFO - input tokens: 563
+2023-09-09 16:49:32 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:32 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:32 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:32 - eval_palm.py - INFO - code uid: 53132dbb5cb84d07930a324b289b108e
+2023-09-09 16:49:33 - eval_palm.py - INFO - input tokens: 1528
+2023-09-09 16:49:34 - eval_palm.py - INFO - response: blob
+2023-09-09 16:49:34 - eval_palm.py - INFO - output tokens: 12
+2023-09-09 16:49:34 - eval_palm.py - INFO - smell: blob
+2023-09-09 16:49:34 - eval_palm.py - INFO - code uid: 0ce6c67dd6354d479f24db0185dfece2
+2023-09-09 16:49:34 - eval_palm.py - INFO - input tokens: 1187
+2023-09-09 16:49:36 - eval_palm.py - INFO - response: feature envy
+2023-09-09 16:49:36 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:36 - eval_palm.py - INFO - smell: feature envy
+2023-09-09 16:49:36 - eval_palm.py - INFO - code uid: afb73d6afb5d4353b413912ec18c7eaf
+2023-09-09 16:49:36 - eval_palm.py - INFO - input tokens: 1115
+2023-09-09 16:49:38 - eval_palm.py - INFO - response: feature envy
+2023-09-09 16:49:38 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:38 - eval_palm.py - INFO - smell: feature envy
+2023-09-09 16:49:38 - eval_palm.py - INFO - code uid: f4eb559f25224a05b5e5d7751df0cd0c
+2023-09-09 16:49:38 - eval_palm.py - INFO - input tokens: 2041
+2023-09-09 16:49:40 - eval_palm.py - INFO - response: The code segment is a long method.
+2023-09-09 16:49:40 - eval_palm.py - INFO - output tokens: 19
+2023-09-09 16:49:40 - eval_palm.py - INFO - smell: long method
+2023-09-09 16:49:40 - eval_palm.py - INFO - code uid: 788274bfe66240719c89ebe05323ac50
+2023-09-09 16:49:41 - eval_palm.py - INFO - input tokens: 947
+2023-09-09 16:49:42 - eval_palm.py - INFO - response: long method
+2023-09-09 16:49:42 - eval_palm.py - INFO - output tokens: 13
+2023-09-09 16:49:42 - eval_palm.py - INFO - smell: long method

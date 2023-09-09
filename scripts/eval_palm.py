@@ -2,6 +2,8 @@ import re
 import json
 import logging
 import argparse
+import sys
+
 import google.generativeai as palm
 
 from pathlib import Path
@@ -11,13 +13,13 @@ from google.api_core import retry
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--api_key', default='', type=str)
-    parser.add_argument('--data_load_name', default='code_test_data.jsonl',
+    parser.add_argument('--api_key', default='AIzaSyCKgHPsJ6kyJa0BBsY2QTBWZVBJcZRi5fY', type=str)
+    parser.add_argument('--data_load_name', default='code_review_data.jsonl',
                         choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl'], type=str)
-    parser.add_argument('--result_save_name', default='code_test_data_palm.jsonl',
+    parser.add_argument('--result_save_name', default='code_review_eval_palm.jsonl',
                         choices=['code_review_eval_palm.jsonl', 'code_smell_eval_palm.jsonl',
                                  'code_test_data_palm.jsonl'], type=str)
-    parser.add_argument('--log_file_name', default='code_test_data_palm.log',
+    parser.add_argument('--log_file_name', default='code_review_eval_palm.log',
                         choices=['code_review_eval_palm.log', 'code_smell_eval_palm.log', 'code_test_data_palm.log'],
                         type=str)
     args = parser.parse_args()
@@ -40,12 +42,27 @@ def add_smell(example):
     lang_cluster = example['lang_cluster']
     smell_code = example['smell_code']
     source_code = example['source_code']
-    prompt = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
-- large class: A class contains too many fields/methods/lines of code.
-- data class: A class contains only fields and crude methods for accessing them.
-- blob: A class that concentrates too many responsibilities, controls and oversees too many different objects.
-- feature envy: A method accesses the data of another object more than its own data.
-- long method: A method contains too many lines of code.
+    if lang_cluster == 'C#':
+        prompt = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
+- large class
+- long method
+The detailed information are as follows:
+1. Programming language: {lang_cluster} 
+2. Smell code segment: 
+```
+{smell_code.strip()}
+```
+3. Source code containing code smells:
+```
+{source_code.strip()}
+```
+Respond only with one of the specified categories."""
+    else:
+        prompt = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
+- data class
+- blob
+- feature envy
+- long method
 The detailed information are as follows:
 1. Programming language: {lang_cluster} 
 2. Smell code segment: 
@@ -88,7 +105,7 @@ Respond only with one of the specified categories."""
                 # Find the smell that first occurs in the response.
                 min_index = float('inf')
                 for supported_smell in supported_smells:
-                    first_index = response.lower().find(supported_smell)
+                    first_index = response.result.lower().find(supported_smell)
                     if first_index != -1 and first_index < min_index:
                         min_index = first_index
                         smell = supported_smell
@@ -157,7 +174,7 @@ Respond only with the number: 0 or 1."""
                 # Find the diff tag that first occurs in the response.
                 min_index = float('inf')
                 for supported_diff_tag in supported_diff_tags:
-                    first_index = response.find(supported_diff_tag)
+                    first_index = response.result.find(supported_diff_tag)
                     if first_index != -1 and first_index < min_index:
                         min_index = first_index
                         diff_tag = int(supported_diff_tag)
@@ -286,7 +303,7 @@ Respond only with a string in the following JSON format:
             if output_tokens > max_output_tokens:
                 logging.warning('Over output tokens limit ' + str(code_uid))
 
-            pattern = r'\[.*{.*?\}.*]'
+            pattern = r'\[\s*\{.*?\}\s*\]'
             matches = re.search(pattern, response.result, re.DOTALL)
             if matches:
                 json_array_string = matches.group().replace("'", '"')
@@ -301,21 +318,21 @@ Respond only with a string in the following JSON format:
                         hidden_unit_tests = str(json_array)
                     else:
                         logging.warning('Respond content is not a list.')
-                        hidden_unit_tests = '[]'
+                        hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
                 except json.JSONDecodeError as e:
                     logging.warning('Failed to load json:', e)
-                    hidden_unit_tests = '[]'
+                    hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
             else:
                 logging.warning('JSON array object not found.')
-                hidden_unit_tests = '[]'
+                hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
 
         else:
             logging.warning('Respond content is none.')
-            hidden_unit_tests = '[]'
+            hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
 
     except Exception as e:
         logging.error('Failed to generate text: ' + e.__str__())
-        hidden_unit_tests = '[]'
+        hidden_unit_tests = "[{'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}, {'input': '', 'output': ['']}]"
 
     logging.info('hidden_unit_tests: ' + str(hidden_unit_tests))
     example['hidden_unit_tests'] = hidden_unit_tests
