@@ -65,7 +65,7 @@ def add_smell(example):
 - long method
 The detailed information are as follows:
 1. Programming language: {lang_cluster} 
-2. Smell code segment: 
+2. Smell code snippet: 
 ```
 {smell_code.strip()}
 ```
@@ -82,7 +82,7 @@ Respond only with one of the specified categories."""
 - long method
 The detailed information are as follows:
 1. Programming language: {lang_cluster} 
-2. Smell code segment: 
+2. Smell code snippet: 
 ```
 {smell_code.strip()}
 ```
@@ -401,7 +401,7 @@ if __name__ == '__main__':
     args = parse_arguments()
 
     log_file_path = Path(__file__).parent.parent / Path('logs') / Path(args.log_file_name)
-    logger = logging.getLogger()
+    logger = logging.getLogger(__name__)
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter(fmt='%(asctime)s - %(filename)s - %(levelname)s - %(message)s',
                                   datefmt='%Y-%m-%d %H:%M:%S')
