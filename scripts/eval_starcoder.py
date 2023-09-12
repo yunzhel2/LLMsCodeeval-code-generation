@@ -13,10 +13,10 @@ from tenacity import retry, stop_after_attempt, wait_random_exponential
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--access_token', default='', type=str)
-    parser.add_argument('--cache_dir', default='', type=str)
-    parser.add_argument('--checkpoint', default='bigcode/tiny_starcoder_py',
-                        choices=['bigcode/tiny_starcoder_py', 'bigcode/starcoder', 'bigcode/starcoderplus'], type=str)
+    parser.add_argument('--access_token', default=None, type=str)
+    parser.add_argument('--cache_dir', default=None, type=str)
+    parser.add_argument('--checkpoint', default='bigcode/starcoder',
+                        choices=['bigcode/starcoder', 'bigcode/starcoderplus'], type=str)
     parser.add_argument('--data_load_name', default='code_smell_data.jsonl',
                         choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl'], type=str)
     parser.add_argument('--result_save_name', default='code_smell_eval_starcoder.jsonl',
@@ -369,7 +369,7 @@ if __name__ == '__main__':
     args = parse_arguments()
 
     log_file_path = Path(__file__).parent.parent / Path('logs') / Path(args.log_file_name)
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter(fmt='%(asctime)s - %(filename)s - %(levelname)s - %(message)s',
                                   datefmt='%Y-%m-%d %H:%M:%S')

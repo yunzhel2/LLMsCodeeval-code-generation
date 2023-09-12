@@ -12,7 +12,7 @@ from datasets import load_dataset
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--api_key', default='', type=str)
+    parser.add_argument('--api_key', default=None, type=str)
     parser.add_argument('--model', default='gpt-3.5-turbo-0613',
                         choices=['gpt-3.5-turbo', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo-0613', 'gpt-3.5-turbo-16k-0613',
                                  'gpt-3.5-turbo-0301', 'gpt-4', 'gpt-4-0613', 'gpt-4-32k', 'gpt-4-32k-0613',
@@ -377,7 +377,7 @@ if __name__ == '__main__':
     args = parse_arguments()
 
     log_file_path = Path(__file__).parent.parent / Path('logs') / Path(args.log_file_name)
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter(fmt='%(asctime)s - %(filename)s - %(levelname)s - %(message)s',
                                   datefmt='%Y-%m-%d %H:%M:%S')

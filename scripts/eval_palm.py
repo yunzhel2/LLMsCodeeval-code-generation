@@ -2,8 +2,6 @@ import re
 import json
 import logging
 import argparse
-import sys
-
 import google.generativeai as palm
 
 from pathlib import Path
@@ -13,7 +11,7 @@ from google.api_core import retry
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--api_key', default='AIzaSyCKgHPsJ6kyJa0BBsY2QTBWZVBJcZRi5fY', type=str)
+    parser.add_argument('--api_key', default=None, type=str)
     parser.add_argument('--data_load_name', default='code_review_data.jsonl',
                         choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl'], type=str)
     parser.add_argument('--result_save_name', default='code_review_eval_palm.jsonl',
@@ -349,7 +347,7 @@ if __name__ == '__main__':
     args = parse_arguments()
 
     log_file_path = Path(__file__).parent.parent / Path('logs') / Path(args.log_file_name)
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter(fmt='%(asctime)s - %(filename)s - %(levelname)s - %(message)s',
                                   datefmt='%Y-%m-%d %H:%M:%S')

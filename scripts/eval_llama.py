@@ -13,8 +13,8 @@ from tenacity import retry, stop_after_attempt, wait_random_exponential
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--access_token', default='', type=str)
-    parser.add_argument('--cache_dir', default='', type=str)
+    parser.add_argument('--access_token', default=None, type=str)
+    parser.add_argument('--cache_dir', default=None, type=str)
     parser.add_argument('--checkpoint', default='elinas/llama-7b-hf-transformers-4.29',
                         choices=['elinas/llama-7b-hf-transformers-4.29', 'elinas/llama-13b-hf-transformers-4.29',
                                  'elinas/llama-30b-hf-transformers-4.29', 'elinas/llama-65b-hf-transformers-4.29'],
@@ -391,7 +391,7 @@ if __name__ == '__main__':
     args = parse_arguments()
 
     log_file_path = Path(__file__).parent.parent / Path('logs') / Path(args.log_file_name)
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     formatter = logging.Formatter(fmt='%(asctime)s - %(filename)s - %(levelname)s - %(message)s',
                                   datefmt='%Y-%m-%d %H:%M:%S')
