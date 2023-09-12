@@ -59,23 +59,8 @@ def add_smell(example):
     lang_cluster = example['lang_cluster']
     smell_code = example['smell_code']
     source_code = example['source_code']
-    if lang_cluster == 'C#':
-        user_message = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
+    user_message = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code snippet and categorize it into one of the following categories:
 - large class
-- long method
-The detailed information are as follows:
-1. Programming language: {lang_cluster} 
-2. Smell code snippet: 
-```
-{smell_code.strip()}
-```
-3. Source code containing code smells:
-```
-{source_code.strip()}
-```
-Respond only with one of the specified categories."""
-    else:
-        user_message = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
 - data class
 - blob
 - feature envy
