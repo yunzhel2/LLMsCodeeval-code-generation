@@ -1,0 +1,4 @@
+2023-09-25 21:30:28 - _metadata.py - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] A socket operation was attempted to an unreachable network
+2023-09-25 21:30:28 - _metadata.py - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] A socket operation was attempted to an unreachable network
+2023-09-25 21:30:28 - _metadata.py - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] A socket operation was attempted to an unreachable network
+2023-09-25 21:30:28 - _default.py - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server.
