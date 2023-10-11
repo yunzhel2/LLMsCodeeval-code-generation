@@ -6,6 +6,23 @@ Replace "access_token" with your own HuggingFace access token.
 Replace "cache_dir" with path to a directory in which a downloaded pretrained model should be cached.
 
 Run following scripts to inference the code generation task.
+
+### Data Augmented 
+#### GPT3.5 & GPT4
+```angular2html
+python eval_XXX_cg.py
+--api_key
+your_apikey
+--model
+gpt-3.5-turbo
+--data_load_name
+augment_problem_list
+--result_save_name
+augment_problem_eval_xxx.jsonl
+--log_file_name
+augment_problem_eval_xxx.log
+```
+
 ### Program synthesis
 #### GPT3.5 & GPT4
 ```angular2html
