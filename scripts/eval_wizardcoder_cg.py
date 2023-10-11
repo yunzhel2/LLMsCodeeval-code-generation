@@ -21,14 +21,7 @@ def parse_arguments():
     parser.add_argument('--data_load_name', default='code_smell_data.jsonl',)
     parser.add_argument('--result_save_name', default='code_smell_eval_llama.jsonl')
     parser.add_argument('--log_file_name', default='code_smell_eval_llama.log'),
-    # parser.add_argument('--data_load_name', default='code_test_data.jsonl',
-    #                     choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl'], type=str)
-    # parser.add_argument('--result_save_name', default='code_test_data_wizardcoder.jsonl',
-    #                     choices=['code_review_eval_wizardcoder.jsonl', 'code_smell_eval_wizardcoder.jsonl',
-    #                              'code_test_data_wizardcoder.jsonl'], type=str)
-    # parser.add_argument('--log_file_name', default='code_test_data_wizardcoder.log',
-    #                     choices=['code_review_eval_wizardcoder.log', 'code_smell_eval_wizardcoder.log',
-    #                              'code_test_data_wizardcoder.log'], type=str)
+
     args = parser.parse_args()
 
     return args
