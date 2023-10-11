@@ -403,8 +403,6 @@ def add_program_synthesis(example):
 
     prob_uid = example['src_uid']
     prob_desc_description = example['description']
-    prob_desc_time_limit = example['time_limit']
-    prob_desc_memory_limit = example['memory_limit']
     prob_desc_input_spec = example['input_spec']
     prob_desc_output_spec = example['output_spec']
     prob_desc_sample_inputs = example['sample_inputs']
@@ -413,19 +411,18 @@ def add_program_synthesis(example):
 
     for lang in lang_cluster:
         user_message = f"""As an expert code developer with years of experience, please provide the source code based on the problem description. The detailed information are as follows:
-        1. Problem description: {prob_desc_description}
-        2. Input specification: {prob_desc_input_spec}
-        3. Output specification: {prob_desc_output_spec}
-        4. Sample inputs: {prob_desc_sample_inputs}
-        5. Sample outputs: {prob_desc_sample_outputs}
-        6. Sample explanations: {prob_desc_notes}
-        7. Programming language: {lang} 
-        8. support programming language version: {env_map[lang]}
-        Respond should only with a string in the following JSON format:
+1. Problem description: {prob_desc_description}
+2. Input specification: {prob_desc_input_spec}
+3. Output specification: {prob_desc_output_spec}
+4. Sample inputs: {prob_desc_sample_inputs} 
+5. Sample outputs: {prob_desc_sample_outputs}
+6. Sample explanations: {prob_desc_notes}
+7. Programming language: {lang} 
+8. support programming language version: {env_map[lang]}
+Respond should only with a string in the following JSON format:
         
-        [{{"version": the specific version you used in support programming language version, "source code": your code}}]
-        
-        """
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
+
         prompt = f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
         ### Instruction:
@@ -493,16 +490,14 @@ def add_code_translation(example):
 
     user_message = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
 
+The detailed information are as follows:
+1. Target programming language: {target_lang}
+2. support programming language version: {env_map[target_lang]}
+3. Source code\n: {source_code}
 
-        The detailed information are as follows:
-        1. Target programming language: {target_lang}
-        2. support programming language version: {env_map[target_lang]}
-        3. Source code\n: {source_code}
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
-        Respond should only with a string in the following JSON format:
-        [{{"version": the specific version you used in support programming language version, "source code": your code}}] 
-
-        """
     prompt = f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
     ### Instruction:
@@ -572,21 +567,20 @@ def add_code_repairing(example):
     prob_desc_sample_outputs = example['sample_outputs']
     error_msg = example['exec_outcome']
     user_message = f"""As an expert code developer with years of experience, please debug the source code in {source_lang} based on the corresponding problem description and show the correct code. 
-        The detailed information are shown as follows: 
-        1. Problem description: {prob_desc_description}
-        2. Input specification: {prob_desc_input_spec}
-        3. Output specification: {prob_desc_output_spec}
-        4. Sample inputs: {prob_desc_sample_inputs}
-        5. Sample outputs: {prob_desc_sample_outputs}
-        6. Programming language: {source_lang}
-        7. Buggy code :\n {source_code}
-        8. Error message: {error_msg}
-        Please note that use complex header files as little as possible. 
+The detailed information are shown as follows: 
+1. Problem description: {prob_desc_description}
+2. Input specification: {prob_desc_input_spec}
+3. Output specification: {prob_desc_output_spec}
+4. Sample inputs: {prob_desc_sample_inputs}
+5. Sample outputs: {prob_desc_sample_outputs}
+6. Programming language: {source_lang}
+7. Buggy code :\n {source_code}
+8. Error message: {error_msg}
+Please note that use complex header files as little as possible. 
 
-        Respond should only with a string in the following JSON format:
-        [{{"version": the specific version you used in support programming language version, "source code": your correct code}}] 
-        
-        """
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
+
     prompt = f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
 
     ### Instruction:

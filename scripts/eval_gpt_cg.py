@@ -3,7 +3,7 @@ import json
 import openai
 import backoff
 import logging
-
+import os
 import pandas as pd
 import tiktoken
 import argparse
@@ -23,20 +23,22 @@ def parse_arguments():
     parser.add_argument('--data_load_name', default='code_review_data.jsonl',
                         choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl',
                                  'program_synthesis.jsonl', 'program_synthesis_v2.jsonl',
-                                 'code_translation_v2.jsonl', 'code_debugging_data.jsonl'], type=str)
+                                 'code_translation_v2.jsonl', 'code_debugging_data.jsonl', 'augment_problem_list'], type=str)
     parser.add_argument('--result_save_name', default='code_review_eval_gpt3.jsonl',
                         choices=['code_review_eval_gpt3.jsonl', 'code_smell_eval_gpt3.jsonl',
                                  'code_test_data_gpt3.jsonl', 'code_review_eval_gpt4.jsonl',
                                  'code_smell_eval_gpt4.jsonl', 'code_test_data_gpt4.jsonl',
                                  'code_translation_eval_gpt3.jsonl', 'code_translation_eval_gpt4.jsonl',
                                  'code_debugging_eval_gpt3.jsonl', 'code_debugging_eval_gpt4.jsonl',
-                                 'program_synthesis_eval_gpt3.jsonl', 'program_synthesis_eval_gpt4.jsonl'], type=str)
+                                 'program_synthesis_eval_gpt3.jsonl', 'program_synthesis_eval_gpt4.jsonl',
+                                 'augment_problem_eval_gpt3.jsonl', 'augment_problem_eval_gpt4.jsonl'], type=str)
     parser.add_argument('--log_file_name', default='code_review_eval_gpt3.log',
                         choices=['code_review_eval_gpt3.log', 'code_smell_eval_gpt3.log', 'code_test_data_gpt3.log',
                                  'code_review_eval_gpt4.log', 'code_smell_eval_gpt4.log', 'code_test_data_gpt4.log',
                                  'code_translation_eval_gpt3.log', 'code_translation_eval_gpt4.log',
                                  'code_debugging_eval_gpt3.log', 'code_debugging_eval_gpt4.log',
-                                 'program_synthesis_eval_gpt3.log', 'program_synthesis_eval_gpt4.log'], type=str)
+                                 'program_synthesis_eval_gpt3.log', 'program_synthesis_eval_gpt4.log',
+                                 'augment_problem_eval_gpt3.log', 'augment_problem_eval_gpt4.log'], type=str)
 
     args = parser.parse_args()
 
@@ -83,284 +85,6 @@ def count_message_tokens(content, model, type):
     return num_tokens
 
 
-def add_smell(example):
-    code_uid = example['code_uid']
-    lang_cluster = example['lang_cluster']
-    smell_code = example['smell_code']
-    source_code = example['source_code']
-    prompt = f"""As an expert software developer with years of experience, please meticulously inspect the following smell code segment and categorize it into one of the following categories:
-- large class: A class contains too many fields/methods/lines of code.
-- data class: A class contains only fields and crude methods for accessing them.
-- blob: A class that concentrates too many responsibilities, controls and oversees too many different objects.
-- feature envy: A method accesses the data of another object more than its own data.
-- long method: A method contains too many lines of code.
-The detailed information are as follows:
-1. Programming language: {lang_cluster} 
-2. Smell code segment: 
-```
-{smell_code.strip()}
-```
-3. Source code containing code smells:
-```
-{source_code.strip()}
-```
-Respond only with one of the specified categories."""
-
-    logging.info('code uid: ' + str(code_uid))
-
-    input_tokens = count_message_tokens(prompt, args.model, 'input')
-    logging.info('input tokens: ' + str(input_tokens))
-
-    try:
-        response = generate_text(
-            model=args.model,
-            prompt=prompt,
-            temperature=temperature
-        )
-        logging.info('response: ' + str(response))
-
-        if response is not None:
-            output_tokens = count_message_tokens(response, args.model, 'output')
-            logging.info('output tokens: ' + str(output_tokens))
-            if input_tokens + output_tokens > max_tokens:
-                logging.warning('Over total tokens limit ' + str(code_uid))
-
-            supported_smells = ['large class', 'long method', 'data class', 'blob', 'feature envy']
-            if all(supported_smell not in response.lower() for supported_smell in supported_smells):
-                logging.warning('Respond content is invalid value.')
-                smell = ''
-            else:
-                smell = ''
-                # Find the smell that first occurs in the response.
-                min_index = float('inf')
-                for supported_smell in supported_smells:
-                    first_index = response.lower().find(supported_smell)
-                    if first_index != -1 and first_index < min_index:
-                        min_index = first_index
-                        smell = supported_smell
-        else:
-            logging.warning('Respond content is none.')
-            smell = ''
-
-    except Exception as e:
-        logging.error('Failed to generate text: ' + e.__str__())
-        smell = ''
-
-    logging.info('smell: ' + str(smell))
-    example['smell'] = smell
-
-    return example
-
-
-def add_diff_tag(example):
-    code_uid = example['code_uid']
-    lang_cluster = example['lang_cluster']
-    old_code = example['old_code']
-    diff_hunk = example['diff_hunk']
-
-    prompt = f"""As an expert code reviewer with years of experience, please meticulously inspect the following code change and categorize its quality into one of the following categories:
-- 0: Good quality that no review comments required.
-- 1: Poor quality that requires review comments.
-The detailed information are as follows:
-1. Programming language: {lang_cluster} 
-2. Original version code: 
-```
-{old_code.strip()}
-```
-3. Code diff chunk:
-```
-{diff_hunk.strip()}
-```
-Respond only with the number: 0 or 1."""
-
-    logging.info('code uid: ' + str(code_uid))
-
-    input_tokens = count_message_tokens(prompt, args.model, 'input')
-    logging.info('input tokens: ' + str(input_tokens))
-
-    try:
-        response = generate_text(
-            model=args.model,
-            prompt=prompt,
-            temperature=temperature
-        )
-        logging.info('response: ' + str(response))
-
-        if response is not None:
-            output_tokens = count_message_tokens(response, args.model, 'output')
-            logging.info('output tokens: ' + str(output_tokens))
-            if input_tokens + output_tokens > max_tokens:
-                logging.warning('Over total tokens limit ' + str(code_uid))
-
-            supported_diff_tags = ['0', '1']
-            if all(supported_diff_tag not in response for supported_diff_tag in supported_diff_tags):
-                logging.warning('Respond content is invalid value.')
-                diff_tag = 2
-            else:
-                diff_tag = 2
-                # Find the diff tag that first occurs in the response.
-                min_index = float('inf')
-                for supported_diff_tag in supported_diff_tags:
-                    first_index = response.find(supported_diff_tag)
-                    if first_index != -1 and first_index < min_index:
-                        min_index = first_index
-                        diff_tag = int(supported_diff_tag)
-        else:
-            logging.warning('Respond content is none.')
-            diff_tag = 2
-
-    except Exception as e:
-        logging.error('Failed to generate text: ' + e.__str__())
-        diff_tag = 2
-
-    logging.info('diff_tag: ' + str(diff_tag))
-    example['diff_tag'] = diff_tag
-
-    return example
-
-
-def add_review_comment(example):
-    code_uid = example['code_uid']
-    lang_cluster = example['lang_cluster']
-    old_code = example['old_code']
-    diff_hunk = example['diff_hunk']
-    prompt = f"""As an expert code reviewer with years of experience, please meticulously inspect the following code change and provide a concise review comment.
-The detailed information are as follows:
-1. Programming language: {lang_cluster} 
-2. Original version code: 
-```
-{old_code.strip()}
-```
-3. Code diff chunk:
-```
-{diff_hunk.strip()}
-```
-Respond only with a string that represents review comment."""
-
-    logging.info('code uid: ' + str(code_uid))
-
-    input_tokens = count_message_tokens(prompt, args.model, 'input')
-    logging.info('input tokens: ' + str(input_tokens))
-
-    try:
-        response = generate_text(
-            model=args.model,
-            prompt=prompt,
-            temperature=temperature
-        )
-        logging.info('response: ' + str(response))
-
-        if response is not None:
-            output_tokens = count_message_tokens(response, args.model, 'output')
-            logging.info('output tokens: ' + str(output_tokens))
-            if input_tokens + output_tokens > max_tokens:
-                logging.warning('Over total tokens limit ' + str(code_uid))
-
-            review_comment = response
-        else:
-            logging.warning('Respond content is none.')
-            review_comment = ''
-
-    except Exception as e:
-        logging.error('Failed to generate text: ' + e.__str__())
-        review_comment = ''
-
-    logging.info('review_comment: ' + str(review_comment))
-    example['review_comment'] = review_comment
-
-    return example
-
-
-def add_hidden_unit_tests(example):
-    code_uid = example['code_uid']
-    prob_desc_description = example['prob_desc_description']
-    prob_desc_time_limit = example['prob_desc_time_limit']
-    prob_desc_memory_limit = example['prob_desc_memory_limit']
-    prob_desc_input_spec = example['prob_desc_input_spec']
-    prob_desc_output_spec = example['prob_desc_output_spec']
-    prob_desc_sample_inputs = example['prob_desc_sample_inputs']
-    prob_desc_sample_outputs = example['prob_desc_sample_outputs']
-    prob_desc_notes = example['prob_desc_notes']
-    source_code = example['source_code']
-    lang_cluster = example['lang_cluster']
-    num_hidden_unit_tests = example['num_hidden_unit_tests']
-    prompt = f"""As an expert code test developer with years of experience, please provide multiple test cases for a given problem along and its solution.
-The detailed information are as follows:
-1. Problem description: {prob_desc_description}
-2. Time limit: {prob_desc_time_limit}
-3. Memory limit: {prob_desc_memory_limit}
-4. Input specification: {prob_desc_input_spec}
-5. Output specification: {prob_desc_output_spec}
-6. Sample inputs: {prob_desc_sample_inputs}
-7. Sample outputs: {prob_desc_sample_outputs}
-8. Sample explanations: {prob_desc_notes}
-9. Programming language: {lang_cluster} 
-10. Solution source code: 
-```
-{source_code.strip()}
-```
-Craft {num_hidden_unit_tests} test cases with these criteria:
-1. Each test case contains a string for both input and output.
-2. The solution source code successfully processes the test case's input with no errors.
-3. The solution source code's outcome aligns with the test case's output.
-4. All test cases are simple and achieve optimal branch and line coverage.
-Respond only with a string in the following JSON format:
-[{{"input": input string, "output": output string}}]"""
-
-    logging.info('code uid: ' + str(code_uid))
-
-    input_tokens = count_message_tokens(prompt, args.model, 'input')
-    logging.info('input tokens: ' + str(input_tokens))
-
-    try:
-        response = generate_text(
-            model=args.model,
-            prompt=prompt,
-            temperature=temperature
-        )
-        logging.info('response: ' + str(response))
-
-        if response is not None:
-            output_tokens = count_message_tokens(response, args.model, 'output')
-            logging.info('output tokens: ' + str(output_tokens))
-            if input_tokens + output_tokens > max_tokens:
-                logging.warning('Over total tokens limit ' + str(code_uid))
-
-            pattern = r'\[.*{.*?\}.*]'
-            matches = re.search(pattern, response, re.DOTALL)
-            if matches:
-                json_array_string = matches.group().replace("'", '"')
-                try:
-                    json_array = json.loads(json_array_string, strict=False)
-                    if isinstance(json_array, list):
-                        for json_item in json_array:
-                            if isinstance(json_item['input'], list):
-                                json_item['input'] = str(json_item['input'][0])
-                            if isinstance(json_item['output'], str):
-                                json_item['output'] = [json_item['output']]
-                        hidden_unit_tests = str(json_array)
-                    else:
-                        logging.warning('Respond content is not a list.')
-                        hidden_unit_tests = '[]'
-                except json.JSONDecodeError as e:
-                    logging.warning('Failed to load json:', e)
-                    hidden_unit_tests = '[]'
-            else:
-                logging.warning('JSON array object not found.')
-                hidden_unit_tests = '[]'
-
-        else:
-            logging.warning('Respond content is none.')
-            hidden_unit_tests = '[]'
-
-    except Exception as e:
-        logging.error('Failed to generate text: ' + e.__str__())
-        hidden_unit_tests = '[]'
-
-    logging.info('hidden_unit_tests: ' + str(hidden_unit_tests))
-    example['hidden_unit_tests'] = hidden_unit_tests
-
-    return example
 
 
 env_map = {
@@ -375,11 +99,81 @@ env_map = {
     'Ruby': ['Ruby', 'Ruby 3'],
     'Kotlin': ['Kotlin', 'Kotlin 1.4', 'Kotlin 1.5', 'Kotlin 1.6', 'Kotlin 1.7', ],
     'Rust': ['Rust', 'Rust 2015', 'Rust 2021'],
-    'Go': ['Go'],
+    'Go': ['Go 1.19.5'],
     'd': ['dmd 2.105.0 win32'],
     'delphi': ['Delphi7 win32'],
     'perl': ['Perl v5.20.3']
 }
+
+# supported languages:
+lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
+                'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
+
+def add_data_augment_v2(example):
+    """
+    Generate corresponding code based on the problem description and corresponding language for new data generation
+
+    problem_attributes = ['title', 'description', 'input_from', 'output_to', 'time_limit',
+           'memory_limit', 'input_spec', 'output_spec', 'notes', 'sample_inputs',
+           'sample_outputs', 'id', 'difficulty', 'tags', 'src_uid']
+    """
+
+    repeat_time = 5
+    lang = example['target_lang']
+    prob_uid = example['src_uid']
+    prob_desc_description = example['description']
+    prob_desc_input_spec = example['input_spec']
+    prob_desc_output_spec = example['output_spec']
+    prob_desc_sample_inputs = example['sample_inputs']
+    prob_desc_sample_outputs = example['sample_outputs']
+    prob_desc_notes = example['notes']
+
+    prompt = f"""
+As a professional code developer with years of experience, please provide the corresponding code solution based on the problem description. Detailed information is given below:
+1. Problem description: {prob_desc_description}
+2. Input specification: {prob_desc_input_spec}
+3. Output specification: {prob_desc_output_spec}
+4. Sample inputs: {prob_desc_sample_inputs}
+5. Sample outputs: {prob_desc_sample_outputs}
+6. Sample explanations: {prob_desc_notes}
+7. Programming language: {lang} 
+8. support programming language version: {env_map[lang]}
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
+
+    logging.info('problem src_id: ' + str(prob_uid))
+
+    input_tokens = count_message_tokens(prompt, args.model, 'input')
+    logging.info('input tokens: ' + str(input_tokens))
+    for time in range(repeat_time):
+        try:
+            response = generate_text(
+                model=args.model,
+                prompt=prompt,
+                temperature=temperature
+            )
+            logging.info('response: ' + str(response))
+
+            if response is not None:
+                output_tokens = count_message_tokens(response, args.model, 'output')
+                logging.info('output tokens: ' + str(output_tokens))
+                if input_tokens + output_tokens > max_tokens:
+                    logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang))
+                    program_sythesis = ''
+                else:
+                    program_sythesis = response
+            else:
+                logging.warning('Respond content is none.')
+                program_sythesis = ''
+        except Exception as e:
+            logging.error('Failed to generate text: ' + e.__str__())
+            program_sythesis = ''
+
+        logging.info('program_synthesis in: ' + lang + ' :' + str(program_sythesis))
+        example[str(time)] = program_sythesis
+
+    return example
+
 
 
 def add_program_synthesis(example):
@@ -391,14 +185,10 @@ def add_program_synthesis(example):
            'sample_outputs', 'id', 'difficulty', 'tags', 'src_uid']
     """
 
-    # supported languages:
-    lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
-                    'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
+
 
     prob_uid = example['src_uid']
     prob_desc_description = example['description']
-    prob_desc_time_limit = example['time_limit']
-    prob_desc_memory_limit = example['memory_limit']
     prob_desc_input_spec = example['input_spec']
     prob_desc_output_spec = example['output_spec']
     prob_desc_sample_inputs = example['sample_inputs']
@@ -406,18 +196,18 @@ def add_program_synthesis(example):
     prob_desc_notes = example['notes']
 
     for lang in lang_cluster:
-        prompt = f"""As an expert code developer with years of experience, please provide the source code based on the problem description. The detailed information are as follows:
-        1. Problem description: {prob_desc_description}
-        2. Input specification: {prob_desc_input_spec}
-        3. Output specification: {prob_desc_output_spec}
-        4. Sample inputs: {prob_desc_sample_inputs}
-        5. Sample outputs: {prob_desc_sample_outputs}
-        6. Sample explanations: {prob_desc_notes}
-        7. Programming language: {lang} 
-        8. support programming language version: {env_map[lang]}
-        Respond should only with a string in the following JSON format:
-        [{{"version": the specific version you used in support programming language version, "source code": your code}}]
-        """
+        prompt = f"""
+As a professional code developer with years of experience, please provide the corresponding code solution based on the problem description. Detailed information is given below:
+1. Problem description: {prob_desc_description}
+2. Input specification: {prob_desc_input_spec}
+3. Output specification: {prob_desc_output_spec}
+4. Sample inputs: {prob_desc_sample_inputs}
+5. Sample outputs: {prob_desc_sample_outputs}
+6. Sample explanations: {prob_desc_notes}
+7. Programming language: {lang} 
+8. support programming language version: {env_map[lang]}
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
         logging.info('problem src_id: ' + str(prob_uid))
 
@@ -439,9 +229,7 @@ def add_program_synthesis(example):
                     logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang))
                     program_sythesis = ''
                 else:
-                    start_index = response.find('"source code": "') + len('"source code": "')
-                    end_index = response.find('"}]', start_index)
-                    program_sythesis = response[start_index:end_index]
+                    program_sythesis = response
             else:
                 logging.warning('Respond content is none.')
                 program_sythesis = ''
@@ -469,25 +257,19 @@ def add_code_translation(example):
        'judged', 'id', 'submission_id', 'participant_id']
      """
 
-    # supported languages:
-    lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
-                    'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
+
     source_lang = example['lang_cluster']
     target_lang = example['target_lang_cluster']
     prob_uid = example['src_uid']
     source_code = example['source_code']
 
     prompt = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
-
-        The detailed information are as follows:
-        1. Target programming language: {target_lang}
-        2. support programming language version: {env_map[target_lang]}
-        3. Source code\n: {source_code}
-
-        Respond should only with a string in the following JSON format:
-        [{{"version": the specific version you used in support programming language version, "source code": your code}}] 
-
-        """
+The detailed information are as follows:
+1. Target programming language: {target_lang}
+2. support programming language version: {env_map[target_lang]}
+3. Source code\n: {source_code}
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
     logging.info('problem src_id: ' + str(prob_uid))
 
@@ -537,10 +319,7 @@ def add_code_repairing(example):
        'judged', 'id', 'submission_id', 'participant_id']
      """
 
-    # supported languages:
-    # supported languages:
-    lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
-                    'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
+
     source_lang = example['lang']
 
     prob_uid = example['src_uid']
@@ -552,21 +331,19 @@ def add_code_repairing(example):
     prob_desc_sample_outputs = example['sample_outputs']
     error_msg = example['exec_outcome']
     prompt = f"""As an expert code developer with years of experience, please debug the source code in {source_lang} based on the corresponding problem description and show the correct code. 
-           The detailed information are shown as follows: 
-           1. Problem description: {prob_desc_description}
-           2. Input specification: {prob_desc_input_spec}
-           3. Output specification: {prob_desc_output_spec}
-           4. Sample inputs: {prob_desc_sample_inputs}
-           5. Sample outputs: {prob_desc_sample_outputs}
-           6. Programming language: {source_lang}
-           7. Buggy code :\n {source_code}
-           8. Error message: {error_msg}
-           Please note that use complex header files as little as possible. 
+The detailed information are shown as follows: 
+1. Problem description: {prob_desc_description}
+2. Input specification: {prob_desc_input_spec}
+3. Output specification: {prob_desc_output_spec}
+4. Sample inputs: {prob_desc_sample_inputs}
+5. Sample outputs: {prob_desc_sample_outputs}
+6. Programming language: {source_lang}
+7. Buggy code :\n {source_code}
+8. Error message: {error_msg}
+Please note that use complex header files as little as possible. 
 
-           Respond should only with a string in the following JSON format:
-           [{{"version": the specific version you used in support programming language version, "source code": your correct code}}] 
-
-           """
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
     logging.info('problem src_id: ' + str(prob_uid))
 
@@ -606,27 +383,27 @@ def add_code_repairing(example):
 def main():
     load_path = Path(__file__).parent.parent / Path('data') / Path(args.data_load_name)
     save_path = Path(__file__).parent.parent / Path('results') / Path(args.result_save_name)
-    # if args.data_load_name == 'program_synthesis_old.jsonl':
-    #     data = pd.read_json(load_path).sample(n=2)
-    #     dataset = Dataset.from_pandas(data)
-    # else:
-    dataset = load_dataset('json', split='train', data_files=str(load_path)).select([200])
-    dataset.cleanup_cache_files()  # for multiple evaluation
+    if 'augment_problem_list' in args.data_load_name:
+        data = []
+        for cluster in lang_cluster:
+            file_name = f'''1007_before_{cluster.lower()}.jsonl'''
+            if os.path.exists(os.path.join(load_path,file_name)):
+                data.append(pd.read_json(os.path.join(load_path,file_name), lines=True))
+        data = pd.concat(data,axis=0)
+        dataset = Dataset.from_pandas(data)
+    else:
+        dataset = load_dataset('json', split='train', data_files=str(load_path))
+        dataset.cleanup_cache_files()  # for multiple evaluation
 
-    if args.data_load_name == 'code_review_data.jsonl':
-        dataset = dataset.map(add_diff_tag)
-        dataset = dataset.map(add_review_comment)
-    elif args.data_load_name == 'code_smell_data.jsonl':
-        dataset = dataset.map(add_smell)
-    elif args.data_load_name == 'code_test_data.jsonl':
-        dataset = dataset.map(add_hidden_unit_tests)
-    elif 'program_synthesis' in args.data_load_name:
-        dataset = dataset.map(add_program_synthesis)
+    if  'program_synthesis' in args.data_load_name or 'augment_problem_list' in args.data_load_name:
+        dataset = dataset.map(add_data_augment_v2)
     elif 'translation' in args.data_load_name:
         dataset = dataset.map(add_code_translation)
     elif 'code_debugging' in args.data_load_name:
         dataset = dataset.map(add_code_repairing)
-    dataset.to_json(save_path, lines=True)
+    else:
+        print("please use corresponding task as file name")
+    dataset.to_json(save_path, orient='records',lines=True)
 
 
 if __name__ == '__main__':
@@ -662,7 +439,7 @@ if __name__ == '__main__':
         'gpt-4-32k-0314': 32768
     }
 
-    temperature = 0
+    temperature = 0.5
     max_tokens = model_max_tokens.get(args.model) if model_max_tokens.get(args.model) is not None else 0
 
     main()

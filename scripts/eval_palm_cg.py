@@ -340,7 +340,7 @@ env_map = {
     'Ruby': ['Ruby', 'Ruby 3'],
     'Kotlin': ['Kotlin', 'Kotlin 1.4', 'Kotlin 1.5', 'Kotlin 1.6', 'Kotlin 1.7', ],
     'Rust': ['Rust', 'Rust 2015', 'Rust 2021'],
-    'Go': ['Go'],
+    'Go': ['Go 1.19.5'],
     'd': ['dmd 2.105.0 win32'],
     'delphi': ['Delphi7 win32'],
     'perl': ['Perl v5.20.3']
@@ -371,7 +371,7 @@ def add_program_synthesis(example):
     prob_desc_notes = example['notes']
 
     for lang in lang_cluster:
-        prompt = f"""As an expert code developer with years of experience, please provide the source code based on the problem description. The detailed information are as follows:
+        prompt = f"""As an experienced code developer with years of expertise, please provide the source code based on the problem description. Here are the specifics:
 1. Problem description: {prob_desc_description}
 2. Input specification: {prob_desc_input_spec}
 3. Output specification: {prob_desc_output_spec}
@@ -381,8 +381,7 @@ def add_program_synthesis(example):
 7. Programming language: {lang} 
 8. support programming language version: {env_map[lang]}
 Respond should only with a string in the following JSON format:
-[{{"version": the specific version you used in support programming language version, "target code": your code}}]
-"""
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
         logging.info('problem src_id: ' + str(prob_uid))
 
@@ -443,17 +442,13 @@ def add_code_translation(example):
     source_code = example['source_code']
 
     prompt = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
+The detailed information are as follows:
+1. Target programming language: {target_lang}
+2. support programming language version: {env_map[target_lang]}
+3. Source code\n: {source_code}
 
-
-        The detailed information are as follows:
-        1. Target programming language: {target_lang}
-        2. support programming language version: {env_map[target_lang]}
-        3. Source code\n: {source_code}
-
-        Respond should only with a string in the following JSON format:
-        [{{"version": the specific version you used in support programming language version, "source code": your code}}] 
-
-        """
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
     logging.info('problem src_id: ' + str(prob_uid))
 
@@ -490,7 +485,6 @@ def add_code_translation(example):
     return example
 
 
-
 def add_code_repairing(example):
     """
      Generate corresponding code based on the problem description
@@ -518,21 +512,19 @@ def add_code_repairing(example):
     prob_desc_sample_outputs = example['sample_outputs']
     error_msg = example['exec_outcome']
     prompt = f"""As an expert code developer with years of experience, please debug the source code in {source_lang} based on the corresponding problem description and show the correct code. 
-        The detailed information are shown as follows: 
-        1. Problem description: {prob_desc_description}
-        2. Input specification: {prob_desc_input_spec}
-        3. Output specification: {prob_desc_output_spec}
-        4. Sample inputs: {prob_desc_sample_inputs}
-        5. Sample outputs: {prob_desc_sample_outputs}
-        6. Programming language: {source_lang}
-        7. Buggy code :\n {source_code}
-        8. Error message: {error_msg}
-        Please note that use complex header files as little as possible. 
+The detailed information are shown as follows:  
+1. Problem description: {prob_desc_description}
+2. Input specification: {prob_desc_input_spec}
+3. Output specification: {prob_desc_output_spec}
+4. Sample inputs: {prob_desc_sample_inputs} 
+5. Sample outputs: {prob_desc_sample_outputs}   
+6. Programming language: {source_lang}
+7. Buggy code :\n {source_code}
+8. Error message: {error_msg}
+Please note that use complex header files as little as possible. 
 
-        Respond should only with a string in the following JSON format:
-        [{{"version": the specific version you used in support programming language version, "source code": your correct code}}] 
-
-        """
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
     logging.info('problem src_id: ' + str(prob_uid))
 
     input_tokens = count_message_tokens(prompt=prompt)['token_count']

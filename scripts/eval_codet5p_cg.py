@@ -372,20 +372,19 @@ env_map = {
     'C++': ['GNU C++11', 'GNU C++14', 'MS C++', 'GNU C++0x', 'GNU C++', 'MS C++ 2017', 'Clang++17 Diagnostics',
             'GNU C++17'],
     'C#': ['MS C#', 'Mono C#', '.NET Core C#'],
-    'Java': ['Java 11', 'Java 7', 'Java 6', 'Java 8'],
+    'Java': ['Java 11', 'Java 7', 'Java 6', 'Java 8', 'Java 17', ],
     'Javascript': ['JavaScript', 'Node.js'],
     'C': ['GNU C', 'GNU C11'],
     'Python': ['Python 2', 'PyPy 3', 'Python 3', 'PyPy 2'],
-    'PHP': ['PHP'],
-    'Ruby': ['Ruby'],
-    'Kotlin': ['Kotlin'],
-    'Rust': ['Rust'],
-    'Go': ['Go'],
+    'PHP': ['PHP', 'PHP 8.1'],
+    'Ruby': ['Ruby', 'Ruby 3'],
+    'Kotlin': ['Kotlin', 'Kotlin 1.4', 'Kotlin 1.5', 'Kotlin 1.6', 'Kotlin 1.7', ],
+    'Rust': ['Rust', 'Rust 2015', 'Rust 2021'],
+    'Go': ['Go 1.19.5'],
     'd': ['dmd 2.105.0 win32'],
     'delphi': ['Delphi7 win32'],
     'perl': ['Perl v5.20.3']
 }
-
 
 def add_program_synthesis(example):
     """
