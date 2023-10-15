@@ -12,24 +12,15 @@ from google.api_core import retry
 def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('--api_key', default=None, type=str)
-    parser.add_argument('--data_load_name', default='code_review_data.jsonl',
-                        choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl',
-                                 'program_synthesis.jsonl', 'program_synthesis_v2.jsonl',
-                                 'code_translation_v2.jsonl', 'code_debugging_data.jsonl'
-                                 ], type=str)
-    parser.add_argument('--result_save_name', default='code_review_eval_palm.jsonl',
-                        choices=['code_review_eval_palm.jsonl', 'code_smell_eval_palm.jsonl',
-                                 'code_test_data_palm.jsonl', 'code_translation_eval_palm.jsonl',
-                                 'code_debugging_eval_palm.jsonl', 'program_synthesis_eval_palm.jsonl'], type=str)
-    parser.add_argument('--log_file_name', default='code_review_eval_palm.log',
-                        choices=['code_review_eval_palm.log', 'code_smell_eval_palm.log', 'code_test_data_palm.log',
-                                 'code_translation_eval_palm.log', 'code_debugging_eval_palm.log',
-                                 'program_synthesis_eval_palm.log',
-                                 ], type=str)
+    parser.add_argument('--data_load_name', default='code_smell_data.jsonl',)
+    parser.add_argument('--result_save_name', default='code_smell_eval_llama.jsonl')
+    parser.add_argument('--log_file_name', default='code_smell_eval_llama.log'),
     args = parser.parse_args()
 
     return args
 
+lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
+                'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
 
 @retry.Retry()
 def generate_text(*args, **kwargs):
@@ -362,8 +353,6 @@ def add_program_synthesis(example):
 
     prob_uid = example['src_uid']
     prob_desc_description = example['description']
-    prob_desc_time_limit = example['time_limit']
-    prob_desc_memory_limit = example['memory_limit']
     prob_desc_input_spec = example['input_spec']
     prob_desc_output_spec = example['output_spec']
     prob_desc_sample_inputs = example['sample_inputs']

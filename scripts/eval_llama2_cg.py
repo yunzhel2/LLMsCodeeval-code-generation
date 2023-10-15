@@ -6,10 +6,11 @@ import argparse
 import warnings
 
 from pathlib import Path
-from datasets import load_dataset
+from datasets import load_dataset, Dataset
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from tenacity import retry, stop_after_attempt, wait_random_exponential
-
+import pandas as pd
+import os
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -22,18 +23,12 @@ def parse_arguments():
     parser.add_argument('--result_save_name', default='code_smell_eval_llama.jsonl')
     parser.add_argument('--log_file_name', default='code_smell_eval_llama.log'),
 
-    # parser.add_argument('--data_load_name', default='code_test_data.jsonl',
-    #                     choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl'], type=str)
-    # parser.add_argument('--result_save_name', default='code_test_data_llama2.jsonl',
-    #                     choices=['code_review_eval_llama2.jsonl', 'code_smell_eval_llama2.jsonl',
-    #                              'code_test_data_llama2.jsonl'], type=str)
-    # parser.add_argument('--log_file_name', default='code_test_data_llama2.log',
-    #                     choices=['code_review_eval_llama2.log', 'code_smell_eval_llama2.log',
-    #                              'code_test_data_llama2.log'], type=str)
     args = parser.parse_args()
 
     return args
 
+lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
+                'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
 
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(6))
 def generate_text(prompt, temperature, max_new_tokens):
@@ -440,6 +435,79 @@ Respond should only with a string in the following JSON format:
     return example
 
 
+def add_program_synthesis_v2(example):
+    """
+    Generate corresponding code based on the problem description
+
+    problem_attributes = ['title', 'description', 'input_from', 'output_to', 'time_limit',
+           'memory_limit', 'input_spec', 'output_spec', 'notes', 'sample_inputs',
+           'sample_outputs', 'id', 'difficulty', 'tags', 'src_uid']
+    """
+
+    # supported languages:
+    lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
+                    'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
+
+    prob_uid = example['src_uid']
+    prob_desc_description = example['description']
+    prob_desc_input_spec = example['input_spec']
+    prob_desc_output_spec = example['output_spec']
+    prob_desc_sample_inputs = example['sample_inputs']
+    prob_desc_sample_outputs = example['sample_outputs']
+    prob_desc_notes = example['notes']
+    lang = example['lang']
+
+    user_message = f"""As an expert code developer with years of experience, please provide the source code based on the problem description. The detailed information are as follows:
+1. Problem description: {prob_desc_description}
+2. Input specification: {prob_desc_input_spec}
+3. Output specification: {prob_desc_output_spec}
+4. Sample inputs: {prob_desc_sample_inputs}
+5. Sample outputs: {prob_desc_sample_outputs}
+6. Sample explanations: {prob_desc_notes}
+7. Programming language: {lang} 
+8. support programming language version: {env_map[lang]}
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
+
+    prompt = f'<s>[INST] {user_message.strip()} [/INST]'
+    logging.info('problem src_id: ' + str(prob_uid))
+
+    input_tokens = count_message_tokens(prompt)
+    logging.info('input tokens: ' + str(input_tokens))
+    if input_tokens > max_input_tokens:
+        logging.warning('Over input tokens limit: ' + str(prob_uid))
+    try:
+        response = generate_text(
+            prompt=prompt,
+            temperature=temperature,
+            max_new_tokens=max_new_tokens
+        )
+        logging.info('response: ' + str(response))
+
+        if response is not None:
+            output_tokens = count_message_tokens(response)
+            logging.info('output tokens: ' + str(output_tokens))
+            if output_tokens > max_new_tokens:
+                logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang))
+                program_synthesis = ''
+            else:
+                # start_index = response.find('"source code": "') + len('"source code": "')
+                # end_index = response.find('"}]', start_index)
+                program_synthesis = response
+        else:
+            logging.warning('Respond content is none.')
+            program_synthesis = ''
+
+    except Exception as e:
+        logging.error('Failed to generate text: ' + e.__str__())
+        program_synthesis = ''
+
+    logging.info('program_synthesis in: ' + lang + ' :' + str(program_synthesis))
+    example['program_synthesis'] = program_synthesis
+
+    return example
+
+
 def add_code_translation(example):
     """
      Generate corresponding code in specific language based on the given code
@@ -590,11 +658,22 @@ def main():
     load_path = Path(__file__).parent.parent / Path('data') / Path(args.data_load_name)
     save_path = Path(__file__).parent.parent / Path('results') / Path(args.result_save_name)
 
-    dataset = load_dataset('json', split='train', data_files=str(load_path))
-    dataset.cleanup_cache_files()  # for multiple evaluation
+    if 'program_synthesis_v3' in args.data_load_name:
+        data = []
+        for cluster in lang_cluster:
+            file_name = f'''1014_each30_{cluster}.jsonl'''
+            if os.path.exists(os.path.join(load_path, file_name)):
+                data.append(pd.read_json(os.path.join(load_path, file_name), lines=True))
+        data = pd.concat(data, axis=0)
+        dataset = Dataset.from_pandas(data)
+    else:
+        dataset = load_dataset('json', split='train', data_files=str(load_path))
+        dataset.cleanup_cache_files()  # for multiple evaluation
     print(dataset)
 
-    if args.data_load_name == 'code_review_data.jsonl':
+    if 'program_synthesis_v3' in args.data_load_name:
+        dataset = dataset.map(add_program_synthesis_v2)
+    elif args.data_load_name == 'code_review_data.jsonl':
         dataset = dataset.map(add_diff_tag)
         dataset = dataset.map(add_review_comment)
     elif args.data_load_name == 'code_smell_data.jsonl':

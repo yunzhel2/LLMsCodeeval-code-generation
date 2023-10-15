@@ -23,7 +23,7 @@ def parse_arguments():
     parser.add_argument('--data_load_name', default='code_review_data.jsonl',
                         choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl',
                                  'program_synthesis.jsonl', 'program_synthesis_v2.jsonl',
-                                 'code_translation_v2.jsonl', 'code_debugging_data.jsonl', 'augment_problem_list'], type=str)
+                                 'code_translation_v2.jsonl', 'code_debugging_data.jsonl', 'augment_problem_list', 'program_synthesis_v3'], type=str)
     parser.add_argument('--result_save_name', default='code_review_eval_gpt3.jsonl',
                         choices=['code_review_eval_gpt3.jsonl', 'code_smell_eval_gpt3.jsonl',
                                  'code_test_data_gpt3.jsonl', 'code_review_eval_gpt4.jsonl',
@@ -159,21 +159,86 @@ Respond should only with a string in the following JSON format:
                 logging.info('output tokens: ' + str(output_tokens))
                 if input_tokens + output_tokens > max_tokens:
                     logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang))
-                    program_sythesis = ''
+                    program_synthesis = ''
                 else:
-                    program_sythesis = response
+                    program_synthesis = response
             else:
                 logging.warning('Respond content is none.')
-                program_sythesis = ''
+                program_synthesis = ''
         except Exception as e:
             logging.error('Failed to generate text: ' + e.__str__())
-            program_sythesis = ''
+            program_synthesis = ''
 
-        logging.info('program_synthesis in: ' + lang + ' :' + str(program_sythesis))
-        example[str(time)] = program_sythesis
+        logging.info('program_synthesis in: ' + lang + ' :' + str(program_synthesis))
+        example[str(time)] = program_synthesis
 
     return example
 
+
+def add_program_synthesis_v2(example):
+    """
+    Generate corresponding code based on the problem description
+
+    problem_attributes = ['title', 'description', 'input_from', 'output_to', 'time_limit',
+           'memory_limit', 'input_spec', 'output_spec', 'notes', 'sample_inputs',
+           'sample_outputs', 'id', 'difficulty', 'tags', 'src_uid']
+    """
+
+    prob_uid = example['src_uid']
+    prob_desc_description = example['description']
+    prob_desc_input_spec = example['input_spec']
+    prob_desc_output_spec = example['output_spec']
+    prob_desc_sample_inputs = example['sample_inputs']
+    prob_desc_sample_outputs = example['sample_outputs']
+    prob_desc_notes = example['notes']
+    lang = example['lang']
+
+    prompt = f"""
+As a professional code developer with years of experience, please provide the corresponding code solution based on the problem description. Detailed information is given below:
+1. Problem description: {prob_desc_description}
+2. Input specification: {prob_desc_input_spec}
+3. Output specification: {prob_desc_output_spec}
+4. Sample inputs: {prob_desc_sample_inputs}
+5. Sample outputs: {prob_desc_sample_outputs}
+6. Sample explanations: {prob_desc_notes}
+7. Programming language: {lang} 
+8. support programming language version: {env_map[lang]}
+Respond should only with a string in the following JSON format:
+[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
+
+    logging.info('problem src_id: ' + str(prob_uid))
+
+    input_tokens = count_message_tokens(prompt, args.model, 'input')
+    logging.info('input tokens: ' + str(input_tokens))
+
+    try:
+        response = generate_text(
+            model=args.model,
+            prompt=prompt,
+            temperature=temperature
+        )
+        logging.info('response: ' + str(response))
+
+        if response is not None:
+            output_tokens = count_message_tokens(response, args.model, 'output')
+            logging.info('output tokens: ' + str(output_tokens))
+            if input_tokens + output_tokens > max_tokens:
+                logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang))
+                program_sythesis = ''
+            else:
+                program_sythesis = response
+        else:
+            logging.warning('Respond content is none.')
+            program_sythesis = ''
+
+    except Exception as e:
+        logging.error('Failed to generate text: ' + e.__str__())
+        program_sythesis = ''
+
+    logging.info('program_synthesis in: ' + lang + ' :' + str(program_sythesis))
+    example['program_synthesis'] = program_sythesis
+
+    return example
 
 
 def add_program_synthesis(example):
@@ -184,8 +249,6 @@ def add_program_synthesis(example):
            'memory_limit', 'input_spec', 'output_spec', 'notes', 'sample_inputs',
            'sample_outputs', 'id', 'difficulty', 'tags', 'src_uid']
     """
-
-
 
     prob_uid = example['src_uid']
     prob_desc_description = example['description']
@@ -257,7 +320,6 @@ def add_code_translation(example):
        'judged', 'id', 'submission_id', 'participant_id']
      """
 
-
     source_lang = example['lang_cluster']
     target_lang = example['target_lang_cluster']
     prob_uid = example['src_uid']
@@ -318,10 +380,7 @@ def add_code_repairing(example):
        'difficulty', 'exec_outcome', 'verdict', 'time', 'memory', 'sent',
        'judged', 'id', 'submission_id', 'participant_id']
      """
-
-
     source_lang = example['lang']
-
     prob_uid = example['src_uid']
     source_code = example['source_code']
     prob_desc_description = example['description']
@@ -391,11 +450,24 @@ def main():
                 data.append(pd.read_json(os.path.join(load_path,file_name), lines=True))
         data = pd.concat(data,axis=0)
         dataset = Dataset.from_pandas(data)
+    elif 'program_synthesis_v3' in args.data_load_name:
+        data = []
+        for cluster in lang_cluster:
+            file_name = f'''1014_each30_{cluster}.jsonl'''
+            if os.path.exists(os.path.join(load_path, file_name)):
+                data.append(pd.read_json(os.path.join(load_path, file_name), lines=True))
+        data = pd.concat(data,axis=0)
+        dataset = Dataset.from_pandas(data)
     else:
         dataset = load_dataset('json', split='train', data_files=str(load_path))
         dataset.cleanup_cache_files()  # for multiple evaluation
 
-    if  'program_synthesis' in args.data_load_name or 'augment_problem_list' in args.data_load_name:
+    dataset = dataset.select([0,1])
+
+
+    if  'program_synthesis_v3' in args.data_load_name:
+        dataset = dataset.map(add_program_synthesis_v2)
+    elif 'program_synthesis' in args.data_load_name or 'augment_problem_list' in args.data_load_name:
         dataset = dataset.map(add_data_augment_v2)
     elif 'translation' in args.data_load_name:
         dataset = dataset.map(add_code_translation)
