@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
+      <paths name="liu326@idealab-01.cs.illinois.edu:22 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/liu326/NLP/code-data-eval" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="yunzhel2@hal.ncsa.illinois.edu:22 password">
         <serverdata>
           <mappings>

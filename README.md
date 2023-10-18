@@ -7,111 +7,6 @@ Replace "cache_dir" with path to a directory in which a downloaded pretrained mo
 
 Run following scripts to inference the code generation task.
 
-### Program synthesis (for batch data update, work with folder)
-#### GPT3.5 & GPT4
-```angular2html
-python eval_XXX_cg.py
---api_key
-your_apikey
---model
-gpt-3.5-turbo-0613
---data_load_name
-PATH/program_synthesis_v3
---result_save_name
-PATH/program_synthesis_eval_XXX.jsonl
---log_file_name
-PATH/program_synthesis_eval_XXX.log
-```
-#### Palm
-```angular2html
-python eval_palm_cg.py
---api_key
-your_apikey
---data_load_name
-PATH/program_synthesis_v3
---result_save_name
-PATH/program_synthesis_eval_palm.jsonl
---log_file_name
-PATH/program_synthesis_eval_palm.log
-```
-#### Others
-```angular2html
-python eval_XXX_cg.py 
---access_token
-access_token
---cache_dir 
-cache_dir 
---checkpoint
-your_model_ckpt
---data_load_name
-PATH/program_synthesis_v3
---result_save_name
-PATH/program_synthesis_eval_XXX.jsonl
---log_file_name
-PATH/program_synthesis_eval_XXX.log
-```
-
-
-### Code Translation
-#### GPT3 & GPT4
-```angular2html
-python eval_XXX_cg.py
---api_key
-your_apikey
---model
-gpt-3.5-turbo-16k
---data_load_name
-PATH/code_translation_v2.jsonl
---result_save_name
-PATH/code_translation_eval_XXX.jsonl
---log_file_name
-PATH/code_translation_eval_XXX.log
-```
-#### Palm
-```angular2html
-python eval_palm_cg.py
---api_key
-your_apikey
---data_load_name
-PATH/code_translation_v2.jsonl
---result_save_name
-PATH/code_translation_eval_palm.jsonl
---log_file_name
-PATH/code_translation_eval_palm.log
-```
-#### Others
-```angular2html
-python eval_XXX_cg.py 
---access_token
-access_token
---cache_dir 
-cache_dir 
---checkpoint
-your_model_ckpt
---data_load_name
-PATH/code_translation_v2.jsonl
---result_save_name
-PATH/code_translation_eval_XXX.jsonl
---log_file_name
-PATH/code_translation_eval_XXX.log
-```
-
-
-### Data Augmented 
-#### GPT3.5 & GPT4
-```angular2html
-python eval_XXX_cg.py
---api_key
-your_apikey
---model
-gpt-3.5-turbo
---data_load_name
-augment_problem_list
---result_save_name
-augment_problem_eval_xxx.jsonl
---log_file_name
-augment_problem_eval_xxx.log
-```
 
 ### Program synthesis
 #### GPT3.5 & GPT4
@@ -122,23 +17,27 @@ your_apikey
 --model
 gpt-3.5-turbo-0613
 --data_load_name
-PATH/program_synthesis_v2.jsonl
+program_synthesis_v4.jsonl
+--candidate_num
+5
 --result_save_name
-PATH/program_synthesis_eval_XXX.jsonl
+program_synthesis_eval_XXX.jsonl
 --log_file_name
-PATH/program_synthesis_eval_XXX.log
+program_synthesis_eval_XXX.log
 ```
 #### Palm
 ```angular2html
 python eval_palm_cg.py
 --api_key
-your_apikey
+your_api_key
 --data_load_name
-PATH/program_synthesis_v2.jsonl
+program_synthesis_v4.jsonl
+--candidate_num
+5
 --result_save_name
-PATH/program_synthesis_eval_palm.jsonl
+program_synthesis_eval_palm.jsonl
 --log_file_name
-PATH/program_synthesis_eval_palm.log
+program_synthesis_eval_palm.log
 ```
 #### Others
 ```angular2html
@@ -150,11 +49,13 @@ cache_dir
 --checkpoint
 your_model_ckpt
 --data_load_name
-PATH/program_synthesis_v2.jsonl
+program_synthesis_v4.jsonl
+--candidate_num
+5
 --result_save_name
-PATH/program_synthesis_eval_XXX.jsonl
+program_synthesis_eval_XXX.jsonl
 --log_file_name
-PATH/program_synthesis_eval_XXX.log
+program_synthesis_eval_XXX.log
 ```
 
 
@@ -167,11 +68,13 @@ your_apikey
 --model
 gpt-3.5-turbo-16k
 --data_load_name
-PATH/code_translation_v2.jsonl
+code_translation_v4.jsonl
+--candidate_num
+1
 --result_save_name
-PATH/code_translation_eval_XXX.jsonl
+code_translation_eval_XXX.jsonl
 --log_file_name
-PATH/code_translation_eval_XXX.log
+code_translation_eval_XXX.log
 ```
 #### Palm
 ```angular2html
@@ -179,11 +82,13 @@ python eval_palm_cg.py
 --api_key
 your_apikey
 --data_load_name
-PATH/code_translation_v2.jsonl
+code_translation_v4.jsonl
+--candidate_num
+1
 --result_save_name
-PATH/code_translation_eval_palm.jsonl
+code_translation_eval_palm_v2.jsonl
 --log_file_name
-PATH/code_translation_eval_palm.log
+code_translation_eval_palm_v2.log
 ```
 #### Others
 ```angular2html
@@ -195,11 +100,13 @@ cache_dir
 --checkpoint
 your_model_ckpt
 --data_load_name
-PATH/code_translation_v2.jsonl
+code_translation_v4.jsonl
+--candidate_num
+1
 --result_save_name
-PATH/code_translation_eval_XXX.jsonl
+code_translation_eval_XXX.jsonl
 --log_file_name
-PATH/code_translation_eval_XXX.log
+code_translation_eval_XXX.log
 ```
 
 
@@ -214,11 +121,13 @@ your_apikey
 --model
 gpt-3.5-turbo-16k
 --data_load_name
-PATH/code_debugging_data.jsonl
+code_debug_v4.jsonl
+--candidate_num
+1
 --result_save_name
-PATH/code_debugging_eval_XXX.jsonl
+code_debug_eval_XXX.jsonl
 --log_file_name
-PATH/code_debugging_eval_XXX.log
+code_debug_eval_XXX.log
 ```
 #### Palm
 ```angular2html
@@ -226,11 +135,13 @@ python eval_palm_cg.py
 --api_key
 your_apikey
 --data_load_name
-PATH/code_debugging_data.jsonl
+code_debug_v4.jsonl
+--candidate_num
+1
 --result_save_name
-PATH/code_debugging_eval_palm.jsonl
+code_debug_eval_palm.jsonl
 --log_file_name
-PATH/code_debugging_eval_palm.log
+code_debug_eval_palm.log
 ```
 #### Others
 ```angular2html
@@ -242,10 +153,12 @@ cache_dir
 --checkpoint
 your_model_ckpt
 --data_load_name
-PATH/code_debugging_data.jsonl
+code_debug_v4.jsonl
+--candidate_num
+1
 --result_save_name
-PATH/code_debugging_eval_XXX.jsonl
+code_debug_eval_XXX.jsonl
 --log_file_name
-PATH/code_debugging_eval_XXX.log
+code_debug_eval_XXX.log
 ```
 

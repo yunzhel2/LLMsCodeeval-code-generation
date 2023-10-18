@@ -15,14 +15,15 @@ def parse_arguments():
     parser.add_argument('--api_key', default=None, type=str)
     parser.add_argument('--data_load_name', default='code_smell_data.jsonl',)
     parser.add_argument('--candidate_num', default=1, type=int)
+    parser.add_argument('--temperature', default=0.7, type=float)
     parser.add_argument('--result_save_name', default='code_smell_eval_llama.jsonl')
     parser.add_argument('--log_file_name', default='code_smell_eval_llama.log'),
     args = parser.parse_args()
 
     return args
 
-lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
-                'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
+lang_cluster = ['c++', 'java', 'python', 'c', 'c#', 'ruby', 'delphi', 'go',
+                'javascript', 'kotlin', 'php', 'd', 'perl', 'rust']
 
 @retry.Retry()
 def generate_text(*args, **kwargs):
@@ -322,22 +323,23 @@ Respond only with a string in the following JSON format:
     return example
 
 env_map = {
-    'C++': ['GNU C++11', 'GNU C++14', 'MS C++', 'GNU C++0x', 'GNU C++', 'MS C++ 2017', 'Clang++17 Diagnostics',
+    'c++': ['GNU C++11', 'GNU C++14', 'MS C++', 'GNU C++0x', 'GNU C++', 'MS C++ 2017', 'Clang++17 Diagnostics',
             'GNU C++17'],
-    'C#': ['MS C#', 'Mono C#', '.NET Core C#'],
-    'Java': ['Java 11', 'Java 7', 'Java 6', 'Java 8', 'Java 17', ],
-    'Javascript': ['JavaScript', 'Node.js'],
-    'C': ['GNU C', 'GNU C11'],
-    'Python': ['Python 2', 'PyPy 3', 'Python 3', 'PyPy 2'],
-    'PHP': ['PHP', 'PHP 8.1'],
-    'Ruby': ['Ruby', 'Ruby 3'],
-    'Kotlin': ['Kotlin', 'Kotlin 1.4', 'Kotlin 1.5', 'Kotlin 1.6', 'Kotlin 1.7', ],
-    'Rust': ['Rust', 'Rust 2015', 'Rust 2021'],
-    'Go': ['Go 1.19.5'],
+    'c#': ['MS C#', 'Mono C#', '.NET Core C#'],
+    'java': ['Java 11', 'Java 7', 'Java 6', 'Java 8'],
+    'javascript': ['JavaScript', 'Node.js'],
+    'c': ['GNU C', 'GNU C11'],
+    'python': ['Python 2', 'PyPy 3', 'Python 3', 'PyPy 2'],
+    'php': ['PHP'],
+    'ruby': ['Ruby'],
+    'kotlin': ['Kotlin'],
+    'rust': ['Rust'],
+    'go': ['Go'],
     'd': ['dmd 2.105.0 win32'],
     'delphi': ['Delphi7 win32'],
     'perl': ['Perl v5.20.3']
 }
+
 
 
 def add_program_synthesis(example):
@@ -356,7 +358,7 @@ def add_program_synthesis(example):
     prob_desc_sample_inputs = example['sample_inputs']
     prob_desc_sample_outputs = example['sample_outputs']
     prob_desc_notes = example['notes']
-    lang = example['lang']
+    lang = example['lang_cluster']
     prompt = f"""As an experienced code developer with years of expertise, please provide the source code based on the problem description. Here are the specifics:
 1. Problem description: {prob_desc_description}
 2. Input specification: {prob_desc_input_spec}
@@ -406,75 +408,6 @@ Respond should only with a string in the following JSON format:
         example['program_synthesis_'+str(i)] = program_synthesis[i]['output']
     return example
 
-# def add_program_synthesis(example):
-#     """
-#     Generate corresponding code based on the problem description
-#
-#     problem_attributes = ['title', 'description', 'input_from', 'output_to', 'time_limit',
-#            'memory_limit', 'input_spec', 'output_spec', 'notes', 'sample_inputs',
-#            'sample_outputs', 'id', 'difficulty', 'tags', 'src_uid']
-#     """
-#
-#     # supported languages:
-#     lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
-#                     'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
-#
-#     prob_uid = example['src_uid']
-#     prob_desc_description = example['description']
-#     prob_desc_input_spec = example['input_spec']
-#     prob_desc_output_spec = example['output_spec']
-#     prob_desc_sample_inputs = example['sample_inputs']
-#     prob_desc_sample_outputs = example['sample_outputs']
-#     prob_desc_notes = example['notes']
-#
-#     for lang in lang_cluster:
-#         prompt = f"""As an experienced code developer with years of expertise, please provide the source code based on the problem description. Here are the specifics:
-# 1. Problem description: {prob_desc_description}
-# 2. Input specification: {prob_desc_input_spec}
-# 3. Output specification: {prob_desc_output_spec}
-# 4. Sample inputs: {prob_desc_sample_inputs}
-# 5. Sample outputs: {prob_desc_sample_outputs}
-# 6. Sample explanations: {prob_desc_notes}
-# 7. Programming language: {lang}
-# 8. support programming language version: {env_map[lang]}
-# Respond should only with a string in the following JSON format:
-# [{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
-#
-#         logging.info('problem src_id: ' + str(prob_uid))
-#
-#         input_tokens = count_message_tokens(prompt=prompt)['token_count']
-#         logging.info('input tokens: ' + str(input_tokens))
-#         if input_tokens > max_input_tokens:
-#             logging.warning('Over input tokens limit: ' + str(prob_uid))
-#
-#         try:
-#             response = generate_text(
-#                 prompt=prompt,
-#                 temperature=temperature,
-#                 max_output_tokens=max_output_tokens
-#             )
-#             logging.info('response: ' + str(response.result))
-#
-#             if response.result is not None:
-#                 output_tokens = count_message_tokens(prompt=response.result)['token_count']
-#                 logging.info('output tokens: ' + str(output_tokens))
-#                 if output_tokens > max_output_tokens:
-#                     logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang))
-#                     program_sythesis = ''
-#                 else:
-#                     program_sythesis = response.result
-#             else:
-#                 logging.warning('Respond content is none.')
-#                 program_sythesis = ''
-#
-#         except Exception as e:
-#             logging.error('Failed to generate text: ' + e.__str__())
-#             program_sythesis = ''
-#
-#         logging.info('program_synthesis in: ' + lang + ' :' + str(program_sythesis))
-#         example[lang] = program_sythesis
-#
-#     return example
 
 def add_code_translation(example):
     """
@@ -489,19 +422,14 @@ def add_code_translation(example):
        'judged', 'id', 'submission_id', 'participant_id']
      """
 
-    # supported languages:
-    lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
-                    'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
+
     source_lang = example['lang_cluster']
 
     prob_uid = example['src_uid']
     source_code = example['source_code']
-    for target_lang in lang_cluster:
+    target_lang = example['target_lang_cluster']
 
-        if target_lang == source_lang:
-            continue
-
-        prompt = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
+    prompt = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
 The detailed information are as follows:
 1. Target programming language: {target_lang}
 2. support programming language version: {env_map[target_lang]}
@@ -510,39 +438,39 @@ The detailed information are as follows:
 Respond should only with a string in the following JSON format:
 [{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
-        logging.info('problem src_id: ' + str(prob_uid))
+    logging.info('problem src_id: ' + str(prob_uid))
 
-        input_tokens = count_message_tokens(prompt=prompt)['token_count']
-        logging.info('input tokens: ' + str(input_tokens))
+    input_tokens = count_message_tokens(prompt=prompt)['token_count']
+    logging.info('input tokens: ' + str(input_tokens))
 
-        try:
-            response = generate_text(
-                prompt=prompt,
-                temperature=temperature,
-                max_output_tokens=max_output_tokens,
-                candidate_count=candidate
-            )
-            logging.info('response: ' + str(response))
+    try:
+        response = generate_text(
+            prompt=prompt,
+            temperature=temperature,
+            max_output_tokens=max_output_tokens,
+            candidate_count=candidate
+        )
+        logging.info('response: ' + str(response))
 
-            if response is not None:
-                output_tokens = count_message_tokens(prompt=response.result)['token_count']
-                logging.info('output tokens: ' + str(output_tokens))
-                if input_tokens > max_input_tokens:
-                    logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang_cluster))
-                    translation_outcome = []
-                else:
-                    translation_outcome = response.candidates
-            else:
-                logging.warning('Respond content is none.')
+        if response is not None:
+            output_tokens = count_message_tokens(prompt=response.result)['token_count']
+            logging.info('output tokens: ' + str(output_tokens))
+            if input_tokens > max_input_tokens:
+                logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang_cluster))
                 translation_outcome = []
-
-        except Exception as e:
-            logging.error('Failed to generate text: ' + e.__str__())
+            else:
+                translation_outcome = response.candidates
+        else:
+            logging.warning('Respond content is none.')
             translation_outcome = []
 
-        for i in range(candidate):
-            logging.info('code translation  in: ' + target_lang + ' :' + str(translation_outcome[i]['output']))
-            example[target_lang+'_' + str(i)] = translation_outcome[i]['output']
+    except Exception as e:
+        logging.error('Failed to generate text: ' + e.__str__())
+        translation_outcome = []
+
+    for i in range(candidate):
+        logging.info('code translation  in: ' + target_lang + ' :' + str(translation_outcome[i]['output']))
+        example['code translation_' + str(i)] = translation_outcome[i]['output']
 
     return example
 
@@ -560,9 +488,6 @@ def add_code_repairing(example):
        'judged', 'id', 'submission_id', 'participant_id']
      """
 
-    # supported languages:
-    lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
-                    'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
     source_lang = example['lang']
 
     prob_uid = example['src_uid']
@@ -624,6 +549,7 @@ Respond should only with a string in the following JSON format:
 
 
 def main():
+
     load_path = Path(__file__).parent.parent / Path('data') / Path(args.data_load_name)
     save_path = Path(__file__).parent.parent / Path('results') / Path(args.result_save_name)
     if 'program_synthesis_v3' in args.data_load_name:
@@ -635,26 +561,22 @@ def main():
         data = pd.concat(data, axis=0)
         dataset = Dataset.from_pandas(data)
     else:
+
         dataset = load_dataset('json', split='train', data_files=str(load_path))
     dataset.cleanup_cache_files()  # for multiple evaluation
     print(dataset)
 
 
-    dataset = dataset.select([0])
+    dataset = dataset.select([0,1])
 
-    if args.data_load_name == 'code_review_data.jsonl':
-        dataset = dataset.map(add_diff_tag)
-        dataset = dataset.map(add_review_comment)
-    elif args.data_load_name == 'code_smell_data.jsonl':
-        dataset = dataset.map(add_smell)
-    elif args.data_load_name == 'code_test_data.jsonl':
-        dataset = dataset.map(add_hidden_unit_tests)
-    elif 'program_synthesis' in args.data_load_name:
+    if 'program_synthesis' in args.data_load_name:
         dataset = dataset.map(add_program_synthesis)
     elif 'translation' in args.data_load_name:
         dataset = dataset.map(add_code_translation)
-    elif 'code_debugging' in args.data_load_name:
+    elif 'code_debug' in args.data_load_name:
         dataset = dataset.map(add_code_repairing)
+    else:
+        print("Unrecognized task")
     print(dataset)
 
     dataset.to_json(save_path, lines=True)
@@ -680,7 +602,7 @@ if __name__ == '__main__':
     # References: https://github.com/google/generative-ai-python/issues/29
     palm.configure(api_key=args.api_key, transport='rest')
     models = [model for model in palm.list_models() if 'generateText' in model.supported_generation_methods]
-    temperature = 0.2
+    temperature = args.temperature
     candidate = args.candidate_num
     max_input_tokens = models[0].input_token_limit  # 8192
     max_output_tokens = models[0].output_token_limit  # 1024

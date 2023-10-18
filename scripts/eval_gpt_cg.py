@@ -20,26 +20,11 @@ def parse_arguments():
                                  'gpt-3.5-turbo-0301', 'gpt-4', 'gpt-4-0613', 'gpt-4-32k', 'gpt-4-32k-0613',
                                  'gpt-4-0314', 'gpt-4-32k-0314'],
                         type=str)
-    parser.add_argument('--data_load_name', default='code_review_data.jsonl',
-                        choices=['code_review_data.jsonl', 'code_smell_data.jsonl', 'code_test_data.jsonl',
-                                 'program_synthesis.jsonl', 'program_synthesis_v2.jsonl',
-                                 'code_translation_v2.jsonl', 'code_debugging_data.jsonl', 'augment_problem_list', 'program_synthesis_v3'], type=str)
-    parser.add_argument('--result_save_name', default='code_review_eval_gpt3.jsonl',
-                        choices=['code_review_eval_gpt3.jsonl', 'code_smell_eval_gpt3.jsonl',
-                                 'code_test_data_gpt3.jsonl', 'code_review_eval_gpt4.jsonl',
-                                 'code_smell_eval_gpt4.jsonl', 'code_test_data_gpt4.jsonl',
-                                 'code_translation_eval_gpt3.jsonl', 'code_translation_eval_gpt4.jsonl',
-                                 'code_debugging_eval_gpt3.jsonl', 'code_debugging_eval_gpt4.jsonl',
-                                 'program_synthesis_eval_gpt3.jsonl', 'program_synthesis_eval_gpt4.jsonl',
-                                 'augment_problem_eval_gpt3.jsonl', 'augment_problem_eval_gpt4.jsonl'], type=str)
-    parser.add_argument('--log_file_name', default='code_review_eval_gpt3.log',
-                        choices=['code_review_eval_gpt3.log', 'code_smell_eval_gpt3.log', 'code_test_data_gpt3.log',
-                                 'code_review_eval_gpt4.log', 'code_smell_eval_gpt4.log', 'code_test_data_gpt4.log',
-                                 'code_translation_eval_gpt3.log', 'code_translation_eval_gpt4.log',
-                                 'code_debugging_eval_gpt3.log', 'code_debugging_eval_gpt4.log',
-                                 'program_synthesis_eval_gpt3.log', 'program_synthesis_eval_gpt4.log',
-                                 'augment_problem_eval_gpt3.log', 'augment_problem_eval_gpt4.log'], type=str)
-
+    parser.add_argument('--data_load_name', default='program_synthesis_data.jsonl', type=str)
+    parser.add_argument('--result_save_name', default='program_synthesis_eval_gpt3.jsonl', type=str)
+    parser.add_argument('--log_file_name', default='program_synthesis_eval_gpt3.log', type=str)
+    parser.add_argument('--temperature', default=0.5, type=float)
+    parser.add_argument('--candidate_num', default=1, type=int)
     args = parser.parse_args()
 
     return args
@@ -91,26 +76,27 @@ def count_message_tokens(content, model, type):
 
 
 env_map = {
-    'C++': ['GNU C++11', 'GNU C++14', 'MS C++', 'GNU C++0x', 'GNU C++', 'MS C++ 2017', 'Clang++17 Diagnostics',
+    'c++': ['GNU C++11', 'GNU C++14', 'MS C++', 'GNU C++0x', 'GNU C++', 'MS C++ 2017', 'Clang++17 Diagnostics',
             'GNU C++17'],
-    'C#': ['MS C#', 'Mono C#', '.NET Core C#'],
-    'Java': ['Java 11', 'Java 7', 'Java 6', 'Java 8', 'Java 17', ],
-    'Javascript': ['JavaScript', 'Node.js'],
-    'C': ['GNU C', 'GNU C11'],
-    'Python': ['Python 2', 'PyPy 3', 'Python 3', 'PyPy 2'],
-    'PHP': ['PHP', 'PHP 8.1'],
-    'Ruby': ['Ruby', 'Ruby 3'],
-    'Kotlin': ['Kotlin', 'Kotlin 1.4', 'Kotlin 1.5', 'Kotlin 1.6', 'Kotlin 1.7', ],
-    'Rust': ['Rust', 'Rust 2015', 'Rust 2021'],
-    'Go': ['Go 1.19.5'],
+    'c#': ['MS C#', 'Mono C#', '.NET Core C#'],
+    'java': ['Java 11', 'Java 7', 'Java 6', 'Java 8'],
+    'javascript': ['JavaScript', 'Node.js'],
+    'c': ['GNU C', 'GNU C11'],
+    'python': ['Python 2', 'PyPy 3', 'Python 3', 'PyPy 2'],
+    'php': ['PHP'],
+    'ruby': ['Ruby'],
+    'kotlin': ['Kotlin'],
+    'rust': ['Rust'],
+    'go': ['Go'],
     'd': ['dmd 2.105.0 win32'],
     'delphi': ['Delphi7 win32'],
     'perl': ['Perl v5.20.3']
 }
 
+
 # supported languages:
-lang_cluster = ['C++', 'Java', 'Python', 'C', 'C#', 'Ruby', 'delphi', 'Go',
-                'Javascript', 'Kotlin', 'PHP', 'd', 'perl', 'Rust']
+lang_cluster = ['c++', 'java', 'python', 'c', 'c#', 'ruby', 'delphi', 'go',
+                'javascript', 'kotlin', 'php', 'd', 'perl', 'rust']
 
 def add_data_augment_v2(example):
     """
@@ -194,7 +180,7 @@ def add_program_synthesis(example):
     prob_desc_sample_inputs = example['sample_inputs']
     prob_desc_sample_outputs = example['sample_outputs']
     prob_desc_notes = example['notes']
-    lang = example['lang']
+    lang = example['lang_cluster']
 
     prompt = f"""
 As a professional code developer with years of experience, please provide the corresponding code solution based on the problem description. Detailed information is given below:
@@ -264,13 +250,12 @@ def add_code_translation(example):
      """
 
     source_lang = example['lang_cluster']
-
+    target_lang = example['target_lang_cluster']
     prob_uid = example['src_uid']
     source_code = example['source_code']
-    for target_lang in lang_cluster:
-        if target_lang == source_lang:
-            continue
-        prompt = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
+
+
+    prompt = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
 The detailed information are as follows:
 1. Target programming language: {target_lang}
 2. support programming language version: {env_map[target_lang]}
@@ -280,39 +265,39 @@ Please take care to minimize the use of complex header files.
 Respond should only with a string in the following JSON format:
 [{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
-        logging.info('problem src_id: ' + str(prob_uid))
+    logging.info('problem src_id: ' + str(prob_uid))
 
-        input_tokens = count_message_tokens(prompt, args.model, 'input')
-        logging.info('input tokens: ' + str(input_tokens))
+    input_tokens = count_message_tokens(prompt, args.model, 'input')
+    logging.info('input tokens: ' + str(input_tokens))
 
-        try:
-            response = generate_text(
-                model=args.model,
-                prompt=prompt,
-                temperature=temperature,
-                candidate=candidate_num
-            )
-            logging.info('response: ' + str(response))
+    try:
+        response = generate_text(
+            model=args.model,
+            prompt=prompt,
+            temperature=temperature,
+            candidate=candidate_num
+        )
+        logging.info('response: ' + str(response))
 
-            if response is not None:
-                output_tokens = count_message_tokens(response, args.model, 'output')
-                logging.info('output tokens: ' + str(output_tokens))
-                if input_tokens + output_tokens > max_tokens:
-                    logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang_cluster))
-                    translation_outcome = ''
-                else:
-                    translation_outcome = response
-            else:
-                logging.warning('Respond content is none.')
+        if response is not None:
+            output_tokens = count_message_tokens(response, args.model, 'output')
+            logging.info('output tokens: ' + str(output_tokens))
+            if input_tokens + output_tokens > max_tokens:
+                logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang_cluster))
                 translation_outcome = ''
-
-        except Exception as e:
-            logging.error('Failed to generate text: ' + e.__str__())
+            else:
+                translation_outcome = response
+        else:
+            logging.warning('Respond content is none.')
             translation_outcome = ''
 
-        for i in range(candidate_num):
-            logging.info('code translation  in: ' + target_lang + ' :' + str(translation_outcome[i]))
-            example[target_lang + '_' + str(i)] = translation_outcome[i]
+    except Exception as e:
+        logging.error('Failed to generate text: ' + e.__str__())
+        translation_outcome = ''
+
+    for i in range(len(translation_outcome)):
+        logging.info('code translation  in: ' + target_lang + ' :' + str(translation_outcome[i]))
+        example[target_lang + '_' + str(i)] = translation_outcome[i]
 
     return example
 
@@ -383,7 +368,7 @@ Respond should only with a string in the following JSON format:
         logging.error('Failed to generate text: ' + e.__str__())
         repair_outcome = []
 
-    for i in range(candidate_num):
+    for i in range(len(repair_outcome)):
         logging.info('Code repairing in: ' + source_lang + ' :' + str(repair_outcome[i]))
         example['Code repairing_'+str(i)] = repair_outcome[i]
 
@@ -422,7 +407,7 @@ def main():
         dataset = dataset.map(add_program_synthesis)
     elif 'translation' in args.data_load_name:
         dataset = dataset.map(add_code_translation)
-    elif 'code_debugging' in args.data_load_name:
+    elif 'code_debug' in args.data_load_name:
         dataset = dataset.map(add_code_repairing)
     else:
         print("please use corresponding task as file name")
@@ -462,8 +447,9 @@ if __name__ == '__main__':
         'gpt-4-32k-0314': 32768
     }
 
-    temperature = 0.5
+    candidate_num = args.candidate_num
+    temperature = args.temperature
     max_tokens = model_max_tokens.get(args.model) if model_max_tokens.get(args.model) is not None else 0
-    candidate_num = 2
+
     main()
     # python scripts/eval_gpt.py
