@@ -47,15 +47,18 @@ def parse_arguments():
 
 # References: https://github.com/openai/openai-cookbook/blob/main/examples/How_to_handle_rate_limits.ipynb
 @backoff.on_exception(backoff.expo, openai.error.RateLimitError)
-def generate_text(model, prompt, temperature):
+def generate_text(model, prompt, temperature,candidate):
     messages = [{'role': 'user', 'content': prompt}]
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
-        temperature=temperature
+        temperature=temperature,
+        n=candidate
     )
-
-    return response['choices'][0]['message']['content']
+    results = []
+    for i in range(candidate):
+        results.append(response['choices'][i]['message']['content'])
+    return results
 
 
 # References: https://github.com/openai/openai-cookbook/blob/5783656852d507c335955d14875ebc9902f628ef/examples/How_to_count_tokens_with_tiktoken.ipynb
@@ -175,7 +178,7 @@ Respond should only with a string in the following JSON format:
     return example
 
 
-def add_program_synthesis_v2(example):
+def add_program_synthesis(example):
     """
     Generate corresponding code based on the problem description
 
@@ -203,6 +206,8 @@ As a professional code developer with years of experience, please provide the co
 6. Sample explanations: {prob_desc_notes}
 7. Programming language: {lang} 
 8. support programming language version: {env_map[lang]}
+Please take care to minimize the use of complex header files.
+
 Respond should only with a string in the following JSON format:
 [{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
@@ -215,7 +220,8 @@ Respond should only with a string in the following JSON format:
         response = generate_text(
             model=args.model,
             prompt=prompt,
-            temperature=temperature
+            temperature=temperature,
+            candidate=candidate_num
         )
         logging.info('response: ' + str(response))
 
@@ -238,72 +244,9 @@ Respond should only with a string in the following JSON format:
     logging.info('program_synthesis in: ' + lang + ' :' + str(program_sythesis))
     example['program_synthesis'] = program_sythesis
 
-    return example
-
-
-def add_program_synthesis(example):
-    """
-    Generate corresponding code based on the problem description
-
-    problem_attributes = ['title', 'description', 'input_from', 'output_to', 'time_limit',
-           'memory_limit', 'input_spec', 'output_spec', 'notes', 'sample_inputs',
-           'sample_outputs', 'id', 'difficulty', 'tags', 'src_uid']
-    """
-
-    prob_uid = example['src_uid']
-    prob_desc_description = example['description']
-    prob_desc_input_spec = example['input_spec']
-    prob_desc_output_spec = example['output_spec']
-    prob_desc_sample_inputs = example['sample_inputs']
-    prob_desc_sample_outputs = example['sample_outputs']
-    prob_desc_notes = example['notes']
-
-    for lang in lang_cluster:
-        prompt = f"""
-As a professional code developer with years of experience, please provide the corresponding code solution based on the problem description. Detailed information is given below:
-1. Problem description: {prob_desc_description}
-2. Input specification: {prob_desc_input_spec}
-3. Output specification: {prob_desc_output_spec}
-4. Sample inputs: {prob_desc_sample_inputs}
-5. Sample outputs: {prob_desc_sample_outputs}
-6. Sample explanations: {prob_desc_notes}
-7. Programming language: {lang} 
-8. support programming language version: {env_map[lang]}
-Respond should only with a string in the following JSON format:
-[{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
-
-        logging.info('problem src_id: ' + str(prob_uid))
-
-        input_tokens = count_message_tokens(prompt, args.model, 'input')
-        logging.info('input tokens: ' + str(input_tokens))
-
-        try:
-            response = generate_text(
-                model=args.model,
-                prompt=prompt,
-                temperature=temperature
-            )
-            logging.info('response: ' + str(response))
-
-            if response is not None:
-                output_tokens = count_message_tokens(response, args.model, 'output')
-                logging.info('output tokens: ' + str(output_tokens))
-                if input_tokens + output_tokens > max_tokens:
-                    logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang))
-                    program_sythesis = ''
-                else:
-                    program_sythesis = response
-            else:
-                logging.warning('Respond content is none.')
-                program_sythesis = ''
-
-        except Exception as e:
-            logging.error('Failed to generate text: ' + e.__str__())
-            program_sythesis = ''
-
-        logging.info('program_synthesis in: ' + lang + ' :' + str(program_sythesis))
-        example[lang] = program_sythesis
-
+    for i, generated_code in enumerate(program_sythesis):
+        logging.info('program_synthesis  in: ' + lang + ' :' + generated_code)
+        example['program_synthesis_' + str(i)] = generated_code
     return example
 
 
@@ -321,49 +264,55 @@ def add_code_translation(example):
      """
 
     source_lang = example['lang_cluster']
-    target_lang = example['target_lang_cluster']
+
     prob_uid = example['src_uid']
     source_code = example['source_code']
-
-    prompt = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
+    for target_lang in lang_cluster:
+        if target_lang == source_lang:
+            continue
+        prompt = f"""As an expert code developer proficient in multiple programming languages with years of experience, please translate the source code in {source_lang} to programming language {target_lang} within our supported version. 
 The detailed information are as follows:
 1. Target programming language: {target_lang}
 2. support programming language version: {env_map[target_lang]}
 3. Source code\n: {source_code}
+Please take care to minimize the use of complex header files.
+
 Respond should only with a string in the following JSON format:
 [{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
 
-    logging.info('problem src_id: ' + str(prob_uid))
+        logging.info('problem src_id: ' + str(prob_uid))
 
-    input_tokens = count_message_tokens(prompt, args.model, 'input')
-    logging.info('input tokens: ' + str(input_tokens))
+        input_tokens = count_message_tokens(prompt, args.model, 'input')
+        logging.info('input tokens: ' + str(input_tokens))
 
-    try:
-        response = generate_text(
-            model=args.model,
-            prompt=prompt,
-            temperature=temperature
-        )
-        logging.info('response: ' + str(response))
+        try:
+            response = generate_text(
+                model=args.model,
+                prompt=prompt,
+                temperature=temperature,
+                candidate=candidate_num
+            )
+            logging.info('response: ' + str(response))
 
-        if response is not None:
-            output_tokens = count_message_tokens(response, args.model, 'output')
-            logging.info('output tokens: ' + str(output_tokens))
-            if input_tokens + output_tokens > max_tokens:
-                logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang_cluster))
-                translation_outcome = ''
+            if response is not None:
+                output_tokens = count_message_tokens(response, args.model, 'output')
+                logging.info('output tokens: ' + str(output_tokens))
+                if input_tokens + output_tokens > max_tokens:
+                    logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang_cluster))
+                    translation_outcome = ''
+                else:
+                    translation_outcome = response
             else:
-                translation_outcome = response
-        else:
-            logging.warning('Respond content is none.')
+                logging.warning('Respond content is none.')
+                translation_outcome = ''
+
+        except Exception as e:
+            logging.error('Failed to generate text: ' + e.__str__())
             translation_outcome = ''
 
-    except Exception as e:
-        logging.error('Failed to generate text: ' + e.__str__())
-        translation_outcome = ''
-
-    logging.info('Code translation in: ' + target_lang + ' :' + str(translation_outcome))
-    example['translation_result'] = translation_outcome
+        for i in range(candidate_num):
+            logging.info('code translation  in: ' + target_lang + ' :' + str(translation_outcome[i]))
+            example[target_lang + '_' + str(i)] = translation_outcome[i]
 
     return example
 
@@ -399,7 +348,7 @@ The detailed information are shown as follows:
 6. Programming language: {source_lang}
 7. Buggy code :\n {source_code}
 8. Error message: {error_msg}
-Please note that use complex header files as little as possible. 
+Please take care to minimize the use of complex header files.
 
 Respond should only with a string in the following JSON format:
 [{{"version": specific version used in the programming language, "target code":  the code you produced in the respective programming language version."}}] """
@@ -413,7 +362,8 @@ Respond should only with a string in the following JSON format:
         response = generate_text(
             model=args.model,
             prompt=prompt,
-            temperature=temperature
+            temperature=temperature,
+            candidate=candidate_num
         )
         logging.info('response: ' + str(response))
 
@@ -422,19 +372,20 @@ Respond should only with a string in the following JSON format:
             logging.info('output tokens: ' + str(output_tokens))
             if input_tokens + output_tokens > max_tokens:
                 logging.warning('Over total tokens limit ' + str(prob_uid) + ' lang: ' + str(lang_cluster))
-                repair_outcome = ''
+                repair_outcome = []
             else:
                 repair_outcome = response
         else:
             logging.warning('Respond content is none.')
-            repair_outcome = ''
+            repair_outcome = []
 
     except Exception as e:
         logging.error('Failed to generate text: ' + e.__str__())
-        repair_outcome = ''
+        repair_outcome = []
 
-    logging.info('Code repairing in: ' +  str(repair_outcome))
-    example['debug_result'] = repair_outcome
+    for i in range(candidate_num):
+        logging.info('Code repairing in: ' + source_lang + ' :' + str(repair_outcome[i]))
+        example['Code repairing_'+str(i)] = repair_outcome[i]
 
     return example
 
@@ -451,24 +402,24 @@ def main():
         data = pd.concat(data,axis=0)
         dataset = Dataset.from_pandas(data)
     elif 'program_synthesis_v3' in args.data_load_name:
-        data = []
-        for cluster in lang_cluster:
-            file_name = f'''1014_each30_{cluster}.jsonl'''
-            if os.path.exists(os.path.join(load_path, file_name)):
-                data.append(pd.read_json(os.path.join(load_path, file_name), lines=True))
-        data = pd.concat(data,axis=0)
-        dataset = Dataset.from_pandas(data)
+            data = []
+            for cluster in lang_cluster:
+                file_name = f'''1014_each30_{cluster}.jsonl'''
+                if os.path.exists(os.path.join(load_path, file_name)):
+                    data.append(pd.read_json(os.path.join(load_path, file_name), lines=True))
+            data = pd.concat(data, axis=0)
+            dataset = Dataset.from_pandas(data)
     else:
         dataset = load_dataset('json', split='train', data_files=str(load_path))
         dataset.cleanup_cache_files()  # for multiple evaluation
 
-    dataset = dataset.select([0,1])
+    # For debug
+    dataset = dataset.select([0])
 
-
-    if  'program_synthesis_v3' in args.data_load_name:
-        dataset = dataset.map(add_program_synthesis_v2)
-    elif 'program_synthesis' in args.data_load_name or 'augment_problem_list' in args.data_load_name:
+    if  'augment_problem_list'  in args.data_load_name:
         dataset = dataset.map(add_data_augment_v2)
+    elif 'program_synthesis' in args.data_load_name:
+        dataset = dataset.map(add_program_synthesis)
     elif 'translation' in args.data_load_name:
         dataset = dataset.map(add_code_translation)
     elif 'code_debugging' in args.data_load_name:
@@ -513,6 +464,6 @@ if __name__ == '__main__':
 
     temperature = 0.5
     max_tokens = model_max_tokens.get(args.model) if model_max_tokens.get(args.model) is not None else 0
-
+    candidate_num = 2
     main()
     # python scripts/eval_gpt.py
